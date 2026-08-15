@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitor Oliveira | Analista de Dados e BI</title>
+<meta name="description" content="Portfólio de Vitor Oliveira: BI ponta a ponta com PostgreSQL, Python e Power BI, e plataforma de dados com dbt, Dagster e CI.">
+<style>
+  :root {
+    --verde: #0E2E23;
+    --creme: #FFF3D8;
+    --ambar: #F5C84B;
+    --terracota: #E97832;
+    --tinta: #22312A;
+    --tinta-suave: #4A5A50;
+    --papel-card: #FBECC9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--creme);
+    color: var(--tinta);
+    font-family: "Segoe UI", system-ui, Roboto, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  a { color: var(--terracota); text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; }
+  a:focus-visible { outline: 3px solid var(--terracota); outline-offset: 2px; }
+
+  .largura { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ===== Capa ===== */
+  .capa {
+    position: relative;
+    background: var(--verde);
+    overflow: hidden;
+  }
+  .capa::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 34%;
+    height: 100%;
+    background: var(--ambar);
+  }
+  .capa .quadrado {
+    position: absolute;
+    background: var(--terracota);
+    z-index: 1;
+  }
+  .q1 { width: 26px; height: 26px; left: 8%; bottom: 14%; }
+  .q2 { width: 14px; height: 14px; left: 12%; bottom: 22%; background: var(--ambar); }
+  .q3 { width: 18px; height: 18px; right: 30%; top: 12%; background: var(--creme); }
+  .capa .conteudo {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 48px;
+    align-items: center;
+    padding-top: 84px;
+    padding-bottom: 84px;
+  }
+  .capa .funcao {
+    color: var(--ambar);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .capa h1 {
+    color: var(--creme);
+    font-size: clamp(44px, 7vw, 82px);
+    font-weight: 900;
+    line-height: 0.98;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .capa h1 span { color: var(--ambar); }
+  .capa .resumo {
+    color: #E9DEC0;
+    max-width: 46ch;
+    margin-top: 22px;
+    font-size: 18px;
+  }
+  .capa .destaques { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 620px; }
+  .capa .destaques div { border-top: 3px solid var(--ambar); padding-top: 10px; }
+  .capa .destaques b { display: block; color: var(--creme); font-size: 24px; font-weight: 800; line-height: 1.05; }
+  .capa .destaques span { display: block; color: #C9BFA2; font-size: 13px; margin-top: 4px; }
+  @media (max-width: 560px) { .capa .destaques { grid-template-columns: 1fr; } }
+  .capa .acoes { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 14px; }
+  .botao {
+    display: inline-block;
+    background: var(--ambar);
+    color: var(--verde);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 13px 24px;
+    border: 3px solid var(--verde);
+    box-shadow: 6px 6px 0 var(--terracota);
+  }
+  .botao:hover { text-decoration: none; transform: translate(2px, 2px); box-shadow: 4px 4px 0 var(--terracota); }
+  .botao.claro {
+    background: transparent;
+    color: var(--creme);
+    border-color: var(--creme);
+    box-shadow: 6px 6px 0 var(--ambar);
+  }
+  .capa .foto {
+    width: 300px;
+    height: 300px;
+    display: block;
+    justify-self: end;
+    border: 5px solid var(--verde);
+    box-shadow: 16px 16px 0 var(--terracota);
+    object-fit: cover;
+  }
+
+  /* ===== Faixa de números ===== */
+  .numeros { background: var(--ambar); border-bottom: 4px solid var(--verde); }
+  .numeros .grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px 28px;
+    padding: 34px 0 38px;
+  }
+  .numeros .valor {
+    color: var(--verde);
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .numeros .rotulo {
+    color: var(--verde);
+    font-size: 14px;
+    margin-top: 6px;
+    max-width: 24ch;
+  }
+
+  /* ===== Seções ===== */
+  section { padding: 68px 0 12px; }
+  h2 {
+    display: inline-block;
+    font-size: clamp(26px, 3.4vw, 36px);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--verde);
+    box-shadow: inset 0 -16px 0 var(--ambar);
+    margin-bottom: 14px;
+  }
+  .sub {
+    max-width: 66ch;
+    color: var(--tinta);
+    margin-bottom: 10px;
+  }
+  .sub strong { color: var(--verde); }
+
+  /* ===== Experiência: painel ===== */
+  .painel { background: var(--verde); color: var(--creme); border: 3px solid var(--verde); margin-top: 26px; box-shadow: 12px 12px 0 var(--ambar); }
+  .painel-barra { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px 18px; padding: 12px 18px; background: #0A2219; font-size: 13.5px; color: #C9BFA2; }
+  .painel-barra b { color: var(--ambar); font-weight: 700; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #24463A; }
+  .kpi { background: var(--verde); padding: 20px 18px; }
+  .kpi small { display: block; font-size: 12px; color: #C9BFA2; letter-spacing: 0.06em; text-transform: uppercase; }
+  .kpi b { display: block; font-size: 30px; font-weight: 900; color: var(--ambar); line-height: 1.05; margin-top: 6px; }
+  .kpi span { display: block; font-size: 13px; color: #E9DEC0; margin-top: 4px; }
+  .painel-tabela { padding: 6px 18px 18px; overflow-x: auto; }
+  .painel-tabela table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .painel-tabela th { font-size: 12px; color: #C9BFA2; font-weight: 700; text-align: left; padding: 14px 12px 8px 0; border-bottom: 1px solid #24463A; letter-spacing: 0.1em; text-transform: uppercase; }
+  .painel-tabela td { padding: 12px 12px 12px 0; border-bottom: 1px solid #1B3A2E; vertical-align: top; color: #E9DEC0; }
+  .painel-tabela td:first-child { color: var(--creme); font-weight: 700; white-space: nowrap; }
+  .painel-tabela td:last-child { color: var(--ambar); font-weight: 700; white-space: nowrap; }
+  .painel-rodape { padding: 12px 18px; font-size: 13px; color: #C9BFA2; background: #0A2219; }
+  @media (max-width: 760px) {
+    .kpis { grid-template-columns: 1fr 1fr; }
+    .painel-tabela td:first-child, .painel-tabela td:last-child { white-space: normal; }
+    .painel { box-shadow: 8px 8px 0 var(--ambar); }
+  }
+
+  /* ===== Etapas do projeto ===== */
+  .etapa { margin-top: 52px; }
+  .etapa .topo {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+  }
+  .etapa .num {
+    color: var(--terracota);
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .etapa h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--verde);
+  }
+  .etapa .ferramentas {
+    width: 100%;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--tinta-suave);
+    margin-top: 2px;
+  }
+  .etapa p { max-width: 70ch; margin-top: 12px; }
+  .etapa figure { margin-top: 22px; max-width: 900px; }
+  .etapa img {
+    width: 100%;
+    display: block;
+    border: 3px solid var(--verde);
+    box-shadow: 12px 12px 0 var(--ambar);
+    background: #fff;
+  }
+  .etapa:nth-child(even) img { box-shadow: 12px 12px 0 var(--terracota); }
+  .etapa figcaption {
+    font-size: 14px;
+    color: var(--tinta-suave);
+    margin-top: 16px;
+  }
+  .projeto-links { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 14px; }
+  .botao.escuro {
+    background: var(--verde);
+    color: var(--creme);
+    border-color: var(--verde);
+    box-shadow: 6px 6px 0 var(--ambar);
+  }
+
+  /* ===== Outros projetos ===== */
+  .outros { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; margin-top: 30px; }
+  .cartao {
+    padding: 28px 28px 26px;
+    border: 3px solid var(--verde);
+  }
+  .cartao.cheio {
+    background: var(--verde);
+    color: #E9DEC0;
+    box-shadow: 12px 12px 0 var(--ambar);
+  }
+  .cartao.cheio h3 { color: var(--creme); }
+  .cartao.rascunho { border-style: dashed; color: var(--tinta); }
+  .cartao h3 { font-size: 21px; font-weight: 800; color: var(--verde); margin-bottom: 10px; }
+  .cartao p { font-size: 15.5px; }
+  .cartao .estado {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--ambar);
+    color: var(--verde);
+    padding: 4px 10px;
+    margin-bottom: 14px;
+  }
+  .cartao.cheio a { color: var(--ambar); font-weight: 700; }
+  .cartao .link { display: inline-block; margin-top: 14px; font-weight: 700; }
+  .cartao .miniatura {
+    width: 100%;
+    display: block;
+    margin-top: 18px;
+    border: 3px solid var(--ambar);
+  }
+  .cartao .links-cartao { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 22px; }
+
+  /* ===== Competências ===== */
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; max-width: 760px; }
+  .chip {
+    background: var(--verde);
+    color: var(--creme);
+    font-size: 14.5px;
+    font-weight: 600;
+    padding: 8px 16px;
+  }
+
+  /* ===== Contato ===== */
+  .contato {
+    background: var(--verde);
+    margin-top: 76px;
+    padding: 60px 0 68px;
+  }
+  .contato h2 { color: var(--creme); box-shadow: inset 0 -16px 0 var(--terracota); }
+  .contato p { color: #E9DEC0; max-width: 56ch; margin-top: 10px; }
+  .contato .acoes { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; }
+
+  @media (max-width: 860px) {
+    .capa::after { display: none; }
+    .capa .conteudo { grid-template-columns: 1fr; padding-top: 64px; padding-bottom: 64px; }
+    .capa .foto { justify-self: start; width: 240px; height: 240px; box-shadow: 12px 12px 0 var(--ambar); }
+    .q3 { display: none; }
+    .etapa img { box-shadow: 8px 8px 0 var(--ambar); }
+    .etapa:nth-child(even) img { box-shadow: 8px 8px 0 var(--terracota); }
+  }
+</style>
+</head>
+<body>
+
+<header class="capa">
+  <span class="quadrado q1"></span>
+  <span class="quadrado q2"></span>
+  <span class="quadrado q3"></span>
+  <div class="largura conteudo">
+    <div>
+      <p class="funcao">Analista de dados e BI</p>
+      <h1>Vitor Oliveira<span>.</span></h1>
+      <p class="resumo">5 anos em dados, 4 deles em indústria de alimentos
+      (FMCG), atendendo comercial, trade e supply. Do hub de dados ao
+      alerta de ruptura na caixa de entrada de quem decide.</p>
+      <div class="destaques">
+        <div><b>R$ 10 mi</b><span>de receita em risco de ruptura identificados por cliente</span></div>
+        <div><b>+40 fontes</b><span>num único hub de sell-in e sell-out</span></div>
+        <div><b>US$ 60 mil/ano</b><span>economizados com o servidor de 45% para 22%</span></div>
+      </div>
+      <div class="acoes">
+        <a class="botao" href="https://linkedin.com/in/vitor-oliveira-722549165" rel="noopener">LinkedIn</a>
+        <a class="botao claro" href="https://github.com/vitordjk" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <img class="foto" src="foto.jpg" alt="Foto de Vitor Oliveira" width="300" height="300">
+  </div>
+</header>
+
+<div class="numeros">
+  <div class="largura grade">
+    <div>
+      <div class="valor">3,4 mi</div>
+      <div class="rotulo">de linhas geradas e carregadas no PostgreSQL (Aurora)</div>
+    </div>
+    <div>
+      <div class="valor">40</div>
+      <div class="rotulo">medidas DAX no modelo semântico do Power BI (Aurora)</div>
+    </div>
+    <div>
+      <div class="valor">873 mil</div>
+      <div class="rotulo">coletas reais da ANP de 9.307 postos em 27 UFs (Radar)</div>
+    </div>
+    <div>
+      <div class="valor">29</div>
+      <div class="rotulo">testes de qualidade em toda execução, com CI bloqueando merge (Radar)</div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section>
+    <div class="largura">
+      <h2>Experiência</h2>
+      <div class="painel">
+        <div class="painel-barra">
+          <span><b>Vigor Alimentos</b> &middot; analista de dados e BI &middot; fev/2024 até hoje &middot; assistente e estagiário de BI desde mai/2021</span>
+          <span>atualizado ago/2026</span>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><small>receita em risco</small><b>R$ 10 mi</b><span>identificada por cliente, via previsão de ruptura</span></div>
+          <div class="kpi"><small>fontes no hub</small><b>+40</b><span>sell-in e sell-out, uma verdade só</span></div>
+          <div class="kpi"><small>uso do servidor</small><b>45% a 22%</b><span>consultas e modelos otimizados</span></div>
+          <div class="kpi"><small>economia anual</small><b>US$ 60 mil</b><span>na conta do Power BI</span></div>
+        </div>
+        <div class="painel-tabela">
+          <table>
+            <thead><tr><th>frente</th><th>o que fiz</th><th>resultado</th></tr></thead>
+            <tbody>
+              <tr><td>Hub de dados</td><td>Warehouse em estrela com mais de 40 fontes (Scanntech, Nielsen, Mtrix, Neogrid, Involves) servido em Power BI com RLS dinâmico por estrutura comercial</td><td>fonte única de sell-in</td></tr>
+              <tr><td>Ruptura</td><td>Regressão da venda diária por cliente cruzada com estoque estima a data de ruptura e compara com o ciclo de compra</td><td>R$ 10 mi em risco</td></tr>
+              <tr><td>Distribuição</td><td>Power Automate consulta o hub, monta relatório em HTML por cargo e envia por e-mail e Teams; alertas de inconsistência para o BI</td><td>sem depender de abrir painel</td></tr>
+              <tr><td>Governança</td><td>Ferramenta em Python que pontua modelos de Power BI antes da publicação; hierarquia comercial sem duplicidade, com histórico mensal em SQL</td><td>relatório ruim não sobe</td></tr>
+              <tr><td>Preço</td><td>Price index, ponte PVM e elasticidade com trade e vendas</td><td>base do módulo RGM</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="painel-rodape">formação: Ciência e Tecnologia, UFABC &middot; inglês C1 &middot; Power BI e DAX &middot; SQL &middot; Python &middot; Power Automate &middot; SAP HANA</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="largura">
+      <h2>Aurora Alimentos</h2>
+      <p class="sub">Indústria fictícia de laticínios. Da geração da base ao
+      alerta por e-mail em quem decide. Todos os números saem de execução
+      real do código.</p>
+
+      <div class="etapa">
+        <div class="topo">
+          <span class="num">01</span>
+          <h3>Geração da base</h3>
+          <p class="ferramentas">Python &middot; pandas &middot; numpy</p>
+        </div>
+        <p>30 distribuidores, 250 lojas, 48 produtos, 18 meses: 3,4 milhões
+        de linhas com semente fixa. A ruptura emerge do estoque dia a dia,
+        em 11,2% dos pares loja e produto.</p>
+        <figure>
+          <img src="01-gerador.png" alt="Terminal mostrando a execução do gerador de dados" loading="lazy">
+          <figcaption>Saída do gerador no terminal, com volumetria por tabela.</figcaption>
+        </figure>
+      </div>
+
+      <div class="etapa">
+        <div class="topo">
+          <span class="num">02</span>
+          <h3>Banco e modelagem</h3>
+          <p class="ferramentas">PostgreSQL</p>
+        </div>
+        <p>Modelo estrela com fatos de venda e estoque, dimensões
+        conformadas e visões materializadas para o painel.</p>
+        <figure>
+          <img src="02-banco.png" alt="Estrutura das tabelas no PostgreSQL" loading="lazy">
+          <figcaption>Esquema do banco carregado.</figcaption>
+        </figure>
+      </div>
+
+      <div class="etapa">
+        <div class="topo">
+          <span class="num">03</span>
+          <h3>Modelo semântico</h3>
+          <p class="ferramentas">Power BI &middot; DAX</p>
+        </div>
+        <p>40 medidas de venda, estoque, cobertura e risco. Cobertura em
+        dias ponderada pela demanda: 9,4 dias contra 15,2 pela média
+        simples, diferença que inverte uma decisão de compra.</p>
+        <figure>
+          <img src="03-modelo.png" alt="Modelo semântico e medidas no Power BI" loading="lazy">
+          <figcaption>Modelo e medidas no Power BI Desktop.</figcaption>
+        </figure>
+      </div>
+
+      <div class="etapa">
+        <div class="topo">
+          <span class="num">04</span>
+          <h3>Telas</h3>
+          <p class="ferramentas">HTML &middot; CSS</p>
+        </div>
+        <p>9 telas geradas a partir de um só arquivo de estilo.</p>
+        <figure>
+          <img src="04-telas.png" alt="Telas do painel de BI" loading="lazy">
+          <figcaption>Telas do painel.</figcaption>
+        </figure>
+      </div>
+
+      <div class="etapa">
+        <div class="topo">
+          <span class="num">05</span>
+          <h3>Sugestão de pedidos</h3>
+          <p class="ferramentas">Python &middot; DAX</p>
+        </div>
+        <p>Recomendação de compra por loja e produto a partir do risco de
+        ruptura. Estimador validado contra a simulação: erro de 5,4% para
+        menos.</p>
+        <figure>
+          <img src="05-pedidos.png" alt="Tela de sugestão de pedidos" loading="lazy">
+          <figcaption>Sugestão de compra por loja e produto.</figcaption>
+        </figure>
+      </div>
+
+      <div class="etapa">
+        <div class="topo">
+          <span class="num">06</span>
+          <h3>Alertas por e-mail</h3>
+          <p class="ferramentas">Python &middot; SMTP</p>
+        </div>
+        <p>Vendedor, gestor, diretor e reposição recebem versões diferentes
+        do mesmo alerta, cada um com o que precisa decidir.</p>
+        <figure>
+          <img src="06-email.png" alt="E-mail de alerta gerado pelo sistema" loading="lazy">
+          <figcaption>Alerta automático como chega ao destinatário.</figcaption>
+        </figure>
+      </div>
+
+      <div class="projeto-links">
+        <!-- Se o código do Aurora estiver em outro repositório, troque o link abaixo -->
+        <a class="botao escuro" href="https://github.com/vitordjk" rel="noopener">Código no GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="largura">
+      <h2>Radar de Preços de Combustíveis</h2>
+      <p class="sub">Plataforma de dados sobre a série histórica de preços da
+      ANP, do download semanal ao mart pronto para análise. Números de
+      execução com os arquivos oficiais.</p>
+
+      <div class="etapa">
+        <div class="topo">
+          <span class="num">01</span>
+          <h3>Ingestão idempotente</h3>
+          <p class="ferramentas">Python &middot; Parquet &middot; DuckDB</p>
+        </div>
+        <p>Comparação por hash: só o que mudou é reprocessado. O bronze
+        guarda o arquivo como veio, com origem e data de ingestão em cada
+        linha.</p>
+        <figure>
+          <img src="08-radar-ingestao.png" alt="Log da ingestão no Dagster mostrando os quatro arquivos da ANP pulados por estarem inalterados" loading="lazy">
+          <figcaption>Segunda execução do dia: os 4 arquivos reconhecidos como inalterados e pulados, sem reprocessar nem duplicar.</figcaption>
+        </figure>
+      </div>
+
+      <div class="etapa">
+        <div class="topo">
+          <span class="num">02</span>
+          <h3>Transformação em camadas e testes</h3>
+          <p class="ferramentas">dbt &middot; SQL</p>
+        </div>
+        <p>Três camadas com uma responsabilidade cada: tipar, deduplicar,
+        modelar. 29 testes em todo build; erro bloqueia, aviso pede
+        investigação. Na primeira execução real, um teste barrou um produto
+        com a unidade grafada de dois jeitos.</p>
+        <figure>
+          <img src="09-radar-execucoes.png" alt="Lista de execuções no Dagster: duas falhas seguidas de uma execução bem-sucedida com 10 assets e 28 verificações" loading="lazy">
+          <figcaption>As duas execuções barradas pelos testes e a terceira, verde, após a correção. O contrato de qualidade fazendo o papel dele.</figcaption>
+        </figure>
+      </div>
+
+      <div class="etapa">
+        <div class="topo">
+          <span class="num">03</span>
+          <h3>Orquestração e linhagem</h3>
+          <p class="ferramentas">Dagster</p>
+        </div>
+        <p>Ingestão em Python e modelos do dbt como um grafo só, do
+        download da ANP ao mart final. Agendamento semanal.</p>
+        <figure>
+          <img src="07-radar-linhagem.png" alt="Grafo de linhagem no Dagster, da ingestão da ANP ao mart semanal" loading="lazy">
+          <figcaption>Linhagem completa: ingestão, staging, intermediária, dimensões, fato e resumo semanal.</figcaption>
+        </figure>
+      </div>
+
+      <div class="etapa">
+        <div class="topo">
+          <span class="num">04</span>
+          <h3>Integração contínua e documentação</h3>
+          <p class="ferramentas">GitHub Actions &middot; GitHub Pages</p>
+        </div>
+        <p>A cada alteração, o GitHub roda o pipeline inteiro contra dados
+        de exemplo versionados. Sem testes verdes, sem merge. Documentação
+        do dbt publicada automaticamente.</p>
+        <figure>
+          <img src="10-radar-ci.png" alt="Aba Actions do GitHub com o pipeline de integração contínua concluído com sucesso" loading="lazy">
+          <figcaption>Pipeline completo executado numa máquina limpa do GitHub a cada push.</figcaption>
+        </figure>
+      </div>
+
+      <div class="projeto-links">
+        <a class="botao escuro" href="https://github.com/vitordjk/radar-precos-combustiveis" rel="noopener">Código no GitHub</a>
+        <a class="botao" href="https://vitordjk.github.io/radar-precos-combustiveis/" rel="noopener">Documentação do dbt</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="largura">
+      <h2>Em desenvolvimento</h2>
+      <p class="sub">Terceiro projeto, sobre a base da Aurora, em dois módulos.</p>
+      <div class="outros">
+        <div class="cartao rascunho">
+          <span class="estado">Módulo 1</span>
+          <h3>Previsão de demanda</h3>
+          <p>Previsão por produto e loja, validada por backtesting temporal,
+          ligada à sugestão de compra já existente.</p>
+        </div>
+        <div class="cartao rascunho">
+          <span class="estado">Módulo 2</span>
+          <h3>Preço, volume, mix e participação (RGM)</h3>
+          <p>Ponte de receita em preço, volume e mix; elasticidade por
+          produto; simulador de preço com participação de mercado;
+          otimização com restrições do negócio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="largura">
+      <h2>Ferramentas</h2>
+      <div class="chips">
+        <span class="chip">SQL e PostgreSQL</span>
+        <span class="chip">Python</span>
+        <span class="chip">Power BI e DAX</span>
+        <span class="chip">dbt</span>
+        <span class="chip">Dagster</span>
+        <span class="chip">DuckDB</span>
+        <span class="chip">Git e CI/CD</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="contato">
+  <div class="largura">
+    <h2>Contato</h2>
+    <p>Vagas e projetos de dados, BI e analytics engineering. O caminho
+    mais rápido é o LinkedIn.</p>
+    <div class="acoes">
+      <a class="botao" href="https://linkedin.com/in/vitor-oliveira-722549165" rel="noopener">LinkedIn</a>
+      <a class="botao claro" href="https://github.com/vitordjk" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
