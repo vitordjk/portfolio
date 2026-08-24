@@ -43,7 +43,7 @@
   </div>
 </header>
 
-<main id="conteudo">
+<main id="conteudo" tabindex="-1">
 
   <section class="num" id="numeros" aria-label="Números dos projetos">
     <div class="largura num-grade">
@@ -71,9 +71,9 @@
     </div>
   </section>
 
-  <section class="exp placa-verde" id="experiencia">
+  <section class="exp placa-verde" id="experiencia" aria-labelledby="t-experiencia">
     <div class="largura">
-      <h2>Experiência</h2>
+      <h2 id="t-experiencia">Experiência</h2>
       <div class="exp-barra">
         <span>
           <b>Vigor Alimentos</b>
@@ -108,35 +108,35 @@
         </div>
       </div>
       <div class="exp-tabela">
-        <table>
-          <thead>
-            <tr><th>frente</th><th>o que fiz</th><th>resultado</th></tr>
+        <table role="table">
+          <thead role="rowgroup">
+            <tr role="row"><th role="columnheader" scope="col">frente</th><th role="columnheader" scope="col">o que fiz</th><th role="columnheader" scope="col">resultado</th></tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="exp-frente">Hub de dados</td>
-              <td>Warehouse em estrela com mais de 40 fontes (Scanntech, Nielsen, Mtrix, Neogrid, Involves) servido em Power BI com RLS dinâmico por estrutura comercial</td>
-              <td class="exp-resultado">fonte única de sell-in</td>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <td role="cell" data-rotulo="frente" class="exp-frente">Hub de dados</td>
+              <td role="cell" data-rotulo="o que fiz">Warehouse em estrela com mais de 40 fontes (Scanntech, Nielsen, Mtrix, Neogrid, Involves) servido em Power BI com RLS dinâmico por estrutura comercial</td>
+              <td role="cell" data-rotulo="resultado" class="exp-resultado">fonte única de sell-in</td>
             </tr>
-            <tr>
-              <td class="exp-frente">Ruptura</td>
-              <td>Regressão da venda diária por cliente cruzada com estoque estima a data de ruptura e compara com o ciclo de compra</td>
-              <td class="exp-resultado">R$ 10 mi em risco</td>
+            <tr role="row">
+              <td role="cell" data-rotulo="frente" class="exp-frente">Ruptura</td>
+              <td role="cell" data-rotulo="o que fiz">Regressão da venda diária por cliente cruzada com estoque estima a data de ruptura e compara com o ciclo de compra</td>
+              <td role="cell" data-rotulo="resultado" class="exp-resultado">R$ 10 mi em risco</td>
             </tr>
-            <tr>
-              <td class="exp-frente">Distribuição</td>
-              <td>Power Automate consulta o hub, monta relatório em HTML por cargo e envia por e-mail e Teams, com alertas de inconsistência para o BI</td>
-              <td class="exp-resultado">sem depender de abrir painel</td>
+            <tr role="row">
+              <td role="cell" data-rotulo="frente" class="exp-frente">Distribuição</td>
+              <td role="cell" data-rotulo="o que fiz">Power Automate consulta o hub, monta relatório em HTML por cargo e envia por e-mail e Teams, com alertas de inconsistência para o BI</td>
+              <td role="cell" data-rotulo="resultado" class="exp-resultado">sem depender de abrir painel</td>
             </tr>
-            <tr>
-              <td class="exp-frente">Governança</td>
-              <td>Ferramenta em Python que pontua modelos de Power BI antes da publicação, com hierarquia comercial sem duplicidade e histórico mensal em SQL</td>
-              <td class="exp-resultado">relatório ruim não sobe</td>
+            <tr role="row">
+              <td role="cell" data-rotulo="frente" class="exp-frente">Governança</td>
+              <td role="cell" data-rotulo="o que fiz">Ferramenta em Python que pontua modelos de Power BI antes da publicação, com hierarquia comercial sem duplicidade e histórico mensal em SQL</td>
+              <td role="cell" data-rotulo="resultado" class="exp-resultado">relatório ruim não sobe</td>
             </tr>
-            <tr>
-              <td class="exp-frente">Preço</td>
-              <td>Price index, ponte PVM e elasticidade com trade e vendas</td>
-              <td class="exp-resultado">base do módulo RGM</td>
+            <tr role="row">
+              <td role="cell" data-rotulo="frente" class="exp-frente">Preço</td>
+              <td role="cell" data-rotulo="o que fiz">Price index, ponte PVM e elasticidade com trade e vendas</td>
+              <td role="cell" data-rotulo="resultado" class="exp-resultado">base do módulo RGM</td>
             </tr>
           </tbody>
         </table>
@@ -155,9 +155,9 @@
 
   <div id="projetos">
 
-    <section class="secao" id="aurora">
+    <section class="secao" id="aurora" aria-labelledby="t-aurora">
       <div class="largura">
-        <h2>Aurora Alimentos</h2>
+        <h2 id="t-aurora">Aurora Alimentos</h2>
         <p class="olho">Distribuidora fictícia de laticínios e alimentos, construída de
         ponta a ponta. A mesma base sustenta três camadas: descrever o que aconteceu,
         prever o que vem e prescrever o que fazer.</p>
@@ -343,9 +343,9 @@
       </div>
     </section>
 
-    <section class="secao" id="radar">
+    <section class="secao" id="radar" aria-labelledby="t-radar">
       <div class="largura">
-        <h2>Radar de Preços de Combustíveis</h2>
+        <h2 id="t-radar">Radar de Preços de Combustíveis</h2>
         <!-- AJUSTE: volume da série da ANP. A versão anterior do site publicava
              "873 mil coletas de 9.307 postos", números que não foram localizados
              em arquivo deste repositório. Fonte: mart de coletas no DuckDB.
@@ -426,9 +426,9 @@
       </div>
     </section>
 
-    <section class="secao" id="interno">
+    <section class="secao" id="interno" aria-labelledby="t-interno">
       <div class="largura">
-        <h2>Painel interno de ruptura</h2>
+        <h2 id="t-interno">Painel interno de ruptura</h2>
         <div class="int-grade">
           <div>
             <p>Produto de trabalho real, em uso. Painel de risco de ruptura em rede de
@@ -448,9 +448,9 @@
 
   </div>
 
-  <section class="secao" id="ferramentas">
+  <section class="secao" id="ferramentas" aria-labelledby="t-ferramentas">
     <div class="largura">
-      <h2>Ferramentas</h2>
+      <h2 id="t-ferramentas">Ferramentas</h2>
       <ul class="fer-lista">
         <li>SQL e PostgreSQL</li>
         <li>Python</li>

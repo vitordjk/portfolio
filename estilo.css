@@ -1,6 +1,12 @@
-/* Portfolio de Vitor Oliveira.
-   Fase 3: estrutura e estilo, sem animacao.
-   Ordem das camadas fixa. Nada fora destas quatro. */
+/* Portfólio de Vitor Oliveira.
+   Fase 3: estrutura e estilo. Fase 4: camada de movimento, no fim do arquivo.
+   Fase 5: correções da matriz pre-flight e da auditoria de acessibilidade.
+   Ordem das camadas fixa, e nenhuma camada nova além destas quatro.
+   Ficam fora de camada, deliberadamente: os @font-face, o :root e os três
+   blocos @media de ponto de quebra. Estilo não estratificado vence qualquer
+   camada nomeada, que é exatamente o que uma sobrescrita de ponto de quebra
+   precisa fazer. A frase anterior dizia "nada fora destas quatro", o que a
+   Fase 5 apontou como falso. */
 @layer base, layout, componentes, utilitarios;
 
 /* ==========================================================================
@@ -29,8 +35,8 @@
     U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Fallbacks com metrica ajustada. Existem para zerar o deslocamento de layout
-   na troca de fonte (CLS). Valores calculados com fontTools contra a metrica
+/* Fallbacks com métrica ajustada. Existem para zerar o deslocamento de layout
+   na troca de fonte (CLS). Valores calculados com fontTools contra a métrica
    real de cada arquivo:
    Archivo 1000 upem, asc 878, desc 210, xAvg 528. Arial 2048 upem, xAvg 904.
    JetBrains Mono 1000 upem, asc 1020, desc 300, xAvg 600. Consolas 2048, 1126. */
@@ -53,16 +59,35 @@
 }
 
 /* ==========================================================================
-   Tokens. Todo valor da pagina sai daqui.
-   Excecoes declaradas e unicas: 0, 100%, auto, unidades de grid, medidas em ch,
-   dvh e vw dentro de clamp, os tres pontos de quebra e as razoes intrinsecas
+   Tokens. Todo valor da página sai daqui.
+   Exceções declaradas e únicas: 0, 100%, auto, unidades de grid, medidas em ch,
+   dvh e vw dentro de clamp, os três pontos de quebra e as razões intrínsecas
    das imagens no fim deste arquivo.
+   Acrescentadas na Fase 5, depois que a matriz pre-flight apontou literais
+   fora do conjunto: os pesos numéricos da família (400, 700, 800 e 900, o
+   conjunto fechado que a seção 3.3 da especificação já declarava), os seis
+   percentuais de métrica dos fallbacks de fonte (calculados com fontTools
+   contra o arquivo real, conferidos na Fase 5) e o multiplicador -1 dentro
+   de calc, que serve apenas para inverter o sinal de um token existente.
    ========================================================================== */
 :root {
-  /* cor */
+  /* cor.
+     Dois fios sobre superfície verde, e a diferença entre eles e de papel,
+     não de gosto. Regra da Fase 5:
+     --verde-linha (1,40:1 sobre --verde, 1,60:1 sobre --verde-fundo) e fio
+     decorativo. Só entra onde a separação já está dada por outra coisa,
+     tipografia, espaçamento ou fundo, e o fio apenas reforca. Fica abaixo
+     de 3:1 de propósito, para não competir com o âmbar.
+     --verde-linha-forte (3,45:1 sobre --verde, 3,93:1 sobre --verde-fundo)
+     e fio necessário ao entendimento. Entra onde o fio e a única pista que
+     separa um registro do seguinte, e por isso responde a WCAG 1.4.11, com
+     mínimo de 3:1. Hoje tem um uso só: a borda de linha da tabela de
+     experiência abaixo de 760px, onde o thead sai e o fio passa a ser o
+     único limite entre um registro e o próximo. */
   --verde: #0e2e23;
   --verde-fundo: #0a2219;
   --verde-linha: #24463a;
+  --verde-linha-forte: #5c8371;
   --creme: #fff3d8;
   --creme-texto: #e9dec0;
   --creme-fraco: #c9bfa2;
@@ -72,11 +97,11 @@
   --tinta-suave: #4a5a50;
   --fundo-captura: #ffffff;
 
-  /* familia */
+  /* família */
   --fonte-display: "Archivo", "Archivo Metrica", Arial, sans-serif;
   --fonte-mono: "JetBrains Mono", "Mono Metrica", Consolas, monospace;
 
-  /* corpo de texto. Razao 4:3 (1,333) sobre o valor ja arredondado. */
+  /* corpo de texto. Razão 4:3 (1,333) sobre o valor já arredondado. */
   --t1: 13px;
   --t2: 17px;
   --t3: 23px;
@@ -92,7 +117,7 @@
   --tk-display: -0.02em;
   --tk-rotulo: 0.12em;
 
-  /* espacamento. Modulo 8 com multiplicadores de Fibonacci. */
+  /* espaçamento. Módulo 8 com multiplicadores de Fibonacci. */
   --e1: 4px;
   --e2: 8px;
   --e3: 16px;
@@ -101,7 +126,7 @@
   --e6: 64px;
   --e7: 104px;
 
-  /* dimensao de componente */
+  /* dimensão de componente */
   --largura-max: 1080px;
   --nav-altura: 64px;
   --foto-lado: 300px;
@@ -118,6 +143,8 @@
   --sombra-2: 12px;
 
   /* camada */
+  --z-capa-marca: 1;
+  --z-capa-texto: 2;
   --z-nav: 10;
   --z-pular: 20;
 
@@ -197,6 +224,16 @@
   :focus-visible {
     outline: var(--traco) solid var(--verde);
     outline-offset: var(--e1);
+  }
+
+  /* main só recebe foco como destino do skip link, por tabindex -1. Não e
+     componente de interface, então 2.4.7 não pede indicador nele, e o anel
+     de 3px do :focus-visible desenharia um retangulo em volta de um bloco
+     de mais de dez mil pixels de altura, que le como erro de layout e não
+     como foco. O indicador de foco util aqui e o do próprio skip link. */
+  main:focus,
+  main:focus-visible {
+    outline: none;
   }
 
   /* Sobre placa verde o par de alto contraste inverte. */
@@ -282,7 +319,7 @@
     text-transform: uppercase;
   }
 
-  /* --- botao --- */
+  /* --- botão --- */
   .botao {
     display: inline-block;
     background: var(--ambar);
@@ -334,7 +371,7 @@
     margin-top: var(--e5);
   }
 
-  /* --- pular para o conteudo --- */
+  /* --- pular para o conteúdo --- */
   .pular {
     position: absolute;
     top: calc(-1 * var(--e7));
@@ -347,11 +384,25 @@
     text-decoration: none;
   }
 
+  /* Focado, o skip link desce para logo abaixo da nav, em vez de pousar
+     em cima dela. Duas razões: a pastilha deixa de cobrir a marca e o
+     primeiro item do menu, e o anel de foco deixa de cruzar o fio âmbar
+     da base da nav. */
   .pular:focus {
-    top: var(--e2);
+    top: calc(var(--nav-altura) + var(--e2));
   }
 
-  /* --- navegacao --- */
+  /* Onde quer que pouse, o skip link fica sobre superfície verde: a nav
+     acima e a capa abaixo, ambas placa verde. O anel padrão é --verde, o
+     que dava 1,00:1, verde sobre verde, e reprovava em 1.4.11. Âmbar
+     resolve nas duas superfícies, com 9,24:1 sobre --verde. É a mesma
+     regra de par da seção 3.3, aplicada aqui na mão porque .pular não é
+     descendente de .placa-verde. */
+  .pular:focus-visible {
+    outline-color: var(--ambar);
+  }
+
+  /* --- navegação --- */
   .nav {
     position: sticky;
     top: 0;
@@ -376,10 +427,16 @@
     text-transform: uppercase;
   }
 
+  /* O gap fluido existe para um defeito medido, não por gosto: com gap fixo
+     de --e5 a nav estourava a viewport entre 561px e 592px, onde a marca
+     volta a aparecer e o corpo sobe de --t1 para --t2. O clamp resolve a
+     faixa inteira sem criar um quarto ponto de quebra, que a seção 3 do
+     estilo proíbe. Em 1000px ou mais o valor volta a ser exatamente --e5,
+     então o desktop aprovado na Fase 2 não muda. */
   .nav-lista {
     display: flex;
     align-items: center;
-    gap: var(--e5);
+    gap: clamp(var(--e3), 4vw, var(--e5));
   }
 
   .nav-lista a {
@@ -410,11 +467,11 @@
     background: var(--ambar);
   }
 
-  /* Tres quadrados de marca, ancorados na borda da faixa ambar.
+  /* Três quadrados de marca, ancorados na borda da faixa âmbar.
      Só existem onde a faixa existe, por isso somem abaixo de 860. */
   .capa-quadrado {
     position: absolute;
-    z-index: 1;
+    z-index: var(--z-capa-marca);
     background: var(--ambar);
   }
 
@@ -442,7 +499,7 @@
 
   .capa-grade {
     position: relative;
-    z-index: 2;
+    z-index: var(--z-capa-texto);
     display: grid;
     grid-template-columns: 1fr var(--foto-lado);
     align-items: center;
@@ -487,7 +544,7 @@
     box-shadow: var(--sombra-2) var(--sombra-2) 0 var(--verde);
   }
 
-  /* --- faixa de numeros --- */
+  /* --- faixa de números --- */
   .num {
     background: var(--ambar);
     border-bottom: var(--traco) solid var(--verde);
@@ -515,7 +572,7 @@
     line-height: var(--l-titulo);
   }
 
-  /* --- experiencia --- */
+  /* --- experiência --- */
   .exp {
     padding-block: var(--e7);
   }
@@ -635,7 +692,7 @@
     padding-left: var(--e3);
   }
 
-  /* --- aurora: trilha com indice fixo --- */
+  /* --- aurora: trilha com índice fixo --- */
   .aur-grade {
     display: grid;
     grid-template-columns: var(--indice-largura) 1fr;
@@ -834,11 +891,11 @@
 }
 
 /* ==========================================================================
-   utilitarios
+   utilitários
    ========================================================================== */
 @layer utilitarios {
-  /* Razao intrinseca de cada imagem, medida no arquivo.
-     Existe para reservar o espaco antes do download e zerar o CLS. */
+  /* Razão intrínseca de cada imagem, medida no arquivo.
+     Existe para reservar o espaço antes do download e zerar o CLS. */
   .fig-foto { aspect-ratio: 400 / 400; }
   .fig-01 { aspect-ratio: 682 / 357; }
   .fig-02 { aspect-ratio: 655 / 237; }
@@ -853,7 +910,7 @@
 }
 
 /* ==========================================================================
-   Pontos de quebra. Tres, e apenas tres: 860, 760 e 560.
+   Pontos de quebra. Três, e apenas três: 860, 760 e 560.
    ========================================================================== */
 @media (max-width: 860px) {
   .capa::after,
@@ -894,18 +951,41 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  /* Abaixo de 760 a tabela vira registro empilhado. Três coisas precisam
+     acontecer juntas, senão o registro fica ilegível ou perde estrutura:
+     1. display block em tr e td remove as funções implícitas de tabela nos
+        motores atuais. Os papéis ARIA explícitos no HTML devolvem table,
+        rowgroup, row, columnheader e cell. Sem eles, WCAG 1.3.1 falha.
+     2. o thead sai por display none, e não por clip-path. Escondido por
+        clip-path ele continua na árvore de acessibilidade, e o leitor de
+        tela ouviria o rótulo duas vezes, junto com o ::before abaixo.
+     3. cada célula passa a carregar o próprio rótulo, vindo de data-rotulo.
+        Sem isso o usuário vidente recebe três strings soltas por registro,
+        perdendo informação que existe no desktop. WCAG 1.4.10. */
   .exp-tabela thead {
-    position: absolute;
-    width: var(--fio);
-    height: var(--fio);
-    overflow: hidden;
-    clip-path: inset(50%);
+    display: none;
   }
 
+  .exp-tabela td::before {
+    content: attr(data-rotulo);
+    display: block;
+    margin-bottom: var(--e1);
+    color: var(--creme-fraco);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    font-weight: 700;
+    letter-spacing: var(--tk-rotulo);
+    text-transform: uppercase;
+  }
+
+  /* Fio necessário ao entendimento, não decorativo: sem o thead, está
+     borda e a única coisa que diz onde termina um registro e começa o
+     seguinte. Por isso --verde-linha-forte, 3,45:1, e não --verde-linha,
+     que tem 1,40:1 e reprovaria em 1.4.11 neste papel. */
   .exp-tabela tr {
     display: block;
     padding-block: var(--e4);
-    border-bottom: var(--fio) solid var(--verde-linha);
+    border-bottom: var(--fio) solid var(--verde-linha-forte);
   }
 
   .exp-tabela td {
@@ -915,7 +995,7 @@
   }
 
   .exp-tabela td + td {
-    margin-top: var(--e2);
+    margin-top: var(--e3);
   }
 
   .exp-resultado {
@@ -948,8 +1028,322 @@
     font-size: var(--t1);
   }
 
+  /* Seção 4.2 da especificação: se os quatro links não couberem em 320px,
+     o quarto sai da nav, porque contato é o último bloco da página e o
+     rodapé já resolve. Medido: com os quatro, 320px estourava 29px e
+     300px estourava 49px. */
+  .nav-lista li:last-child {
+    display: none;
+  }
+
   .aur-etapa + .aur-etapa,
   .rad-placa + .rad-placa {
     margin-top: var(--e6);
+  }
+
+  /* Reflow em 320px, o piso da WCAG 1.4.10. O titulo de etapa divide a
+     linha com uma tarja de --tarja-lado que não encolhe, então sobram
+     cerca de 177px para o h3. A --t4 a palavra "Transformação" sozinha
+     mede mais que isso e estourava a viewport em 29px. Medido, não
+     estimado: três h3 passavam da borda direita em 320px. */
+  .aur-etapa h3,
+  .rad-placa h3 {
+    font-size: var(--t3);
+    overflow-wrap: break-word;
+  }
+}
+
+/* ==========================================================================
+   Fase 4. Camada de movimento.
+
+   Contrato desta camada, válido para tudo daqui para baixo:
+   - Zero JavaScript. Nenhum listener de rolagem. O movimento dirigido por
+     rolagem sai de scroll() e view(), linhas do tempo nativas do CSS.
+   - Anima apenas opacity, translate e scale. Nada de width, height, top,
+     left, cor, sombra ou filtro.
+   - Tudo dentro de prefers-reduced-motion: no-preference. Quem pede
+     movimento reduzido recebe exatamente a página da Fase 3, sem exceção.
+   - Todo movimento dirigido por rolagem fica dentro de @supports: entrada
+     de bloco, barra de progresso e marcador de etapa. Navegador sem linha
+     do tempo de rolagem recebe exatamente a página da Fase 3. As sete
+     animações de carregamento da capa não dependem de @supports, porque
+     não dependem de recurso novo: usam animation-fill-mode backwards e o
+     estado final é o do próprio CSS, então não há como deixar conteúdo
+     invisível se algo falhar.
+   - Nenhum bloco que contenha elemento focável, e nenhum candidato a
+     elemento LCP, parte de opacity 0. Regra da Fase 5.
+   - O rodapé não recebe entrada por rolagem, e isso é deliberado: uma faixa
+     de entrada precisa de rolagem restante depois do elemento para chegar
+     ao fim, e o último bloco da página não tem essa garantia.
+   - Duração e curva saem de --dur-1, --dur-2, --dur-3, --curva-saida e
+     --curva-padrao. Nenhum token de movimento novo, conforme a seção 3.7.
+   - Exceção de literal declarada e única desta fase, além das já abertas
+     na seção 3: os fatores adimensionais de opacity e scale (0 e 100%),
+     as porcentagens de quadro dentro de @keyframes, o multiplicador
+     inteiro do escalonamento e a palavra linear.
+   ========================================================================== */
+@layer utilitarios {
+
+  /* Entrada padrão de bloco: sobe a distância de um --e4 e abre. */
+  @keyframes surgir {
+    from {
+      opacity: 0;
+      translate: 0 var(--e4);
+    }
+    to {
+      opacity: 100%;
+      translate: 0 0;
+    }
+  }
+
+  /* Entrada sem opacity, para os dois candidatos a LCP da capa.
+     O elemento pinta no primeiro quadro, só chega deslocado. */
+  @keyframes subir {
+    from {
+      translate: 0 var(--e5);
+    }
+  }
+
+  /* Abertura, para elemento que só precisa aparecer no lugar. */
+  @keyframes abrir {
+    from {
+      opacity: 0;
+    }
+  }
+
+  /* Crescimento horizontal a partir de uma das bordas. Serve a faixa âmbar
+     da capa (origem a direita, no carregamento) e a barra de progresso de
+     leitura da nav (origem a esquerda, dirigida pela rolagem). Eram dois
+     keyframes byte a byte identicos ate a Fase 5. */
+  @keyframes estender {
+    from {
+      scale: 0 100%;
+    }
+    to {
+      scale: 100% 100%;
+    }
+  }
+
+  /* Etapa corrente no índice do Aurora. Volta ao lugar quando a etapa sai. */
+  @keyframes etapa-ativa {
+    0% {
+      translate: 0 0;
+    }
+    8%,
+    92% {
+      translate: var(--e3) 0;
+    }
+    100% {
+      translate: 0 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+
+    /* --- 1. âncora suave -------------------------------------------------
+       Justificativa: transição de estado. O índice do Aurora e o menu do
+       topo saltam oito etapas, e o salto instantâneo perde o leitor. */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* --- 2. feedback de clique -------------------------------------------
+       Justificativa: feedback. O botão já afunda no :active da Fase 3, e a
+       transição faz o afundamento ser lido como toque, não como falha. */
+    .botao {
+      transition: translate var(--dur-1) var(--curva-padrao);
+    }
+
+    /* --- 3. entrada da capa, no carregamento -----------------------------
+       Justificativa: hierarquia. A capa se monta na ordem de leitura,
+       rótulo, nome, resumo e ações, em vez de chegar como bloco único.
+
+       Correção da Fase 5. Ate aqui este comentário afirmava que "o h1 e o
+       retrato são os candidatos a LCP", e a afirmação era falsa numa faixa
+       inteira de larguras. A medição das areas pintadas deu isto:
+         390px  retrato 57.600px2 > resumo 50.300 > h1 28.000
+         560px  retrato 57.600    > resumo 56.500 > h1 17.000
+         760px  resumo  58.400    > retrato 57.600 > h1 31.300
+         860px  resumo  58.400    > retrato 58.000 > h1 40.100
+        1200px  h1     101.000    > retrato 90.000 > resumo 58.400
+       Ou seja: entre 700px e 880px quem disputa o LCP e o .capa-resumo, que
+       não e nem o h1 nem o retrato. Elemento em opacity 0 não entra como
+       candidato a LCP, então deixar o resumo em surgir adiava a métrica pelo
+       atraso mais a duração, 640ms, exatamente na faixa em que ele vence.
+       Regra que substitui a afirmação errada: na capa, nenhum bloco de texto
+       ou imagem que possa ser o maior elemento pintado anima opacity. Hoje
+       isso vale para h1, retrato e resumo, os três em subir. */
+    .capa::after {
+      transform-origin: right;
+      animation: estender var(--dur-3) var(--curva-saida) backwards;
+    }
+
+    .capa h1 {
+      animation: subir var(--dur-3) var(--curva-saida) backwards;
+    }
+
+    .capa-foto {
+      animation: subir var(--dur-3) var(--curva-saida) var(--dur-1) backwards;
+    }
+
+    .capa-rotulo {
+      animation: surgir var(--dur-2) var(--curva-saida) var(--dur-1) backwards;
+    }
+
+    /* Resumo e ações animam só translate, pela mesma regra do h1 e do
+       retrato, por dois motivos medidos na Fase 5:
+       o resumo disputa o papel de elemento LCP entre 700px e 880px de
+       largura, e elemento em opacity zero não é candidato a LCP, o que
+       adiaria a métrica pelo atraso mais a duração da animação;
+       as ações contem os dois primeiros links focáveis da página, e alvo
+       de foco não pode começar invisível. */
+    .capa-resumo {
+      animation: subir var(--dur-2) var(--curva-saida) var(--dur-2) backwards;
+    }
+
+    .capa .acoes {
+      animation: subir var(--dur-2) var(--curva-saida)
+        calc(var(--dur-1) + var(--dur-2)) backwards;
+    }
+
+    .capa-quadrado {
+      animation: abrir var(--dur-2) var(--curva-padrao) var(--dur-3) backwards;
+    }
+
+    /* --- 4. progresso de leitura -----------------------------------------
+       Justificativa: feedback. A página é longa e sem paginação, e o fio
+       âmbar sob a navegação engrossa conforme o documento avança. */
+    @supports (animation-timeline: scroll()) {
+      .nav::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: var(--traco);
+        background: var(--ambar);
+        transform-origin: left;
+        animation-name: estender;
+        animation-timeline: scroll(root block);
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+      }
+    }
+
+    /* --- 5. entrada de bloco por rolagem ---------------------------------
+       Justificativa: hierarquia. Cada bloco se anuncia ao entrar em cena,
+       o que separa etapa de etapa numa página de leitura longa.
+       A faixa de rolagem é um comprimento fixo, --e7, e não um percentual
+       do elemento: bloco alto e bloco baixo abrem no mesmo ritmo, e nenhum
+       fica preso a meio caminho por ser mais alto que a janela. */
+    @supports (animation-timeline: view()) {
+      .secao > .largura > h2,
+      .exp > .largura > h2,
+      .olho,
+      .num-grade > div,
+      .exp-barra,
+      .exp-kpi,
+      .exp-tabela,
+      .exp-rodape,
+      .aur-topo,
+      .aur-etapa > p,
+      .aur-etapa figure,
+      .rad-topo,
+      .rad-placa > p,
+      .rad-placa figure,
+      .int-grade > *,
+      .fer-lista li {
+        animation-name: surgir;
+        animation-timeline: view();
+        animation-range: entry var(--atraso, 0px)
+          entry calc(var(--atraso, 0px) + var(--e7));
+        animation-timing-function: var(--curva-saida);
+        animation-fill-mode: both;
+      }
+
+      /* Exceção da lista acima. .rad-links é o único dos blocos animados
+         que contem elemento focável, os dois botões do Radar. Entra só por
+         translate, para que o alvo de foco nunca esteja invisível enquanto
+         a rolagem suave o traz para a tela. */
+      .rad-links {
+        animation-name: subir;
+        animation-timeline: view();
+        animation-range: entry var(--atraso, 0px)
+          entry calc(var(--atraso, 0px) + var(--e7));
+        animation-timing-function: var(--curva-saida);
+        animation-fill-mode: both;
+      }
+
+      /* Escalonamento dentro de grupo. Justificativa: hierarquia. Quatro
+         números ou sete ferramentas que abrem juntos viram um bloco só;
+         abertos em ordem, cada item volta a ser lido como item. */
+      :is(.num-grade > div, .exp-kpi, .fer-lista li):nth-child(2) {
+        --atraso: var(--e3);
+      }
+
+      :is(.num-grade > div, .exp-kpi, .fer-lista li):nth-child(3) {
+        --atraso: calc(var(--e3) * 2);
+      }
+
+      :is(.num-grade > div, .exp-kpi, .fer-lista li):nth-child(4) {
+        --atraso: calc(var(--e3) * 3);
+      }
+
+      .fer-lista li:nth-child(5) {
+        --atraso: calc(var(--e3) * 4);
+      }
+
+      .fer-lista li:nth-child(6) {
+        --atraso: calc(var(--e3) * 5);
+      }
+
+      .fer-lista li:nth-child(7) {
+        --atraso: calc(var(--e3) * 6);
+      }
+    }
+
+    /* --- 6. etapa corrente no índice do Aurora ---------------------------
+       Justificativa: navegação. O índice fica fixo por oito etapas, e sem
+       marcador o leitor não sabe em qual delas está. Cada item do índice e
+       movido pela linha do tempo da própria etapa, exportada por
+       timeline-scope, e volta ao lugar quando a etapa sai da tela.
+       A faixa é exit-crossing, o trecho em que a etapa cruza o topo da
+       janela. Escolha deliberada: as faixas de duas etapas vizinhas são
+       contíguas e não se sobrepõem, então há sempre uma e só uma etapa
+       marcada. contain foi testado e reprovado: quando a altura da etapa
+       se aproxima da altura da janela, a faixa encolhe para quase nada e
+       o marcador some no meio da leitura. */
+    @supports (timeline-scope: --etapa-01) and
+      (animation-range: exit-crossing 0% exit-crossing 100%) {
+      .aur-grade {
+        timeline-scope: --etapa-01, --etapa-02, --etapa-03, --etapa-04,
+          --etapa-05, --etapa-06, --etapa-07, --etapa-08;
+      }
+
+      #aurora-01 { view-timeline-name: --etapa-01; }
+      #aurora-02 { view-timeline-name: --etapa-02; }
+      #aurora-03 { view-timeline-name: --etapa-03; }
+      #aurora-04 { view-timeline-name: --etapa-04; }
+      #aurora-05 { view-timeline-name: --etapa-05; }
+      #aurora-06 { view-timeline-name: --etapa-06; }
+      #aurora-07 { view-timeline-name: --etapa-07; }
+      #aurora-08 { view-timeline-name: --etapa-08; }
+
+      .aur-indice a {
+        animation-name: etapa-ativa;
+        animation-range: exit-crossing 0% exit-crossing 100%;
+        animation-timing-function: linear;
+        animation-fill-mode: none;
+      }
+
+      .aur-indice li:nth-child(1) a { animation-timeline: --etapa-01; }
+      .aur-indice li:nth-child(2) a { animation-timeline: --etapa-02; }
+      .aur-indice li:nth-child(3) a { animation-timeline: --etapa-03; }
+      .aur-indice li:nth-child(4) a { animation-timeline: --etapa-04; }
+      .aur-indice li:nth-child(5) a { animation-timeline: --etapa-05; }
+      .aur-indice li:nth-child(6) a { animation-timeline: --etapa-06; }
+      .aur-indice li:nth-child(7) a { animation-timeline: --etapa-07; }
+      .aur-indice li:nth-child(8) a { animation-timeline: --etapa-08; }
+    }
   }
 }
