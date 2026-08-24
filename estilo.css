@@ -1,0 +1,955 @@
+/* Portfolio de Vitor Oliveira.
+   Fase 3: estrutura e estilo, sem animacao.
+   Ordem das camadas fixa. Nada fora destas quatro. */
+@layer base, layout, componentes, utilitarios;
+
+/* ==========================================================================
+   Fontes auto-hospedadas. Sem CDN, sem link externo.
+   Archivo: SIL OFL 1.1. JetBrains Mono: Apache 2.0. Ver fontes/LICENCAS.md
+   ========================================================================== */
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("fontes/archivo-var-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fontes/jetbrains-mono-var-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Fallbacks com metrica ajustada. Existem para zerar o deslocamento de layout
+   na troca de fonte (CLS). Valores calculados com fontTools contra a metrica
+   real de cada arquivo:
+   Archivo 1000 upem, asc 878, desc 210, xAvg 528. Arial 2048 upem, xAvg 904.
+   JetBrains Mono 1000 upem, asc 1020, desc 300, xAvg 600. Consolas 2048, 1126. */
+@font-face {
+  font-family: "Archivo Metrica";
+  src: local("Arial"), local("Helvetica"), local("Liberation Sans");
+  size-adjust: 119.62%;
+  ascent-override: 73.4%;
+  descent-override: 17.56%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Mono Metrica";
+  src: local("Consolas"), local("Menlo"), local("DejaVu Sans Mono");
+  size-adjust: 109.13%;
+  ascent-override: 93.47%;
+  descent-override: 27.49%;
+  line-gap-override: 0%;
+}
+
+/* ==========================================================================
+   Tokens. Todo valor da pagina sai daqui.
+   Excecoes declaradas e unicas: 0, 100%, auto, unidades de grid, medidas em ch,
+   dvh e vw dentro de clamp, os tres pontos de quebra e as razoes intrinsecas
+   das imagens no fim deste arquivo.
+   ========================================================================== */
+:root {
+  /* cor */
+  --verde: #0e2e23;
+  --verde-fundo: #0a2219;
+  --verde-linha: #24463a;
+  --creme: #fff3d8;
+  --creme-texto: #e9dec0;
+  --creme-fraco: #c9bfa2;
+  --ambar: #f5c84b;
+  --terracota: #e97832;
+  --tinta: #22312a;
+  --tinta-suave: #4a5a50;
+  --fundo-captura: #ffffff;
+
+  /* familia */
+  --fonte-display: "Archivo", "Archivo Metrica", Arial, sans-serif;
+  --fonte-mono: "JetBrains Mono", "Mono Metrica", Consolas, monospace;
+
+  /* corpo de texto. Razao 4:3 (1,333) sobre o valor ja arredondado. */
+  --t1: 13px;
+  --t2: 17px;
+  --t3: 23px;
+  --t4: 31px;
+  --t5: 41px;
+  --t6: 55px;
+  --t7: 73px;
+
+  /* entrelinha e tracking */
+  --l-solida: 1;
+  --l-titulo: 1.15;
+  --l-corpo: 1.6;
+  --tk-display: -0.02em;
+  --tk-rotulo: 0.12em;
+
+  /* espacamento. Modulo 8 com multiplicadores de Fibonacci. */
+  --e1: 4px;
+  --e2: 8px;
+  --e3: 16px;
+  --e4: 24px;
+  --e5: 40px;
+  --e6: 64px;
+  --e7: 104px;
+
+  /* dimensao de componente */
+  --largura-max: 1080px;
+  --nav-altura: 64px;
+  --foto-lado: 300px;
+  --foto-lado-min: 240px;
+  --tarja-lado: 56px;
+  --indice-largura: 200px;
+  --capa-faixa: 34%;
+
+  /* forma */
+  --raio: 0;
+  --traco: 3px;
+  --fio: 1px;
+  --sombra-1: 6px;
+  --sombra-2: 12px;
+
+  /* camada */
+  --z-nav: 10;
+  --z-pular: 20;
+
+  /* movimento. Declarado aqui, consumido apenas na Fase 4. */
+  --dur-1: 160ms;
+  --dur-2: 320ms;
+  --dur-3: 560ms;
+  --curva-saida: cubic-bezier(0.16, 1, 0.3, 1);
+  --curva-padrao: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   base
+   ========================================================================== */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background: var(--creme);
+    color: var(--tinta);
+    font-family: var(--fonte-display);
+    font-size: var(--t2);
+    font-weight: 400;
+    line-height: var(--l-corpo);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 900;
+    line-height: var(--l-titulo);
+    text-wrap: balance;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  code {
+    font-size: inherit;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  a {
+    color: var(--verde);
+    font-weight: 700;
+    text-underline-offset: var(--e1);
+  }
+
+  a:hover {
+    background: var(--ambar);
+    color: var(--verde);
+  }
+
+  :focus-visible {
+    outline: var(--traco) solid var(--verde);
+    outline-offset: var(--e1);
+  }
+
+  /* Sobre placa verde o par de alto contraste inverte. */
+  .placa-verde a {
+    color: var(--ambar);
+  }
+
+  .placa-verde a:hover {
+    background: var(--ambar);
+    color: var(--verde);
+  }
+
+  .placa-verde :focus-visible {
+    outline-color: var(--ambar);
+  }
+
+  [id] {
+    scroll-margin-top: calc(var(--nav-altura) + var(--e3));
+  }
+}
+
+/* ==========================================================================
+   layout
+   ========================================================================== */
+@layer layout {
+  .largura {
+    width: 100%;
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding-inline: var(--e4);
+  }
+
+  .placa-verde {
+    background: var(--verde);
+    color: var(--creme-texto);
+  }
+
+  .secao {
+    padding-block: var(--e7);
+  }
+
+  .secao > .largura > h2 {
+    margin-bottom: var(--e5);
+  }
+}
+
+/* ==========================================================================
+   componentes
+   ========================================================================== */
+@layer componentes {
+  /* --- utilidades de texto compartilhadas --- */
+  h2 {
+    display: inline-block;
+    font-size: clamp(var(--t4), 4vw, var(--t5));
+    letter-spacing: var(--tk-display);
+    text-transform: uppercase;
+    color: var(--verde);
+    box-shadow: inset 0 calc(-1 * var(--e3)) 0 var(--ambar);
+  }
+
+  .placa-verde h2 {
+    color: var(--creme);
+    box-shadow: none;
+    border-top: var(--traco) solid var(--ambar);
+    padding-top: var(--e3);
+  }
+
+  .olho {
+    max-width: 66ch;
+    margin-bottom: var(--e6);
+  }
+
+  .dado {
+    font-family: var(--fonte-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rotulo {
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    font-weight: 700;
+    letter-spacing: var(--tk-rotulo);
+    text-transform: uppercase;
+  }
+
+  /* --- botao --- */
+  .botao {
+    display: inline-block;
+    background: var(--ambar);
+    color: var(--verde);
+    border: var(--traco) solid var(--verde);
+    border-radius: var(--raio);
+    font-size: var(--t2);
+    font-weight: 700;
+    line-height: var(--l-titulo);
+    padding: var(--e3) var(--e4);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .botao:hover {
+    background: var(--verde);
+    color: var(--ambar);
+  }
+
+  .botao:active {
+    translate: var(--e1) var(--e1);
+  }
+
+  .botao.contorno {
+    background: transparent;
+    color: var(--creme);
+    border-color: var(--creme);
+  }
+
+  .botao.contorno:hover {
+    background: var(--creme);
+    color: var(--verde);
+  }
+
+  .botao.escuro {
+    background: var(--verde);
+    color: var(--creme);
+  }
+
+  .botao.escuro:hover {
+    background: var(--ambar);
+    color: var(--verde);
+  }
+
+  .acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e3);
+    margin-top: var(--e5);
+  }
+
+  /* --- pular para o conteudo --- */
+  .pular {
+    position: absolute;
+    top: calc(-1 * var(--e7));
+    left: var(--e4);
+    z-index: var(--z-pular);
+    background: var(--ambar);
+    color: var(--verde);
+    font-weight: 700;
+    padding: var(--e2) var(--e3);
+    text-decoration: none;
+  }
+
+  .pular:focus {
+    top: var(--e2);
+  }
+
+  /* --- navegacao --- */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-nav);
+    background: var(--verde);
+    border-bottom: var(--traco) solid var(--ambar);
+  }
+
+  .nav > .largura {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--e4);
+    height: var(--nav-altura);
+  }
+
+  .nav-marca {
+    color: var(--creme);
+    font-size: var(--t1);
+    font-weight: 700;
+    letter-spacing: var(--tk-rotulo);
+    text-transform: uppercase;
+  }
+
+  .nav-lista {
+    display: flex;
+    align-items: center;
+    gap: var(--e5);
+  }
+
+  .nav-lista a {
+    color: var(--creme);
+    font-size: var(--t2);
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nav-lista a:hover {
+    background: var(--ambar);
+    color: var(--verde);
+  }
+
+  /* --- capa --- */
+  .capa {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .capa::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    right: 0;
+    width: var(--capa-faixa);
+    background: var(--ambar);
+  }
+
+  /* Tres quadrados de marca, ancorados na borda da faixa ambar.
+     Só existem onde a faixa existe, por isso somem abaixo de 860. */
+  .capa-quadrado {
+    position: absolute;
+    z-index: 1;
+    background: var(--ambar);
+  }
+
+  .capa-q1 {
+    right: calc(var(--capa-faixa) + var(--e5));
+    bottom: var(--e6);
+    width: var(--e4);
+    height: var(--e4);
+  }
+
+  .capa-q2 {
+    right: calc(var(--capa-faixa) + var(--e7));
+    bottom: var(--e7);
+    width: var(--e3);
+    height: var(--e3);
+  }
+
+  .capa-q3 {
+    right: calc(var(--capa-faixa) - var(--e5));
+    top: var(--e6);
+    width: var(--e3);
+    height: var(--e3);
+    background: var(--verde);
+  }
+
+  .capa-grade {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr var(--foto-lado);
+    align-items: center;
+    gap: var(--e5);
+    min-height: calc(100dvh - var(--nav-altura));
+    padding-block: var(--e6);
+  }
+
+  .capa-rotulo {
+    color: var(--ambar);
+    font-size: var(--t1);
+    font-weight: 700;
+    letter-spacing: var(--tk-rotulo);
+    text-transform: uppercase;
+    margin-bottom: var(--e3);
+  }
+
+  .capa h1 {
+    color: var(--creme);
+    font-size: clamp(var(--t5), 7.4vw, var(--t7));
+    line-height: var(--l-solida);
+    letter-spacing: var(--tk-display);
+    text-transform: uppercase;
+  }
+
+  .capa h1 span {
+    color: var(--ambar);
+  }
+
+  .capa-resumo {
+    max-width: 46ch;
+    margin-top: var(--e4);
+    font-size: var(--t3);
+  }
+
+  .capa-foto {
+    width: clamp(var(--foto-lado-min), 28vw, var(--foto-lado));
+    aspect-ratio: 1 / 1;
+    justify-self: end;
+    object-fit: cover;
+    border: var(--traco) solid var(--verde);
+    box-shadow: var(--sombra-2) var(--sombra-2) 0 var(--verde);
+  }
+
+  /* --- faixa de numeros --- */
+  .num {
+    background: var(--ambar);
+    border-bottom: var(--traco) solid var(--verde);
+  }
+
+  .num-grade {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--e4);
+    padding-block: var(--e5);
+  }
+
+  .num-valor {
+    color: var(--verde);
+    font-size: clamp(var(--t4), 4.6vw, var(--t6));
+    font-weight: 700;
+    line-height: var(--l-solida);
+  }
+
+  .num-rotulo {
+    max-width: 24ch;
+    margin-top: var(--e2);
+    color: var(--verde);
+    font-size: var(--t2);
+    line-height: var(--l-titulo);
+  }
+
+  /* --- experiencia --- */
+  .exp {
+    padding-block: var(--e7);
+  }
+
+  .exp > .largura > h2 {
+    margin-bottom: var(--e5);
+  }
+
+  .exp-barra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--e3) var(--e5);
+    background: var(--verde-fundo);
+    padding: var(--e4);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    line-height: var(--l-corpo);
+    color: var(--creme-fraco);
+  }
+
+  .exp-barra b {
+    display: block;
+    color: var(--ambar);
+    font-weight: 700;
+  }
+
+  .exp-kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--fio);
+    background: var(--verde-linha);
+  }
+
+  .exp-kpi {
+    background: var(--verde);
+    padding: var(--e4);
+  }
+
+  .exp-kpi-rotulo {
+    display: block;
+    color: var(--creme-fraco);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    letter-spacing: var(--tk-rotulo);
+    text-transform: uppercase;
+  }
+
+  .exp-kpi-valor {
+    display: block;
+    margin-top: var(--e2);
+    color: var(--ambar);
+    font-family: var(--fonte-mono);
+    font-size: var(--t4);
+    font-weight: 700;
+    line-height: var(--l-solida);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .exp-kpi-nota {
+    display: block;
+    margin-top: var(--e2);
+    color: var(--creme-texto);
+    font-size: var(--t2);
+    line-height: var(--l-titulo);
+  }
+
+  .exp-tabela {
+    padding: var(--e4);
+  }
+
+  .exp-tabela th {
+    color: var(--creme-fraco);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    font-weight: 700;
+    letter-spacing: var(--tk-rotulo);
+    text-transform: uppercase;
+    text-align: left;
+    padding-bottom: var(--e3);
+    border-bottom: var(--fio) solid var(--verde-linha);
+  }
+
+  .exp-tabela td {
+    padding-block: var(--e4);
+    padding-right: var(--e4);
+    vertical-align: top;
+    color: var(--creme-texto);
+  }
+
+  .exp-frente {
+    color: var(--creme);
+    font-weight: 700;
+  }
+
+  .exp-resultado {
+    color: var(--ambar);
+    font-family: var(--fonte-mono);
+    font-weight: 700;
+    text-align: right;
+    padding-right: 0;
+  }
+
+  .exp-rodape {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e2) var(--e3);
+    background: var(--verde-fundo);
+    padding: var(--e4);
+    color: var(--creme-fraco);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+  }
+
+  .exp-rodape li + li {
+    border-left: var(--fio) solid var(--verde-linha);
+    padding-left: var(--e3);
+  }
+
+  /* --- aurora: trilha com indice fixo --- */
+  .aur-grade {
+    display: grid;
+    grid-template-columns: var(--indice-largura) 1fr;
+    gap: var(--e6);
+    align-items: start;
+  }
+
+  .aur-indice {
+    position: sticky;
+    top: calc(var(--nav-altura) + var(--e4));
+    border-top: var(--traco) solid var(--verde);
+    padding-top: var(--e3);
+  }
+
+  .aur-indice li + li {
+    margin-top: var(--e2);
+  }
+
+  .aur-indice a {
+    display: block;
+    color: var(--tinta-suave);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    font-weight: 400;
+    text-decoration: none;
+    line-height: var(--l-titulo);
+  }
+
+  .aur-indice a:hover {
+    color: var(--verde);
+  }
+
+  .aur-etapa + .aur-etapa {
+    margin-top: var(--e7);
+  }
+
+  .aur-topo {
+    display: flex;
+    align-items: center;
+    gap: var(--e4);
+  }
+
+  .aur-num {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: var(--tarja-lado);
+    height: var(--tarja-lado);
+    background: var(--ambar);
+    color: var(--verde);
+    font-family: var(--fonte-mono);
+    font-size: var(--t3);
+    font-weight: 700;
+  }
+
+  .aur-etapa h3 {
+    font-size: var(--t4);
+    font-weight: 800;
+    color: var(--verde);
+  }
+
+  .aur-ferramentas,
+  .rad-ferramentas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e2) var(--e4);
+    margin-top: var(--e3);
+    color: var(--tinta-suave);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+  }
+
+  .aur-etapa p,
+  .rad-placa p {
+    max-width: 70ch;
+    margin-top: var(--e3);
+  }
+
+  .aur-nota {
+    display: inline-block;
+    margin-top: var(--e3);
+    background: var(--verde);
+    color: var(--terracota);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    font-weight: 700;
+    letter-spacing: var(--tk-rotulo);
+    text-transform: uppercase;
+    padding: var(--e2) var(--e3);
+  }
+
+  figure {
+    margin-top: var(--e5);
+  }
+
+  figure img {
+    width: 100%;
+    background: var(--fundo-captura);
+    border: var(--traco) solid var(--verde);
+    box-shadow: var(--sombra-2) var(--sombra-2) 0 var(--verde);
+  }
+
+  figcaption {
+    max-width: 70ch;
+    margin-top: var(--e4);
+    color: var(--tinta-suave);
+    font-size: var(--t2);
+    line-height: var(--l-titulo);
+  }
+
+  /* --- radar: placas empilhadas --- */
+  .rad-placa {
+    border-top: var(--traco) solid var(--verde);
+    padding-top: var(--e4);
+  }
+
+  .rad-placa + .rad-placa {
+    margin-top: var(--e7);
+  }
+
+  .rad-topo {
+    display: flex;
+    align-items: baseline;
+    gap: var(--e4);
+  }
+
+  .rad-num {
+    color: var(--verde);
+    font-family: var(--fonte-mono);
+    font-size: var(--t5);
+    font-weight: 700;
+    line-height: var(--l-solida);
+  }
+
+  .rad-placa h3 {
+    font-size: var(--t4);
+    font-weight: 800;
+    color: var(--verde);
+  }
+
+  .rad-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e3);
+    margin-top: var(--e6);
+  }
+
+  /* --- projeto interno --- */
+  .int-grade {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--e6);
+    align-items: start;
+  }
+
+  .int-grade p + p {
+    margin-top: var(--e3);
+  }
+
+  .int-nota {
+    border-left: var(--traco) solid var(--verde);
+    padding-left: var(--e4);
+    color: var(--tinta-suave);
+  }
+
+  .int-nota .rotulo {
+    display: block;
+    margin-bottom: var(--e2);
+    color: var(--verde);
+  }
+
+  /* --- ferramentas --- */
+  .fer-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e2);
+  }
+
+  .fer-lista li {
+    background: var(--verde);
+    color: var(--creme);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    padding: var(--e2) var(--e3);
+  }
+
+  /* --- contato --- */
+  .con {
+    padding-block: var(--e7);
+  }
+
+  .con p {
+    max-width: 56ch;
+    margin-top: var(--e4);
+  }
+}
+
+/* ==========================================================================
+   utilitarios
+   ========================================================================== */
+@layer utilitarios {
+  /* Razao intrinseca de cada imagem, medida no arquivo.
+     Existe para reservar o espaco antes do download e zerar o CLS. */
+  .fig-foto { aspect-ratio: 400 / 400; }
+  .fig-01 { aspect-ratio: 682 / 357; }
+  .fig-02 { aspect-ratio: 655 / 237; }
+  .fig-03 { aspect-ratio: 1327 / 742; }
+  .fig-04 { aspect-ratio: 1267 / 697; }
+  .fig-05 { aspect-ratio: 1270 / 702; }
+  .fig-06 { aspect-ratio: 982 / 877; }
+  .fig-07 { aspect-ratio: 1186 / 477; }
+  .fig-08 { aspect-ratio: 1607 / 847; }
+  .fig-09 { aspect-ratio: 1606 / 101; }
+  .fig-10 { aspect-ratio: 1438 / 460; }
+}
+
+/* ==========================================================================
+   Pontos de quebra. Tres, e apenas tres: 860, 760 e 560.
+   ========================================================================== */
+@media (max-width: 860px) {
+  .capa::after,
+  .capa-quadrado {
+    display: none;
+  }
+
+  .capa-grade {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: var(--e6);
+  }
+
+  .capa-foto {
+    justify-self: start;
+    border-color: var(--ambar);
+    box-shadow: var(--sombra-1) var(--sombra-1) 0 var(--ambar);
+  }
+
+  .aur-grade,
+  .int-grade {
+    grid-template-columns: 1fr;
+    gap: var(--e5);
+  }
+
+  .aur-indice {
+    position: static;
+  }
+
+  figure img {
+    box-shadow: var(--sombra-1) var(--sombra-1) 0 var(--verde);
+  }
+}
+
+@media (max-width: 760px) {
+  .num-grade,
+  .exp-kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .exp-tabela thead {
+    position: absolute;
+    width: var(--fio);
+    height: var(--fio);
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .exp-tabela tr {
+    display: block;
+    padding-block: var(--e4);
+    border-bottom: var(--fio) solid var(--verde-linha);
+  }
+
+  .exp-tabela td {
+    display: block;
+    width: auto;
+    padding: 0;
+  }
+
+  .exp-tabela td + td {
+    margin-top: var(--e2);
+  }
+
+  .exp-resultado {
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .secao,
+  .exp,
+  .con {
+    padding-block: var(--e6);
+  }
+
+  .num-grade {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-marca {
+    display: none;
+  }
+
+  .nav-lista {
+    gap: var(--e3);
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-lista a {
+    font-size: var(--t1);
+  }
+
+  .aur-etapa + .aur-etapa,
+  .rad-placa + .rad-placa {
+    margin-top: var(--e6);
+  }
+}
