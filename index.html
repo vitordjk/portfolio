@@ -54,24 +54,24 @@
   <section class="num" id="numeros" aria-label="Resultados em destaque">
     <div class="largura num-grade">
       <div>
-        <p class="num-valor dado">R$ 10 mi</p>
-        <p class="num-rotulo">de receita em risco por ruptura, identificada por cliente na Vigor</p>
-        <a class="num-ir" href="#casos" data-rt-go="0"><span>1</span>Ruptura</a>
-      </div>
-      <div>
-        <p class="num-valor dado">+R$ 287 mil</p>
-        <p class="num-rotulo">de variação de receita explicados até o centavo</p>
-        <a class="num-ir" href="#casos" data-rt-go="1"><span>2</span>Variação de receita</a>
+        <p class="num-valor dado">400</p>
+        <p class="num-rotulo">usuários no hub comercial que criei e mantenho, do vendedor ao presidente</p>
+        <a class="num-ir" href="#casos" data-rt-go="0"><span>1</span>Hub comercial</a>
       </div>
       <div>
         <p class="num-valor dado">US$ 60 mil</p>
-        <p class="num-rotulo">por ano sem trocar a capacidade do hub, com 400 usuários</p>
-        <a class="num-ir" href="#casos" data-rt-go="2"><span>3</span>Servidor P1</a>
+        <p class="num-rotulo">por ano sem trocar a capacidade do servidor</p>
+        <a class="num-ir" href="#casos" data-rt-go="1"><span>2</span>Servidor P1</a>
       </div>
       <div>
         <p class="num-valor dado">3 dias</p>
         <p class="num-rotulo">de apuração da Maratona por campanha, agora automática</p>
         <a class="num-ir" href="#casos" data-rt-go="3"><span>4</span>Excel para o hub</a>
+      </div>
+      <div>
+        <p class="num-valor dado">R$ 10 mi</p>
+        <p class="num-rotulo">de receita em risco por ruptura, identificada por cliente</p>
+        <a class="num-ir" href="#casos" data-rt-go="4"><span>5</span>Ruptura</a>
       </div>
     </div>
   </section>
@@ -82,84 +82,272 @@
       <header class="rt-head">
         <div class="rt-head-txt">
           <p class="rt-eyebrow">Casos</p>
-          <h2 class="rt-title" id="rt-titulo">Cinco projetos, do 1 ao 5<span>.</span></h2>
+          <h2 class="rt-title" id="rt-titulo">Sete projetos, do 1 ao 7<span>.</span></h2>
           <p class="rt-lead">Passe o mouse ou toque em cada lugar, na ordem. Cada parada mostra o problema, o que eu fiz e o resultado em reais ou em horas.</p>
         </div>
         <div class="rt-progress" aria-live="polite">
-          <span class="rt-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-          <span data-rt-seen>0 de 5 paradas vistas</span>
+          <span class="rt-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span data-rt-seen>0 de 7 paradas vistas</span>
         </div>
       </header>
 
       <!-- CENA: título em cima de cada lugar, trilha numerada ligando a ordem de leitura -->
       <div class="rt-scene">
-        <div class="rt-scene-in">
-          <div class="rt-route" aria-hidden="true"><span class="rt-route-fill"></span></div>
-          <div class="rt-road" aria-hidden="true"></div>
-          <div class="rt-lane" aria-hidden="true"></div>
-          <div class="rt-truck" aria-hidden="true"><i></i><b></b></div>
+      <div class="rt-scene-in">
+        <div class="rt-route" aria-hidden="true"><span class="rt-route-fill"></span></div>
+        <div class="rt-road" aria-hidden="true"></div>
+        <div class="rt-lane" aria-hidden="true"></div>
+        <div class="rt-truck" aria-hidden="true"><i></i><b></b></div>
 
-          <div class="rt-stop" data-rt-stop="0" style="--x:10%">
-            <button type="button" class="rt-hot" aria-label="Parada 1: ruptura em reais" aria-controls="rt-sum-0">1</button>
-            <p class="rt-tag"><b>Ruptura</b><small>loja</small></p>
-            <div class="rt-bld rt-bld--loja" aria-hidden="true">
-              <div class="rt-awning"></div>
-              <div class="rt-shop"><div class="rt-shelf"><i></i><i></i><i class="rt-gap"></i><i></i></div></div>
-            </div>
-          </div>
+        <div class="rt-stop" data-rt-stop="0" style="--x:7.14%">
+          <button type="button" class="rt-hot" aria-label="Parada 1: hub comercial" aria-controls="rt-sum-0">1</button>
+          <p class="rt-tag"><b>Hub comercial</b><small>Vigor, 400 usuários</small></p>
+          <div class="rt-bld rt-bld--hub" aria-hidden="true"><b>HUB</b><div class="rt-windows"><i class="y"></i><i></i><i class="y"></i><i class="y"></i><i class="y"></i><i></i><i></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i></i><i class="y"></i><i></i><i class="y"></i></div></div>
+        </div>
 
-          <div class="rt-stop" data-rt-stop="1" style="--x:30%">
-            <button type="button" class="rt-hot" aria-label="Parada 2: variação de receita" aria-controls="rt-sum-1">2</button>
-            <p class="rt-tag"><b>Variação de receita</b><small>área comercial</small></p>
-            <div class="rt-bld rt-bld--office" aria-hidden="true">
-              <div class="rt-windows"><i class="y"></i><i></i><i class="y"></i><i></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i></i><i></i><i class="y"></i><i class="y"></i></div>
-            </div>
-          </div>
+        <div class="rt-stop" data-rt-stop="1" style="--x:21.43%">
+          <button type="button" class="rt-hot" aria-label="Parada 2: capacidade do servidor de BI" aria-controls="rt-sum-1">2</button>
+          <p class="rt-tag"><b>Servidor P1</b><small>BI da Vigor</small></p>
+          <div class="rt-bld rt-bld--rack" aria-hidden="true"><div class="rt-slot"><i></i><span></span></div><div class="rt-slot"><i></i><span></span></div><div class="rt-slot"><i class="rt-led"></i><span></span></div><div class="rt-slot"><i></i><span></span></div></div>
+        </div>
 
-          <div class="rt-stop" data-rt-stop="2" style="--x:50%">
-            <button type="button" class="rt-hot" aria-label="Parada 3: capacidade do servidor de BI" aria-controls="rt-sum-2">3</button>
-            <p class="rt-tag"><b>Servidor P1</b><small>BI da Vigor</small></p>
-            <div class="rt-bld rt-bld--rack" aria-hidden="true">
-              <div class="rt-slot"><i></i><span></span></div>
-              <div class="rt-slot"><i></i><span></span></div>
-              <div class="rt-slot"><i class="rt-led"></i><span></span></div>
-              <div class="rt-slot"><i></i><span></span></div>
-            </div>
-          </div>
+        <div class="rt-stop" data-rt-stop="2" style="--x:35.71%">
+          <button type="button" class="rt-hot" aria-label="Parada 3: nota do relatório antes de publicar" aria-controls="rt-sum-2">3</button>
+          <p class="rt-tag"><b>Nota do relatório</b><small>VIGOR SHIELD</small></p>
+          <div class="rt-bld rt-bld--shield" aria-hidden="true"><span>A</span></div>
+        </div>
 
-          <div class="rt-stop" data-rt-stop="3" style="--x:70%">
-            <button type="button" class="rt-hot" aria-label="Parada 4: análises que saíram do Excel" aria-controls="rt-sum-3">4</button>
-            <p class="rt-tag"><b>Excel para o hub</b><small>Vigor</small></p>
-            <div class="rt-bld rt-bld--vigor" aria-hidden="true">
-              <img src="vigor-logo.png" alt="" width="185" height="96">
-              <div class="rt-sheet"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            </div>
-          </div>
+        <div class="rt-stop" data-rt-stop="3" style="--x:50%">
+          <button type="button" class="rt-hot" aria-label="Parada 4: análises que saíram do Excel" aria-controls="rt-sum-3">4</button>
+          <p class="rt-tag"><b>Excel para o hub</b><small>Vigor</small></p>
+          <div class="rt-bld rt-bld--vigor" aria-hidden="true"><img src="vigor-logo.png" alt="" width="185" height="96"><div class="rt-sheet"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        </div>
 
-          <div class="rt-stop" data-rt-stop="4" style="--x:90%">
-            <button type="button" class="rt-hot" aria-label="Parada 5: preço de combustível da ANP" aria-controls="rt-sum-4">5</button>
-            <p class="rt-tag"><b>Preço de combustível</b><small>dados da ANP</small></p>
-            <div class="rt-bld rt-bld--posto" aria-hidden="true">
-              <div class="rt-canopy"></div>
-              <div class="rt-pumps"><span class="rt-pole"></span><span class="rt-pump"><i></i></span><span class="rt-pole"></span></div>
-            </div>
-          </div>
+        <div class="rt-stop" data-rt-stop="4" style="--x:64.29%">
+          <button type="button" class="rt-hot" aria-label="Parada 5: ruptura em reais" aria-controls="rt-sum-4">5</button>
+          <p class="rt-tag"><b>Ruptura</b><small>loja</small></p>
+          <div class="rt-bld rt-bld--loja" aria-hidden="true"><div class="rt-awning"></div><div class="rt-shop"><div class="rt-shelf"><i></i><i></i><i class="rt-gap"></i><i></i></div></div></div>
+        </div>
+
+        <div class="rt-stop" data-rt-stop="5" style="--x:78.57%">
+          <button type="button" class="rt-hot" aria-label="Parada 6: variação de receita" aria-controls="rt-sum-5">6</button>
+          <p class="rt-tag"><b>Variação de receita</b><small>área comercial</small></p>
+          <div class="rt-bld rt-bld--office" aria-hidden="true"><div class="rt-windows"><i class="y"></i><i></i><i class="y"></i><i></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i></i><i></i><i class="y"></i><i class="y"></i></div></div>
+        </div>
+
+        <div class="rt-stop" data-rt-stop="6" style="--x:92.86%">
+          <button type="button" class="rt-hot" aria-label="Parada 7: preço de combustível da ANP" aria-controls="rt-sum-6">7</button>
+          <p class="rt-tag"><b>Preço de combustível</b><small>dados da ANP</small></p>
+          <div class="rt-bld rt-bld--posto" aria-hidden="true"><div class="rt-canopy"></div><div class="rt-pumps"><span class="rt-pole"></span><span class="rt-pump"><i></i></span><span class="rt-pole"></span></div></div>
         </div>
       </div>
+    </div>
 
-      <!-- PAINEL: cada parada em três passos e um gráfico com guia de leitura -->
-      <div class="rt-panel">
+    <div class="rt-panel">
 
-        <div class="rt-intro" data-rt-intro>
+      <div class="rt-intro" data-rt-intro>
           <p class="rt-k rt-k--y">Como ler</p>
-          <p class="rt-intro-txt">Comece pela loja, no número 1. Em cada parada, leia os passos 1, 2 e 3 e depois os números marcados no gráfico.</p>
+          <p class="rt-intro-txt">Comece pelo hub, no número 1. Em cada parada, leia os passos 1, 2 e 3 e depois os números marcados no gráfico.</p>
           <button type="button" class="rt-btn" data-rt-go="0">Começar pela parada 1</button>
         </div>
 
-        <!-- PARADA 1 -->
-        <div class="rt-sum" id="rt-sum-0" data-rt-sum="0">
+      <!-- PARADA 1 -->
+      <div class="rt-sum" id="rt-sum-0" data-rt-sum="0">
+        <div class="rt-guia">
+          <p class="rt-k">Parada 1 de 7 / Vigor</p>
+          <h3>Hub comercial</h3>
+          <ol class="rt-passos">
+            <li><span class="rt-n">1</span><div><p class="rt-k rt-k--y">Problema</p><p>Sell-in e sell-out chegavam de mais de 40 fontes separadas, e cada área consultava a sua.</p></div></li>
+            <li><span class="rt-n">2</span><div><p class="rt-k rt-k--y">O que fiz</p><p>Criei o hub comercial em Power BI e cuido dele todo dia: um modelo só, com acesso por estrutura comercial.</p></div></li>
+            <li><span class="rt-n">3</span><div><p class="rt-k rt-k--y">Resultado</p><p class="rt-hero"><span data-count="400">400</span></p><p>usuários consultando o mesmo painel, do vendedor ao presidente.</p></div></li>
+          </ol>
+          <div class="rt-actions">
+            <a class="rt-btn" href="#experiencia">Ver na experiência</a>
+            <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="1">Parada 2</button>
+          </div>
+        </div>
+        <div class="rt-vizcol">
+          <figure class="rt-chart">
+            <figcaption class="rt-chart-t">Do dado espalhado ao mesmo número para todos<small>fontes entram, cargos consultam</small></figcaption>
+            <div class="rt-hubviz">
+              <div class="rt-hub-col rt-hub-col--in">
+                <p><span class="rt-m">1</span>Fontes</p>
+                <ul><li>Scanntech</li><li>Nielsen</li><li>Mtrix</li><li>Neogrid</li><li>Involves</li><li>e mais 35</li></ul>
+              </div>
+              <div class="rt-hub-core"><span class="rt-m">2</span><b>400</b><span>usuários<br>no hub</span></div>
+              <div class="rt-hub-col rt-hub-col--out">
+                <p><span class="rt-m">3</span>Quem consulta</p>
+                <ul><li>Presidente</li><li>Diretor</li><li>Gerente comercial</li><li>Executivo de contas</li><li>Vendedor</li><li>Analista</li></ul>
+              </div>
+            </div>
+            <ol class="rt-leitura">
+              <li><span class="rt-m">1</span><span>Mais de <b>40 fontes</b> de sell-in e sell-out entram num modelo em estrela.</span></li>
+              <li><span class="rt-m">2</span><span>Um painel só, que eu criei e mantenho todo dia, com <b>400 usuários</b> simultâneos.</span></li>
+              <li><span class="rt-m">3</span><span>Do <b>vendedor</b> ao <b>presidente</b>, cada um vê a parte da sua estrutura comercial.</span></li>
+            </ol>
+          </figure>
+          <details class="rt-tec">
+            <summary>Detalhe técnico</summary>
+            <ul>
+              <li>Warehouse em estrela servido em Power BI no Microsoft Fabric, capacidade P1.</li>
+              <li>RLS dinâmico pela estrutura comercial, com hierarquia sem duplicidade.</li>
+              <li>Relatórios por cargo saem do hub pelo Power Automate, por e-mail e Teams.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+      <!-- PARADA 2 -->
+      <div class="rt-sum" id="rt-sum-1" data-rt-sum="1">
+        <div class="rt-guia">
+          <p class="rt-k">Parada 2 de 7 / servidor de BI</p>
+          <h3>Servidor P1</h3>
+          <ol class="rt-passos">
+            <li><span class="rt-n">1</span><div><p class="rt-k rt-k--y">Problema</p><p>A capacidade P1 do hub chegou a 146% de uso e recusou atualizações. A proposta era migrar para a P2.</p></div></li>
+            <li><span class="rt-n">2</span><div><p class="rt-k rt-k--y">O que fiz</p><p>Medi quem consumia e fui por fases: reescrevi os fluxos de e-mail, desliguei o cache de consulta e troquei os dataflows por SQL.</p></div></li>
+            <li><span class="rt-n">3</span><div><p class="rt-k rt-k--y">Resultado</p><p class="rt-hero"><span data-count="60" data-prefix="US$ " data-suffix=" mil">US$ 60 mil</span></p><p>por ano sem migrar para a P2. Hoje a média de uso é 60%, com os mesmos 400 usuários.</p></div></li>
+          </ol>
+          <div class="rt-actions">
+            <button type="button" class="rt-btn" data-rt-open="0">Ver o caso completo</button>
+            <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="2">Parada 3</button>
+          </div>
+        </div>
+        <div class="rt-vizcol">
+          <figure class="rt-chart">
+            <figcaption class="rt-chart-t">Uso da capacidade P1, fase a fase<small>% da capacidade, por semana</small></figcaption>
+            <svg class="rt-svg" viewBox="0 0 560 262" role="img" aria-label="Uso da capacidade em quatro fases: antes, acima de 100% com pico de 146%; fase 1, fluxos reescritos; fase 2, cache desligado; fase 3, SQL no lugar de dataflow, com média de 60%">
+              <rect class="fase" x="199.5" y="30" width="93.0" height="180"/>
+              <rect class="fase" x="385.5" y="30" width="159.5" height="180"/>
+              <line class="grade" x1="45" x2="545" y1="210" y2="210"/>
+              <line class="grade" x1="45" x2="545" y1="153.75" y2="153.75"/>
+              <line class="grade" x1="45" x2="545" y1="41.25" y2="41.25"/>
+              <text class="rot" x="40" y="214" text-anchor="end">0%</text>
+              <text class="rot" x="40" y="157.75" text-anchor="end">50%</text>
+              <text class="rot" x="40" y="45.25" text-anchor="end">150%</text>
+              <line class="divisa" x1="199.5" x2="199.5" y1="30" y2="210"/>
+              <line class="divisa" x1="292.5" x2="292.5" y1="30" y2="210"/>
+              <line class="divisa" x1="385.5" x2="385.5" y1="30" y2="210"/>
+              <polygon class="area-ruim" points="60,97.5 60,77.25 91,62.62 122,45.75 153,53.62 184,66.0 220.2,97.5"/>
+              <line class="limite" x1="45" x2="545" y1="97.5" y2="97.5"/>
+              <text class="rot-b" x="545" y="91.5" text-anchor="end">limite 100%</text>
+              <line class="media" x1="385.5" x2="545" y1="142.5" y2="142.5"/>
+              <text class="media-t" x="545" y="158.5" text-anchor="end">média 60%</text>
+              <polyline class="linha" points="60,77.25 91,62.62 122,45.75 153,53.62 184,66.0 215,93.0 246,102.0 277,106.5 308,115.5 339,120.0 370,122.25 401,138.0 432,142.5 463,144.75 494,141.38 525,143.62"/>
+              <g class="mk"><circle cx="122" cy="29.75" r="11"/><text x="122" y="29.75">1</text></g>
+              <g class="mk"><circle cx="246" cy="126.0" r="11"/><text x="246" y="126.0">2</text></g>
+              <g class="mk"><circle cx="339" cy="144.0" r="11"/><text x="339" y="144.0">3</text></g>
+              <g class="mk"><circle cx="463" cy="174.75" r="11"/><text x="463" y="174.75">4</text></g>
+              <text class="fase-t" x="122.2" y="232">antes</text>
+              <text class="fase-s" x="122.2" y="247">pico 146%</text>
+              <text class="fase-t" x="246.0" y="232">fase 1</text>
+              <text class="fase-s" x="246.0" y="247">fluxos</text>
+              <text class="fase-t" x="339.0" y="232">fase 2</text>
+              <text class="fase-s" x="339.0" y="247">cache</text>
+              <text class="fase-t" x="465.2" y="232">fase 3</text>
+              <text class="fase-s" x="465.2" y="247">SQL</text>
+            </svg>
+            <ol class="rt-leitura">
+              <li><span class="rt-m">1</span><span>Antes: pico de <b>146%</b>, com atualizações recusadas.</span></li>
+              <li><span class="rt-m">2</span><span>Fase 1: fluxos de e-mail reescritos, de <b>78 mil</b> para <b>2 mil</b> consultas por dia.</span></li>
+              <li><span class="rt-m">3</span><span>Fase 2: cache de consulta desligado; levava <b>17 min</b> por atualização.</span></li>
+              <li><span class="rt-m">4</span><span>Fase 3: dataflows trocados por SQL. Média de <b>60%</b> com os mesmos <b>400 usuários</b>.</span></li>
+            </ol>
+            <p class="rt-nota">Curva ilustrativa entre os pontos medidos: pico de 146%, limite de 100% e média recente de 60%.</p>
+          </figure>
+          <details class="rt-tec">
+            <summary>Detalhe técnico</summary>
+            <ul>
+              <li>Capacidade P1 do Microsoft Fabric, com até 400 usuários simultâneos no hub comercial.</li>
+              <li>A atualização automática de página foi a primeira hipótese e foi descartada pela medição.</li>
+              <li>A carga saiu dos dataflows e passou a ler SQL direto, o que tirou da capacidade o processamento das transformações.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+      <!-- PARADA 3 -->
+      <div class="rt-sum" id="rt-sum-2" data-rt-sum="2">
+        <div class="rt-guia">
+          <p class="rt-k">Parada 3 de 7 / VIGOR SHIELD</p>
+          <h3>Nota antes de publicar</h3>
+          <ol class="rt-passos">
+            <li><span class="rt-n">1</span><div><p class="rt-k rt-k--y">Problema</p><p>Um relatório pesado publicado no servidor deixa todos os outros lentos, inclusive o hub.</p></div></li>
+            <li><span class="rt-n">2</span><div><p class="rt-k rt-k--y">O que fiz</p><p>Criei o VIGOR SHIELD, um aplicativo que lê o modelo do Power BI, dá nota e lista o que corrigir antes de publicar.</p></div></li>
+            <li><span class="rt-n">3</span><div><p class="rt-k rt-k--y">Resultado</p><p class="rt-hero">Nota A</p><p>no hub, com 400 usuários. Relatório novo passa pela mesma régua para entrar no servidor.</p></div></li>
+          </ol>
+          <div class="rt-actions">
+            <a class="rt-btn" href="#experiencia">Ver na experiência</a>
+            <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="3">Parada 4</button>
+          </div>
+        </div>
+        <div class="rt-vizcol">
+          <figure class="rt-chart">
+            <figcaption class="rt-chart-t">A régua para entrar no servidor<small>nota de 0 a 100, mostrada em letra</small></figcaption>
+            <div class="rt-regua" role="img" aria-label="Escala de A+ a F, com o hub marcado na nota A">
+              <p class="rt-regua-pin"><span class="rt-m">1</span>hub: A</p>
+              <span class="ok">A+</span><span class="ok">A</span><span>B</span><span>C</span><span>D</span><span class="ruim">F</span>
+            </div>
+            <div class="rt-regua-x" aria-hidden="true"><span>mais leve</span><span>mais pesado</span></div>
+            <ol class="rt-leitura">
+              <li><span class="rt-m">1</span><span>O hub, com tudo o que tem e <b>400 usuários</b>, tem nota <b>A</b>.</span></li>
+              <li><span class="rt-m">2</span><span>Relatório novo recebe a nota e a <b>lista do que corrigir</b>, com o trecho em DAX ou M pronto para copiar.</span></li>
+              <li><span class="rt-m">3</span><span>O que mais pesa: <b>memória</b> da capacidade, <b>tempo de atualização</b> e <b>CPU</b> por consulta.</span></li>
+            </ol>
+          </figure>
+          <div class="rt-fatos">
+            <div><b>25 regras</b><span>sobre modelo, DAX, Power Query e camada visual</span></div>
+            <div><b>antes</b><span>de alterar o arquivo, simula o ganho de cada correção</span></div>
+          </div>
+          <details class="rt-tec">
+            <summary>Detalhe técnico</summary>
+            <ul>
+              <li>Aplicativo desktop em Python com interface em React, que roda local, sem rede.</li>
+              <li>Lê PBIP e o modelo aberto no Power BI Desktop; grava correções pelo TOM, um objeto por vez, com script de retorno.</li>
+              <li>Peso alto no que custa servidor (colunas sem uso, tabelas calculadas grandes, muitos para muitos); peso baixo em higiene.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+<!-- PARADA 4 -->
+        <div class="rt-sum" id="rt-sum-3" data-rt-sum="3">
           <div class="rt-guia">
-            <p class="rt-k">Parada 1 de 5 / loja</p>
+            <p class="rt-k">Parada 4 de 7 / Vigor</p>
+            <h3>Do Excel para o hub</h3>
+            <ol class="rt-passos">
+              <li><span class="rt-n">1</span><div><p class="rt-k rt-k--y">Problema</p><p>Três análises recorrentes eram montadas à mão em Excel, a cada campanha ou atualização.</p></div></li>
+              <li><span class="rt-n">2</span><div><p class="rt-k rt-k--y">O que fiz</p><p>Levei os cálculos para o hub. Os números saem com a atualização do hub ou com o fechamento do mês.</p></div></li>
+              <li><span class="rt-n">3</span><div><p class="rt-k rt-k--y">Resultado</p><p class="rt-hero"><span data-count="3" data-suffix=" dias">3 dias</span></p><p>de apuração da Maratona a cada campanha, agora automática.</p></div></li>
+            </ol>
+            <div class="rt-actions">
+              <a class="rt-btn" href="#experiencia">Ver na experiência</a>
+              <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="4">Parada 5</button>
+            </div>
+          </div>
+          <div class="rt-vizcol">
+            <figure class="rt-chart">
+              <figcaption class="rt-chart-t">Trabalho manual por rodada, antes e depois<small>barra em horas de trabalho; 3 dias contados como 24 h</small></figcaption>
+              <ol class="rt-hx">
+                <li><span class="rt-m">1</span><div><p class="rt-hx-top">Maratona Vigor<span>3 dias por campanha</span></p><div class="rt-hx-track"><i style="--w:100%;--d:0ms"></i></div><p class="rt-hx-depois">agora sai com o fechamento do mês</p></div></li>
+                <li><span class="rt-m">2</span><div><p class="rt-hx-top">Ciclo de vida<span>mais de 3 h por atualização</span></p><div class="rt-hx-track"><i style="--w:12.5%;--d:150ms"></i></div><p class="rt-hx-depois">agora atualiza com o hub</p></div></li>
+                <li><span class="rt-m">3</span><div><p class="rt-hx-top">Performance<span>4 h por atualização</span></p><div class="rt-hx-track"><i style="--w:16.7%;--d:300ms"></i></div><p class="rt-hx-depois">agora consulta e análise prontas no hub</p></div></li>
+              </ol>
+            </figure>
+            <details class="rt-tec">
+              <summary>Detalhe técnico</summary>
+              <ul>
+                <li>Maratona: apuração de quanto cada campanha de vendas trouxe.</li>
+                <li>Performance: clientes a recuperar e clientes sem compra há mais de 14 meses, tratados como oportunidade.</li>
+                <li>Ciclo de vida: a estimativa de mais de 3 h inclui o trabalho manual do analista em cada atualização.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+
+<!-- PARADA 5 -->
+        <div class="rt-sum" id="rt-sum-4" data-rt-sum="4">
+          <div class="rt-guia">
+            <p class="rt-k">Parada 5 de 7 / loja</p>
             <h3>Ruptura em reais</h3>
             <ol class="rt-passos">
               <li><span class="rt-n">1</span><div><p class="rt-k rt-k--y">Problema</p><p>Produto em falta não gera venda, então a perda não aparecia em nenhum relatório.</p></div></li>
@@ -167,8 +355,8 @@
               <li><span class="rt-n">3</span><div><p class="rt-k rt-k--y">Resultado</p><p class="rt-hero"><span data-count="10" data-prefix="R$ " data-suffix=" mi">R$ 10 mi</span></p><p>de receita em risco identificada por cliente na Vigor.</p></div></li>
             </ol>
             <div class="rt-actions">
-              <button type="button" class="rt-btn" data-rt-open="0">Ver o caso completo</button>
-              <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="1">Parada 2</button>
+              <button type="button" class="rt-btn" data-rt-open="1">Ver o caso completo</button>
+              <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="5">Parada 6</button>
             </div>
           </div>
           <div class="rt-vizcol">
@@ -212,10 +400,10 @@
           </div>
         </div>
 
-        <!-- PARADA 2 -->
-        <div class="rt-sum" id="rt-sum-1" data-rt-sum="1">
+<!-- PARADA 6 -->
+        <div class="rt-sum" id="rt-sum-5" data-rt-sum="5">
           <div class="rt-guia">
-            <p class="rt-k">Parada 2 de 5 / área comercial</p>
+            <p class="rt-k">Parada 6 de 7 / área comercial</p>
             <h3>Variação de receita</h3>
             <ol class="rt-passos">
               <li><span class="rt-n">1</span><div><p class="rt-k rt-k--y">Problema</p><p>A receita subiu 18,9% e cada área explicava o aumento de um jeito.</p></div></li>
@@ -223,8 +411,8 @@
               <li><span class="rt-n">3</span><div><p class="rt-k rt-k--y">Resultado</p><p class="rt-hero"><span data-count="287" data-prefix="+R$ " data-suffix=" mil">+R$ 287 mil</span></p><p>explicados até o centavo, agosto de 2026 contra agosto de 2025.</p></div></li>
             </ol>
             <div class="rt-actions">
-              <button type="button" class="rt-btn" data-rt-open="1">Ver o caso completo</button>
-              <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="2">Parada 3</button>
+              <button type="button" class="rt-btn" data-rt-open="2">Ver o caso completo</button>
+              <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="6">Parada 7</button>
             </div>
           </div>
           <div class="rt-vizcol">
@@ -260,100 +448,10 @@
           </div>
         </div>
 
-        <!-- PARADA 3 -->
-        <div class="rt-sum" id="rt-sum-2" data-rt-sum="2">
+<!-- PARADA 7 -->
+        <div class="rt-sum" id="rt-sum-6" data-rt-sum="6">
           <div class="rt-guia">
-            <p class="rt-k">Parada 3 de 5 / servidor de BI</p>
-            <h3>Servidor P1</h3>
-            <ol class="rt-passos">
-              <li><span class="rt-n">1</span><div><p class="rt-k rt-k--y">Problema</p><p>A capacidade P1 do hub chegou a 146% de uso e recusou atualizações. A proposta era migrar para a P2.</p></div></li>
-              <li><span class="rt-n">2</span><div><p class="rt-k rt-k--y">O que fiz</p><p>Medi quem consumia: eram os fluxos que montam relatórios por e-mail. Reescrevi os fluxos e desliguei o cache de consulta.</p></div></li>
-              <li><span class="rt-n">3</span><div><p class="rt-k rt-k--y">Resultado</p><p class="rt-hero"><span data-count="60" data-prefix="US$ " data-suffix=" mil">US$ 60 mil</span></p><p>por ano sem migrar para a P2, com os mesmos 400 usuários.</p></div></li>
-            </ol>
-            <div class="rt-actions">
-              <button type="button" class="rt-btn" data-rt-open="2">Ver o caso completo</button>
-              <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="3">Parada 4</button>
-            </div>
-          </div>
-          <div class="rt-vizcol">
-            <figure class="rt-chart">
-              <figcaption class="rt-chart-t">Uso da capacidade P1, antes e depois<small>% da capacidade, por semana</small></figcaption>
-              <svg class="rt-svg" viewBox="0 0 520 232" role="img" aria-label="Uso da capacidade: acima de 100% nas primeiras semanas, com pico de 146%, e abaixo de 100% depois dos fluxos reescritos e do cache desligado">
-                <line class="grade" x1="40" x2="500" y1="200" y2="200"/>
-                <line class="grade" x1="40" x2="500" y1="143.75" y2="143.75"/>
-                <line class="grade" x1="40" x2="500" y1="31.25" y2="31.25"/>
-                <text class="rot" x="34" y="204" text-anchor="end">0%</text>
-                <text class="rot" x="34" y="147" text-anchor="end">50%</text>
-                <text class="rot" x="34" y="35" text-anchor="end">150%</text>
-                <polygon class="area-ruim" points="40,87.5 40,67.25 80,52.6 120,35.75 160,43.6 200,56 235,87.5"/>
-                <line class="limite" x1="40" x2="500" y1="87.5" y2="87.5"/>
-                <text class="rot-b" x="500" y="81" text-anchor="end">limite da P1, 100%</text>
-                <polyline class="linha" points="40,67.25 80,52.6 120,35.75 160,43.6 200,56 240,92 280,101 320,116.75 360,120.1 400,122.4 440,119 480,121.25"/>
-                <g class="mk"><circle cx="120" cy="16" r="11"/><text x="120" y="16">1</text></g>
-                <g class="mk"><circle cx="240" cy="114" r="11"/><text x="240" y="114">2</text></g>
-                <g class="mk"><circle cx="320" cy="139" r="11"/><text x="320" y="139">3</text></g>
-                <g class="mk"><circle cx="480" cy="143" r="11"/><text x="480" y="143">4</text></g>
-                <text class="rot" x="40" y="222">antes</text>
-                <text class="rot" x="480" y="222" text-anchor="end">depois</text>
-              </svg>
-              <ol class="rt-leitura">
-                <li><span class="rt-m">1</span><span>Pico de <b>146%</b>: o servidor recusa atualizações.</span></li>
-                <li><span class="rt-m">2</span><span>Fluxos de e-mail reescritos: de <b>78 mil</b> para <b>2 mil</b> consultas por dia.</span></li>
-                <li><span class="rt-m">3</span><span>Cache de consulta desligado: levava <b>17 min</b>, mais que a carga de dados.</span></li>
-                <li><span class="rt-m">4</span><span>Abaixo de <b>100%</b>, na mesma P1.</span></li>
-              </ol>
-              <p class="rt-nota">Curva ilustrativa. Valores medidos: pico de 146%, limite de 100% e consultas dos fluxos.</p>
-            </figure>
-            <details class="rt-tec">
-              <summary>Detalhe técnico</summary>
-              <ul>
-                <li>Capacidade P1 do Microsoft Fabric, com até 400 usuários simultâneos no hub comercial.</li>
-                <li>A atualização automática de página foi a primeira hipótese e foi descartada pela medição.</li>
-                <li>Para o problema não voltar, uma ferramenta em Python dá nota de A+ a F a cada modelo antes da publicação.</li>
-              </ul>
-            </details>
-          </div>
-        </div>
-
-        <!-- PARADA 4 -->
-        <div class="rt-sum" id="rt-sum-3" data-rt-sum="3">
-          <div class="rt-guia">
-            <p class="rt-k">Parada 4 de 5 / Vigor</p>
-            <h3>Do Excel para o hub</h3>
-            <ol class="rt-passos">
-              <li><span class="rt-n">1</span><div><p class="rt-k rt-k--y">Problema</p><p>Três análises recorrentes eram montadas à mão em Excel, a cada campanha ou atualização.</p></div></li>
-              <li><span class="rt-n">2</span><div><p class="rt-k rt-k--y">O que fiz</p><p>Levei os cálculos para o hub. Os números saem com a atualização do hub ou com o fechamento do mês.</p></div></li>
-              <li><span class="rt-n">3</span><div><p class="rt-k rt-k--y">Resultado</p><p class="rt-hero"><span data-count="3" data-suffix=" dias">3 dias</span></p><p>de apuração da Maratona a cada campanha, agora automática.</p></div></li>
-            </ol>
-            <div class="rt-actions">
-              <a class="rt-btn" href="#experiencia">Ver na experiência</a>
-              <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="4">Parada 5</button>
-            </div>
-          </div>
-          <div class="rt-vizcol">
-            <figure class="rt-chart">
-              <figcaption class="rt-chart-t">Trabalho manual por rodada, antes e depois<small>barra em horas de trabalho; 3 dias contados como 24 h</small></figcaption>
-              <ol class="rt-hx">
-                <li><span class="rt-m">1</span><div><p class="rt-hx-top">Maratona Vigor<span>3 dias por campanha</span></p><div class="rt-hx-track"><i style="--w:100%;--d:0ms"></i></div><p class="rt-hx-depois">agora sai com o fechamento do mês</p></div></li>
-                <li><span class="rt-m">2</span><div><p class="rt-hx-top">Ciclo de vida<span>mais de 3 h por atualização</span></p><div class="rt-hx-track"><i style="--w:12.5%;--d:150ms"></i></div><p class="rt-hx-depois">agora atualiza com o hub</p></div></li>
-                <li><span class="rt-m">3</span><div><p class="rt-hx-top">Performance<span>4 h por atualização</span></p><div class="rt-hx-track"><i style="--w:16.7%;--d:300ms"></i></div><p class="rt-hx-depois">agora consulta e análise prontas no hub</p></div></li>
-              </ol>
-            </figure>
-            <details class="rt-tec">
-              <summary>Detalhe técnico</summary>
-              <ul>
-                <li>Maratona: apuração de quanto cada campanha de vendas trouxe.</li>
-                <li>Performance: clientes a recuperar e clientes sem compra há mais de 14 meses, tratados como oportunidade.</li>
-                <li>Ciclo de vida: a estimativa de mais de 3 h inclui o trabalho manual do analista em cada atualização.</li>
-              </ul>
-            </details>
-          </div>
-        </div>
-
-        <!-- PARADA 5 -->
-        <div class="rt-sum" id="rt-sum-4" data-rt-sum="4">
-          <div class="rt-guia">
-            <p class="rt-k">Parada 5 de 5 / dados públicos</p>
+            <p class="rt-k">Parada 7 de 7 / dados públicos</p>
             <h3>Preço de combustível</h3>
             <ol class="rt-passos">
               <li><span class="rt-n">1</span><div><p class="rt-k rt-k--y">Problema</p><p>Quanto a gasolina subiu no último ano e em que estado o etanol compensa.</p></div></li>
@@ -403,15 +501,97 @@
             </details>
           </div>
         </div>
-      </div>
+    </div>
 
-      <!-- CASOS COMPLETOS: abrem aqui, um por vez, em etapas numeradas -->
+    <!-- CASOS COMPLETOS: abrem aqui, um por vez, em etapas numeradas -->
       <div class="rt-cases" data-rt-cases>
 
-        <!-- CASO 1 -->
-        <article class="rt-case" id="caso-01" data-rt-case="0" aria-labelledby="rt-c1-t">
+        <!-- CASO DA PARADA 2 -->
+        <article class="rt-case" id="caso-03" data-rt-case="0" data-rt-parada="1" aria-labelledby="rt-c3-t">
           <header class="rt-case-head">
-            <div class="rt-case-id"><span class="rt-num">1</span><div><p class="rt-k">Parada 1 / Aurora Alimentos, distribuidora fictícia de laticínios</p><h3 id="rt-c1-t">Ruptura em reais</h3></div></div>
+            <div class="rt-case-id"><span class="rt-num">2</span><div><p class="rt-k">Parada 2 / Vigor Alimentos, hub comercial</p><h3 id="rt-c3-t">400 usuários na mesma capacidade</h3></div></div>
+            <button type="button" class="rt-close" data-rt-close aria-label="Fechar o caso e voltar às paradas">Voltar às paradas</button>
+            <p class="rt-case-lead">A capacidade P1 do hub passou do limite. Antes de comprar a P2, medi quem consumia.</p>
+            <div class="rt-kpis">
+              <div><b data-count="60" data-prefix="US$ " data-suffix=" mil">US$ 60 mil</b><span>por ano, sem migrar para a P2</span></div>
+              <div><b data-count="60" data-suffix="%">60%</b><span>de uso médio hoje, depois da troca dos dataflows por SQL</span></div>
+              <div><b data-count="400">400</b><span>usuários simultâneos</span></div>
+            </div>
+          </header>
+          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso da parada 2">
+            <button type="button" role="tab" data-rt-tab="0">1 Problema</button>
+            <button type="button" role="tab" data-rt-tab="1">2 Medição</button>
+            <button type="button" role="tab" data-rt-tab="2">3 Cache</button>
+            <button type="button" role="tab" data-rt-tab="3">4 SQL</button>
+          <button type="button" role="tab" data-rt-tab="4">5 Nota</button>
+          </div>
+          <section class="rt-step" role="tabpanel" data-rt-step="0">
+            <div class="rt-step-txt">
+              <h4>146% de uso</h4>
+              <p>As atualizações começaram a ser recusadas. A saída proposta era migrar para a P2.</p>
+              <ul class="rt-tags"><li>Microsoft Fabric</li><li>P1</li></ul>
+            </div>
+            <div class="rt-viz rt-hbars">
+              <p class="rt-k">Uso da capacidade no pico (linha branca: 100%)</p>
+              <div class="rt-hrow"><span class="rt-hl">pico</span><span class="rt-track"><i class="neg" style="--w:91%;--d:100ms"></i><em class="rt-limit" style="left:62.5%"></em></span><b>146%</b></div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="1">
+            <div class="rt-step-txt">
+              <h4>O consumo vinha dos fluxos de e-mail</h4>
+              <p>A atualização automática de página foi descartada pela medição. O peso estava nos fluxos do Power Automate que montam relatórios por e-mail. Reescritos, passaram de 78 mil para 2 mil consultas por dia.</p>
+              <ul class="rt-tags"><li>Power Automate</li><li>DAX</li></ul>
+            </div>
+            <div class="rt-viz rt-hbars">
+              <p class="rt-k">Consultas por dia dos fluxos</p>
+              <div class="rt-hrow"><span class="rt-hl">antes</span><span class="rt-track"><i class="dim" style="--w:100%;--d:100ms"></i></span><b>78 mil</b></div>
+              <div class="rt-hrow"><span class="rt-hl">depois</span><span class="rt-track"><i class="hi" style="--w:2.6%;--d:250ms"></i></span><b>2 mil</b></div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="2">
+            <div class="rt-step-txt">
+              <h4>O cache levava mais que a carga</h4>
+              <p>No histórico de atualização, a fase de cache levava 17 minutos e a carga de dados, 8. O cache de consulta foi desligado.</p>
+              <ul class="rt-tags"><li>Fabric</li><li>histórico de atualização</li></ul>
+            </div>
+            <div class="rt-viz rt-hbars">
+              <p class="rt-k">Tempo por fase da atualização</p>
+              <div class="rt-hrow"><span class="rt-hl">cache</span><span class="rt-track"><i class="neg" style="--w:85%;--d:100ms"></i></span><b>17 min</b></div>
+              <div class="rt-hrow"><span class="rt-hl">dados</span><span class="rt-track"><i class="ok" style="--w:40%;--d:250ms"></i></span><b>8 min</b></div>
+            </div>
+          </section>
+        <section class="rt-step" role="tabpanel" data-rt-step="3">
+          <div class="rt-step-txt">
+            <h4>SQL no lugar de dataflow</h4>
+            <p>A carga saiu dos dataflows e passou a ler SQL direto. A capacidade deixou de processar as transformações, e o uso médio caiu para 60% com os mesmos 400 usuários.</p>
+            <ul class="rt-tags"><li>SQL</li><li>Power Query</li><li>Fabric</li></ul>
+          </div>
+          <div class="rt-viz rt-hbars">
+            <p class="rt-k">Uso da capacidade (linha branca: 100%)</p>
+            <div class="rt-hrow"><span class="rt-hl">pico antes</span><span class="rt-track"><i class="neg" style="--w:91%;--d:100ms"></i><em class="rt-limit" style="left:62.5%"></em></span><b>146%</b></div>
+            <div class="rt-hrow"><span class="rt-hl">média hoje</span><span class="rt-track"><i class="ok" style="--w:37.5%;--d:250ms"></i><em class="rt-limit" style="left:62.5%"></em></span><b>60%</b></div>
+          </div>
+        </section>
+        <section class="rt-step" role="tabpanel" data-rt-step="4">
+          <div class="rt-step-txt">
+            <h4>Nota antes de publicar</h4>
+              <p>Para o problema não voltar, o VIGOR SHIELD dá nota a cada relatório antes da publicação (parada 3). Dados internos: sem capturas.</p>
+              <ul class="rt-tags"><li>Python</li><li>governança</li></ul>
+            </div>
+            <div class="rt-viz rt-grades" aria-label="Escala de notas de A+ a F">
+              <span class="g1">A+</span><span>A</span><span>B</span><span>C</span><span>D</span><span class="g5">F</span>
+            </div>
+          </section>
+          <footer class="rt-case-foot">
+            <button type="button" class="rt-btn rt-btn--ghost" data-rt-prev>Etapa anterior</button>
+            <button type="button" class="rt-btn" data-rt-next>Próxima etapa</button>
+          </footer>
+        </article>
+
+        <!-- CASO DA PARADA 5 -->
+        <article class="rt-case" id="caso-01" data-rt-case="1" data-rt-parada="4" aria-labelledby="rt-c1-t">
+          <header class="rt-case-head">
+            <div class="rt-case-id"><span class="rt-num">5</span><div><p class="rt-k">Parada 5 / Aurora Alimentos, distribuidora fictícia de laticínios</p><h3 id="rt-c1-t">Ruptura em reais</h3></div></div>
             <button type="button" class="rt-close" data-rt-close aria-label="Fechar o caso e voltar às paradas">Voltar às paradas</button>
             <p class="rt-case-lead">Do gerador de dados ao e-mail de cada vendedor: quanto a ruptura custa, em que loja, e o que pedir.</p>
             <div class="rt-kpis">
@@ -420,7 +600,7 @@
               <div><b data-count="105" data-prefix="R$ " data-suffix=" mil">R$ 105 mil</b><span>em itens que já faltam na loja</span></div>
             </div>
           </header>
-          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso da parada 1">
+          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso da parada 5">
             <button type="button" role="tab" data-rt-tab="0">1 Base</button>
             <button type="button" role="tab" data-rt-tab="1">2 Banco</button>
             <button type="button" role="tab" data-rt-tab="2">3 Modelo</button>
@@ -483,10 +663,10 @@
           </footer>
         </article>
 
-        <!-- CASO 2 -->
-        <article class="rt-case" id="caso-02" data-rt-case="1" aria-labelledby="rt-c2-t">
+        <!-- CASO DA PARADA 6 -->
+        <article class="rt-case" id="caso-02" data-rt-case="2" data-rt-parada="5" aria-labelledby="rt-c2-t">
           <header class="rt-case-head">
-            <div class="rt-case-id"><span class="rt-num">2</span><div><p class="rt-k">Parada 2 / Aurora Alimentos, versão aberta do motor que roda no hub da Vigor</p><h3 id="rt-c2-t">Variação de receita</h3></div></div>
+            <div class="rt-case-id"><span class="rt-num">6</span><div><p class="rt-k">Parada 6 / Aurora Alimentos, versão aberta do motor que roda no hub da Vigor</p><h3 id="rt-c2-t">Variação de receita</h3></div></div>
             <button type="button" class="rt-close" data-rt-close aria-label="Fechar o caso e voltar às paradas">Voltar às paradas</button>
             <p class="rt-case-lead">Quanto da variação veio de clientes novos, de itens, de volume, de mix e de preço, com soma que fecha no centavo.</p>
             <div class="rt-kpis">
@@ -495,7 +675,7 @@
               <div><b>R$ 0,00</b><span>de diferença entre a soma dos pilares e a variação</span></div>
             </div>
           </header>
-          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso da parada 2">
+          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso da parada 6">
             <button type="button" role="tab" data-rt-tab="0">1 Soma</button>
             <button type="button" role="tab" data-rt-tab="1">2 Ritmo</button>
             <button type="button" role="tab" data-rt-tab="2">3 Mix</button>
@@ -565,79 +745,10 @@
           </footer>
         </article>
 
-        <!-- CASO 3 -->
-        <article class="rt-case" id="caso-03" data-rt-case="2" aria-labelledby="rt-c3-t">
+        <!-- CASO DA PARADA 7 -->
+        <article class="rt-case" id="caso-04" data-rt-case="3" data-rt-parada="6" aria-labelledby="rt-c4-t">
           <header class="rt-case-head">
-            <div class="rt-case-id"><span class="rt-num">3</span><div><p class="rt-k">Parada 3 / Vigor Alimentos, hub comercial</p><h3 id="rt-c3-t">400 usuários na mesma capacidade</h3></div></div>
-            <button type="button" class="rt-close" data-rt-close aria-label="Fechar o caso e voltar às paradas">Voltar às paradas</button>
-            <p class="rt-case-lead">A capacidade P1 do hub passou do limite. Antes de comprar a P2, medi quem consumia.</p>
-            <div class="rt-kpis">
-              <div><b data-count="60" data-prefix="US$ " data-suffix=" mil">US$ 60 mil</b><span>por ano, sem migrar para a P2</span></div>
-              <div><b data-count="97" data-suffix="%">97%</b><span>menos consultas por dia, de 78 mil para 2 mil</span></div>
-              <div><b data-count="400">400</b><span>usuários simultâneos</span></div>
-            </div>
-          </header>
-          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso da parada 3">
-            <button type="button" role="tab" data-rt-tab="0">1 Problema</button>
-            <button type="button" role="tab" data-rt-tab="1">2 Medição</button>
-            <button type="button" role="tab" data-rt-tab="2">3 Cache</button>
-            <button type="button" role="tab" data-rt-tab="3">4 Nota</button>
-          </div>
-          <section class="rt-step" role="tabpanel" data-rt-step="0">
-            <div class="rt-step-txt">
-              <h4>146% de uso</h4>
-              <p>As atualizações começaram a ser recusadas. A saída proposta era migrar para a P2.</p>
-              <ul class="rt-tags"><li>Microsoft Fabric</li><li>P1</li></ul>
-            </div>
-            <div class="rt-viz rt-hbars">
-              <p class="rt-k">Uso da capacidade no pico (linha branca: 100%)</p>
-              <div class="rt-hrow"><span class="rt-hl">pico</span><span class="rt-track"><i class="neg" style="--w:91%;--d:100ms"></i><em class="rt-limit" style="left:62.5%"></em></span><b>146%</b></div>
-            </div>
-          </section>
-          <section class="rt-step" role="tabpanel" data-rt-step="1">
-            <div class="rt-step-txt">
-              <h4>O consumo vinha dos fluxos de e-mail</h4>
-              <p>A atualização automática de página foi descartada pela medição. O peso estava nos fluxos do Power Automate que montam relatórios por e-mail. Reescritos, passaram de 78 mil para 2 mil consultas por dia.</p>
-              <ul class="rt-tags"><li>Power Automate</li><li>DAX</li></ul>
-            </div>
-            <div class="rt-viz rt-hbars">
-              <p class="rt-k">Consultas por dia dos fluxos</p>
-              <div class="rt-hrow"><span class="rt-hl">antes</span><span class="rt-track"><i class="dim" style="--w:100%;--d:100ms"></i></span><b>78 mil</b></div>
-              <div class="rt-hrow"><span class="rt-hl">depois</span><span class="rt-track"><i class="hi" style="--w:2.6%;--d:250ms"></i></span><b>2 mil</b></div>
-            </div>
-          </section>
-          <section class="rt-step" role="tabpanel" data-rt-step="2">
-            <div class="rt-step-txt">
-              <h4>O cache levava mais que a carga</h4>
-              <p>No histórico de atualização, a fase de cache levava 17 minutos e a carga de dados, 8. O cache de consulta foi desligado.</p>
-              <ul class="rt-tags"><li>Fabric</li><li>histórico de atualização</li></ul>
-            </div>
-            <div class="rt-viz rt-hbars">
-              <p class="rt-k">Tempo por fase da atualização</p>
-              <div class="rt-hrow"><span class="rt-hl">cache</span><span class="rt-track"><i class="neg" style="--w:85%;--d:100ms"></i></span><b>17 min</b></div>
-              <div class="rt-hrow"><span class="rt-hl">dados</span><span class="rt-track"><i class="ok" style="--w:40%;--d:250ms"></i></span><b>8 min</b></div>
-            </div>
-          </section>
-          <section class="rt-step" role="tabpanel" data-rt-step="3">
-            <div class="rt-step-txt">
-              <h4>Nota antes de publicar</h4>
-              <p>Uma ferramenta em Python dá nota de A+ a F a cada modelo antes da publicação e simula o ganho de cada remoção antes de alterar o arquivo. Dados internos: sem capturas.</p>
-              <ul class="rt-tags"><li>Python</li><li>governança</li></ul>
-            </div>
-            <div class="rt-viz rt-grades" aria-label="Escala de notas de A+ a F">
-              <span class="g1">A+</span><span>A</span><span>B</span><span>C</span><span>D</span><span class="g5">F</span>
-            </div>
-          </section>
-          <footer class="rt-case-foot">
-            <button type="button" class="rt-btn rt-btn--ghost" data-rt-prev>Etapa anterior</button>
-            <button type="button" class="rt-btn" data-rt-next>Próxima etapa</button>
-          </footer>
-        </article>
-
-        <!-- CASO 4 (parada 5) -->
-        <article class="rt-case" id="caso-04" data-rt-case="3" data-rt-parada="4" aria-labelledby="rt-c4-t">
-          <header class="rt-case-head">
-            <div class="rt-case-id"><span class="rt-num">5</span><div><p class="rt-k">Parada 5 / dados públicos da ANP</p><h3 id="rt-c4-t">Preço de combustível</h3></div></div>
+            <div class="rt-case-id"><span class="rt-num">7</span><div><p class="rt-k">Parada 7 / dados públicos da ANP</p><h3 id="rt-c4-t">Preço de combustível</h3></div></div>
             <button type="button" class="rt-close" data-rt-close aria-label="Fechar o caso e voltar às paradas">Voltar às paradas</button>
             <p class="rt-case-lead">Preços de 9.307 postos, coletados pela ANP, do arquivo bruto às tabelas de análise, toda semana.</p>
             <div class="rt-kpis">
@@ -646,7 +757,7 @@
               <div><b>10 de 27</b><span>estados onde o etanol compensa</span></div>
             </div>
           </header>
-          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso da parada 5">
+          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso da parada 7">
             <button type="button" role="tab" data-rt-tab="0">1 Ingestão</button>
             <button type="button" role="tab" data-rt-tab="1">2 Camadas</button>
             <button type="button" role="tab" data-rt-tab="2">3 Métricas</button>
@@ -731,9 +842,9 @@
           <span class="exp-kpi-nota">sell-in e sell-out, uma verdade só</span>
         </div>
         <div class="exp-kpi">
-          <span class="exp-kpi-rotulo">uso do servidor</span>
-          <span class="exp-kpi-valor">45% a 22%</span>
-          <span class="exp-kpi-nota">consultas e modelos otimizados</span>
+          <span class="exp-kpi-rotulo">uso médio da P1</span>
+          <span class="exp-kpi-valor">60%</span>
+          <span class="exp-kpi-nota">com os mesmos 400 usuários, depois da troca por SQL</span>
         </div>
         <div class="exp-kpi">
           <span class="exp-kpi-rotulo">economia anual</span>
@@ -741,62 +852,58 @@
           <span class="exp-kpi-nota">na conta do Power BI</span>
         </div>
       </div>
-      <div class="exp-tabela">
-        <table role="table">
-          <thead role="rowgroup">
-            <tr role="row"><th role="columnheader" scope="col">frente</th><th role="columnheader" scope="col">o que fiz</th><th role="columnheader" scope="col">resultado</th></tr>
-          </thead>
-          <tbody role="rowgroup">
-            <tr role="row">
-              <td role="cell" data-rotulo="frente" class="exp-frente">Hub de dados</td>
-              <td role="cell" data-rotulo="o que fiz">Warehouse em estrela com mais de 40 fontes (Scanntech, Nielsen, Mtrix, Neogrid, Involves) servido em Power BI com RLS dinâmico por estrutura comercial</td>
-              <td role="cell" data-rotulo="resultado" class="exp-resultado">fonte única de sell-in</td>
-            </tr>
-            <tr role="row">
-              <td role="cell" data-rotulo="frente" class="exp-frente">Ruptura</td>
-              <td role="cell" data-rotulo="o que fiz">Regressão da venda diária por cliente cruzada com estoque estima a data de ruptura e compara com o ciclo de compra</td>
-              <td role="cell" data-rotulo="resultado" class="exp-resultado">R$ 10 mi em risco</td>
-            </tr>
-            <tr role="row">
-              <td role="cell" data-rotulo="frente" class="exp-frente">Variação</td>
-              <td role="cell" data-rotulo="o que fiz">Motor em SQL que quebra a variação da receita líquida em carteira, sortimento, volume, mix, preço e cada linha da DRE, fechando no centavo em qualquer filtro</td>
-              <td role="cell" data-rotulo="resultado" class="exp-resultado">em uso no hub</td>
-            </tr>
-            <tr role="row">
-              <td role="cell" data-rotulo="frente" class="exp-frente">Distribuição</td>
-              <td role="cell" data-rotulo="o que fiz">Power Automate consulta o hub, monta relatório em HTML por cargo e envia por e-mail e Teams, com alertas de inconsistência para o BI</td>
-              <td role="cell" data-rotulo="resultado" class="exp-resultado">sem depender de abrir painel</td>
-            </tr>
-            <tr role="row">
-              <td role="cell" data-rotulo="frente" class="exp-frente">Governança</td>
-              <td role="cell" data-rotulo="o que fiz">Ferramenta em Python que pontua modelos de Power BI antes da publicação, com hierarquia comercial sem duplicidade e histórico mensal em SQL</td>
-              <td role="cell" data-rotulo="resultado" class="exp-resultado">relatório ruim não sobe</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="exp-auto" aria-labelledby="t-exp-auto">
-        <p class="exp-auto-titulo" id="t-exp-auto">do Excel para o hub</p>
-        <ul class="exp-auto-lista">
+      <div class="exp-frentes" aria-labelledby="t-exp-frentes">
+        <p class="exp-auto-titulo" id="t-exp-frentes">o que faço na Vigor, na ordem das paradas</p>
+        <ol>
           <li>
-            <span class="exp-kpi-rotulo">Maratona Vigor</span>
-            <span class="exp-auto-antes">3 dias</span>
-            <span class="exp-auto-depois">automático</span>
-            <span class="exp-kpi-nota">de apuração ao fim de cada campanha; o resultado sai com o fechamento do mês</span>
+            <span class="exp-f-n">1</span>
+            <h3>Hub comercial</h3>
+            <p>Modelo em estrela com mais de 40 fontes (Scanntech, Nielsen, Mtrix, Neogrid, Involves) e acesso por estrutura comercial. Crio e mantenho todo dia.</p>
+            <p class="exp-f-res">400 usuários</p>
+            <a class="exp-f-ir" href="#casos" data-rt-go="0">Ver a parada 1</a>
           </li>
           <li>
-            <span class="exp-kpi-rotulo">Ciclo de vida</span>
-            <span class="exp-auto-antes">+3 h</span>
-            <span class="exp-auto-depois">automático</span>
-            <span class="exp-kpi-nota">de trabalho manual do analista a cada atualização; agora atualiza junto com o hub</span>
+            <span class="exp-f-n">2</span>
+            <h3>Servidor P1</h3>
+            <p>Fluxos de e-mail reescritos, cache de consulta desligado e dataflows trocados por SQL.</p>
+            <p class="exp-f-res">US$ 60 mil por ano</p>
+            <a class="exp-f-ir" href="#casos" data-rt-go="1">Ver a parada 2</a>
           </li>
           <li>
-            <span class="exp-kpi-rotulo">Performance</span>
-            <span class="exp-auto-antes">4 h</span>
-            <span class="exp-auto-depois">automático</span>
-            <span class="exp-kpi-nota">por atualização dos clientes a recuperar e dos sem compra há mais de 14 meses; consulta e análise prontas no hub</span>
+            <span class="exp-f-n">3</span>
+            <h3>Nota antes de publicar</h3>
+            <p>VIGOR SHIELD: lê o modelo do Power BI, dá nota de A+ a F e lista o que corrigir.</p>
+            <p class="exp-f-res">hub com nota A</p>
+            <a class="exp-f-ir" href="#casos" data-rt-go="2">Ver a parada 3</a>
           </li>
-        </ul>
+          <li>
+            <span class="exp-f-n">4</span>
+            <h3>Excel para o hub</h3>
+            <p>Maratona, Ciclo de vida e Performance deixaram de ser montadas à mão.</p>
+            <p class="exp-f-res">3 dias por campanha</p>
+            <a class="exp-f-ir" href="#casos" data-rt-go="3">Ver a parada 4</a>
+          </li>
+          <li>
+            <span class="exp-f-n">5</span>
+            <h3>Ruptura</h3>
+            <p>Venda diária cruzada com estoque estima, por cliente, o dia em que o produto acaba.</p>
+            <p class="exp-f-res">R$ 10 mi em risco</p>
+            <a class="exp-f-ir" href="#casos" data-rt-go="4">Ver a parada 5</a>
+          </li>
+          <li>
+            <span class="exp-f-n">6</span>
+            <h3>Variação de receita</h3>
+            <p>Motor em SQL que divide a variação da receita líquida em clientes, itens, volume, mix, preço e linhas da DRE.</p>
+            <p class="exp-f-res">fecha no centavo</p>
+            <a class="exp-f-ir" href="#casos" data-rt-go="5">Ver a parada 6</a>
+          </li>
+          <li>
+            <span class="exp-f-n exp-f-n--sem" aria-hidden="true">+</span>
+            <h3>Distribuição</h3>
+            <p>Power Automate monta o relatório de cada cargo a partir do hub e envia por e-mail e Teams.</p>
+            <p class="exp-f-res">sem abrir o painel</p>
+          </li>
+        </ol>
       </div>
       <ul class="exp-rodape">
         <li>Ciência e Tecnologia, UFABC</li>

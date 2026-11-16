@@ -691,9 +691,9 @@
     line-height: var(--l-titulo);
   }
 
-  /* Do Excel para o hub: análises que eram montadas à mão. O antes riscado
-     e o depois em âmbar repetem o par rótulo e valor dos .exp-kpi. */
-  .exp-auto {
+  /* Frentes da experiência em cartões numerados com a mesma ordem das
+     paradas da rota; cada cartão leva à parada que explica o número. */
+  .exp-frentes {
     margin-top: var(--e5);
   }
 
@@ -707,9 +707,9 @@
     text-transform: uppercase;
   }
 
-  .exp-auto-lista {
+  .exp-frentes ol {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--fio);
     margin: 0;
     padding: 0;
@@ -717,30 +717,67 @@
     background: var(--verde-linha);
   }
 
-  .exp-auto-lista li {
+  .exp-frentes li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--e2);
     background: var(--verde);
     padding: var(--e4);
   }
 
-  .exp-auto-antes {
-    display: block;
-    margin-top: var(--e2);
-    color: var(--creme-fraco);
+  .exp-f-n {
+    display: inline-grid;
+    place-items: center;
+    width: var(--e5);
+    height: var(--e5);
+    border-radius: 999px;
+    background: var(--ambar);
+    color: var(--verde);
     font-family: var(--fonte-mono);
-    font-size: var(--t3);
-    text-decoration: line-through;
-    text-decoration-thickness: var(--traco);
-    font-variant-numeric: tabular-nums;
+    font-size: var(--t2);
+    font-weight: 700;
   }
 
-  .exp-auto-depois {
-    display: block;
-    margin-top: var(--e1);
+  /* Distribuição não tem parada própria: fecha a grade na largura toda,
+     em qualquer número de colunas, sem deixar um vão ao lado. */
+  .exp-frentes li:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .exp-f-n--sem {
+    background: transparent;
+    border: var(--traco) solid var(--verde-linha-forte);
+    color: var(--creme-fraco);
+  }
+
+  .placa-verde .exp-frentes h3 {
+    color: var(--creme);
+    font-size: var(--t3);
+    line-height: var(--l-titulo);
+  }
+
+  .exp-frentes li > p {
+    color: var(--creme-texto);
+    font-size: var(--t2);
+    line-height: var(--l-corpo);
+  }
+
+  .exp-frentes .exp-f-res {
+    margin-top: auto;
     color: var(--ambar);
     font-family: var(--fonte-mono);
-    font-size: var(--t4);
+    font-size: var(--t2);
     font-weight: 700;
-    line-height: var(--l-solida);
+  }
+
+  .exp-f-ir {
+    align-self: flex-start;
+    color: var(--creme);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: var(--e1);
   }
 
   .exp-tabela {
@@ -1075,8 +1112,8 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .exp-auto-lista {
-    grid-template-columns: 1fr;
+  .exp-frentes ol {
+    grid-template-columns: 1fr 1fr;
   }
 
   /* Abaixo de 760 a tabela vira registro empilhado. Três coisas precisam
@@ -1139,6 +1176,10 @@
   }
 
   .num-grade {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-frentes ol {
     grid-template-columns: 1fr;
   }
 
