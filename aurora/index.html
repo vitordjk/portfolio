@@ -53,10 +53,10 @@ h1 { font-size: clamp(24px, 4vw, 36px); line-height: 1.15; letter-spacing: -.02e
 <header class="topo">
   <a class="voltar" href="../#casos">&larr; VOLTAR AO PORTFÓLIO</a>
   <h1>Painel Aurora Alimentos</h1>
-  <p class="nota">As telas do painel, renderizadas a partir do PostgreSQL com o mesmo arquivo
-  de estilo que gera as medidas DAX do Power BI. Os números são da base sintética do projeto:
-  250 lojas, 19 meses de pedidos. A versão estática mostra o resultado de cada tela sem os
-  filtros do relatório.</p>
+  <p class="nota">As telas do relatório no Power BI. Cada uma é uma medida DAX que devolve HTML;
+  aqui está o HTML que cada medida devolve. Os números são da base sintética do projeto:
+  250 lojas e 48 produtos. As telas de ruptura mostram a leitura de 01/08/2026, sem filtro,
+  como abrem no relatório.</p>
 </header>
 
 <div class="abas" role="tablist" aria-label="Telas do painel"></div>
@@ -66,24 +66,35 @@ h1 { font-size: clamp(24px, 4vw, 36px); line-height: 1.15; letter-spacing: -.02e
     <iframe id="tela" title="Tela do painel" loading="eager"></iframe>
   </div>
   <p class="legenda"><span id="legenda" aria-live="polite"></span>
-  <a id="real" href="telas/1-executiva.html" target="_blank" rel="noopener">Abrir em tamanho real</a></p>
+  <a id="real" href="telas/01-inicio.html" target="_blank" rel="noopener">Abrir em tamanho real</a></p>
 </main>
 
-<p class="rodape">Telas geradas por <code>preview_telas.py</code> e
-<code>montar_tela_variacao.py</code> do repositório da Aurora. No Power BI, cada tela é uma
-medida DAX que devolve HTML.</p>
+<p class="rodape">As nove telas de ruptura e pedido são o resultado das medidas
+<code>Tela 1</code> a <code>Tela 9</code> do relatório, avaliadas no modelo. A tela de variação
+vem do <code>montar_tela_variacao.py</code>. No relatório, filtros de bandeira, equipe e produto
+ficam numa barra acima da tela.</p>
 
 <script>
 const TELAS = [
-  { id: "executiva", nome: "Visão Executiva", arq: "telas/1-executiva.html", w: 1280, h: 720,
-    legenda: "Resumo da rede: valor em risco por ruptura, cobertura e evolução." },
-  { id: "ruptura", nome: "Ruptura em Valor", arq: "telas/2-ruptura.html", w: 1280, h: 720,
-    legenda: "Onde a ruptura custa mais, em reais, por loja e produto." },
-  { id: "gestor", nome: "Gestão da Equipe", arq: "telas/3-gestor.html", w: 1280, h: 720,
-    legenda: "Visão do coordenador: carteira de cada vendedor e o que está em risco." },
-  { id: "vendedor", nome: "Próximo Pedido", arq: "telas/4-vendedor.html", w: 1280, h: 720,
-    legenda: "Visão do vendedor: lojas a visitar e pedido sugerido." },
-  { id: "variacao", nome: "Variação de Receita", arq: "telas/5-variacao.html", w: 1240, h: 640,
+  { id: "inicio", nome: "Início", arq: "telas/01-inicio.html", w: 1280, h: 720,
+    legenda: "Abertura: o valor em risco hoje e o que o painel calcula." },
+  { id: "executiva", nome: "Visão Executiva", arq: "telas/02-executiva.html", w: 1280, h: 720,
+    legenda: "Vendas, compras e abastecimento da rede nos últimos 12 meses fechados." },
+  { id: "mapa", nome: "Mapa e Regiões", arq: "telas/03-mapa.html", w: 1280, h: 720,
+    legenda: "Valor em risco por estado e por regional. No relatório, o quadro da esquerda é o mapa do Power BI." },
+  { id: "ruptura", nome: "Ruptura em Valor", arq: "telas/04-ruptura.html", w: 1280, h: 720,
+    legenda: "Quanto deixa de ser vendido até a próxima entrega chegar, por loja e produto." },
+  { id: "gestor", nome: "Gestão da Equipe", arq: "telas/05-gestor.html", w: 1280, h: 720,
+    legenda: "Valor em risco por carteira e há quanto tempo cada alerta está aberto." },
+  { id: "vendedor", nome: "Próximo Pedido", arq: "telas/06-vendedor.html", w: 1280, h: 720,
+    legenda: "Itens sugeridos para cada loja na próxima visita, em caixa fechada e por urgência." },
+  { id: "matriz", nome: "Matriz Detalhada", arq: "telas/07-matriz.html", w: 1280, h: 720,
+    legenda: "Os 5 maiores produtos de cada categoria: sell-out, sell-in, saldo e status por ruptura." },
+  { id: "feito", nome: "Como Foi Feito", arq: "telas/08-feito.html", w: 1280, h: 720,
+    legenda: "As camadas do projeto, da geração dos dados ao envio automático do e-mail." },
+  { id: "guia", nome: "Como Funciona", arq: "telas/09-guia.html", w: 1280, h: 720,
+    legenda: "Como o cálculo é feito, o glossário e a comparação do modelo com a perda verdadeira." },
+  { id: "variacao", nome: "Variação de Receita", arq: "telas/10-variacao.html", w: 1240, h: 640,
     legenda: "Agosto de 2026 contra agosto de 2025: a variação quebrada em pilares que fecham no centavo." },
 ];
 
