@@ -840,6 +840,26 @@
     margin-top: var(--e6);
   }
 
+  /* --- rótulo de caso, acima do h2 --- */
+  .caso-rotulo {
+    margin-bottom: var(--e3);
+    color: var(--tinta-suave);
+  }
+
+  /* --- bloco de código do Radar --- */
+  .rad-codigo {
+    max-width: 70ch;
+    margin-top: var(--e4);
+    overflow-x: auto;
+    background: var(--verde);
+    color: var(--creme);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    line-height: var(--l-corpo);
+    padding: var(--e3) var(--e4);
+    box-shadow: var(--sombra-1) var(--sombra-1) 0 var(--ambar);
+  }
+
   /* --- projeto interno --- */
   .int-grade {
     display: grid;
@@ -907,6 +927,7 @@
   .fig-08 { aspect-ratio: 1607 / 847; }
   .fig-09 { aspect-ratio: 1606 / 101; }
   .fig-10 { aspect-ratio: 1438 / 460; }
+  .fig-11 { aspect-ratio: 1240 / 640; }
 }
 
 /* ==========================================================================
@@ -1142,7 +1163,7 @@
 
     /* --- 1. âncora suave -------------------------------------------------
        Justificativa: transição de estado. O índice do Aurora e o menu do
-       topo saltam oito etapas, e o salto instantâneo perde o leitor. */
+       topo saltam seis etapas, e o salto instantâneo perde o leitor. */
     html {
       scroll-behavior: smooth;
     }
@@ -1251,6 +1272,8 @@
       .rad-topo,
       .rad-placa > p,
       .rad-placa figure,
+      .rad-codigo,
+      .caso-rotulo,
       .int-grade > *,
       .fer-lista li {
         animation-name: surgir;
@@ -1275,7 +1298,7 @@
       }
 
       /* Escalonamento dentro de grupo. Justificativa: hierarquia. Quatro
-         números ou sete ferramentas que abrem juntos viram um bloco só;
+         números ou nove ferramentas que abrem juntos viram um bloco só;
          abertos em ordem, cada item volta a ser lido como item. */
       :is(.num-grade > div, .exp-kpi, .fer-lista li):nth-child(2) {
         --atraso: var(--e3);
@@ -1300,10 +1323,18 @@
       .fer-lista li:nth-child(7) {
         --atraso: calc(var(--e3) * 6);
       }
+
+      .fer-lista li:nth-child(8) {
+        --atraso: calc(var(--e3) * 7);
+      }
+
+      .fer-lista li:nth-child(9) {
+        --atraso: calc(var(--e3) * 8);
+      }
     }
 
     /* --- 6. etapa corrente no índice do Aurora ---------------------------
-       Justificativa: navegação. O índice fica fixo por oito etapas, e sem
+       Justificativa: navegação. O índice fica fixo por seis etapas, e sem
        marcador o leitor não sabe em qual delas está. Cada item do índice e
        movido pela linha do tempo da própria etapa, exportada por
        timeline-scope, e volta ao lugar quando a etapa sai da tela.
@@ -1317,7 +1348,7 @@
       (animation-range: exit-crossing 0% exit-crossing 100%) {
       .aur-grade {
         timeline-scope: --etapa-01, --etapa-02, --etapa-03, --etapa-04,
-          --etapa-05, --etapa-06, --etapa-07, --etapa-08;
+          --etapa-05, --etapa-06;
       }
 
       #aurora-01 { view-timeline-name: --etapa-01; }
@@ -1326,8 +1357,6 @@
       #aurora-04 { view-timeline-name: --etapa-04; }
       #aurora-05 { view-timeline-name: --etapa-05; }
       #aurora-06 { view-timeline-name: --etapa-06; }
-      #aurora-07 { view-timeline-name: --etapa-07; }
-      #aurora-08 { view-timeline-name: --etapa-08; }
 
       .aur-indice a {
         animation-name: etapa-ativa;
@@ -1342,8 +1371,6 @@
       .aur-indice li:nth-child(4) a { animation-timeline: --etapa-04; }
       .aur-indice li:nth-child(5) a { animation-timeline: --etapa-05; }
       .aur-indice li:nth-child(6) a { animation-timeline: --etapa-06; }
-      .aur-indice li:nth-child(7) a { animation-timeline: --etapa-07; }
-      .aur-indice li:nth-child(8) a { animation-timeline: --etapa-08; }
     }
   }
 }

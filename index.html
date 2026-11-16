@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vitor Oliveira | Analista de Dados e BI</title>
-<meta name="description" content="Portfólio de Vitor Oliveira: BI ponta a ponta com PostgreSQL, Python e Power BI, plataforma de dados com dbt, Dagster e CI, e painel de ruptura em uso.">
+<title>Vitor Oliveira | Analytics engineering e BI</title>
+<meta name="description" content="Portfólio de Vitor Oliveira: ruptura em reais, variação de receita explicada no centavo, BI para 400 usuários no Fabric e plataforma de dados com dbt, contratos e camada semântica.">
 <link rel="preload" href="fontes/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="estilo.css">
 </head>
@@ -17,7 +17,7 @@
     <span class="nav-marca">Vitor Oliveira</span>
     <ul class="nav-lista">
       <li><a href="#experiencia">Experiência</a></li>
-      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#casos">Casos</a></li>
       <li><a href="#ferramentas">Ferramentas</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -30,10 +30,11 @@
   <span class="capa-quadrado capa-q3"></span>
   <div class="largura capa-grade">
     <div>
-      <p class="capa-rotulo">Analista de dados e BI</p>
+      <p class="capa-rotulo">Analytics engineering e BI</p>
       <h1>Vitor Oliveira<span>.</span></h1>
-      <p class="capa-resumo">5 anos em dados, 4 em indústria de alimentos.
-      Do hub de dados ao alerta de ruptura em quem decide.</p>
+      <p class="capa-resumo">5 anos em dados, 4 na indústria de alimentos.
+      Ruptura em reais, variação de receita explicada no centavo e BI para
+      400 usuários.</p>
       <div class="acoes">
         <a class="botao" href="https://linkedin.com/in/vitor-oliveira-722549165" rel="noopener">LinkedIn</a>
         <a class="botao contorno" href="https://github.com/vitordjk" rel="noopener">GitHub</a>
@@ -45,28 +46,23 @@
 
 <main id="conteudo" tabindex="-1">
 
-  <section class="num" id="numeros" aria-label="Números dos projetos">
+  <section class="num" id="numeros" aria-label="Números dos casos">
     <div class="largura num-grade">
-      <!-- AJUSTE: a versão anterior desta faixa publicava "40 medidas DAX",
-           "873 mil coletas de 9.307 postos" e "29 testes de qualidade".
-           Nenhum dos três foi localizado em arquivo deste repositório, então
-           saíram da faixa. Repor assim que a origem for confirmada, uma
-           métrica por coluna, mantendo o total de quatro colunas. -->
       <div>
-        <p class="num-valor dado">3,4 mi</p>
-        <p class="num-rotulo">de linhas de fato carregadas no PostgreSQL (Aurora)</p>
+        <p class="num-valor dado">400</p>
+        <p class="num-rotulo">usuários simultâneos no hub comercial que mantenho em produção (caso 03)</p>
       </div>
       <div>
-        <p class="num-valor dado">11,2%</p>
-        <p class="num-rotulo">dos pares de loja e produto por dia em ruptura na base gerada (Aurora)</p>
+        <p class="num-valor dado">97%</p>
+        <p class="num-rotulo">menos consultas por dia ao modelo, sem trocar de capacidade (caso 03)</p>
       </div>
       <div>
-        <p class="num-valor dado">27</p>
-        <p class="num-rotulo">unidades federativas na série de preços da ANP (Radar)</p>
+        <p class="num-valor dado">R$ 0,00</p>
+        <p class="num-rotulo">entre a soma dos pilares e a variação da receita, em qualquer filtro (caso 02)</p>
       </div>
       <div>
-        <p class="num-valor dado">50 s</p>
-        <p class="num-rotulo">para o CI rodar o pipeline inteiro a cada push (Radar)</p>
+        <p class="num-valor dado">873 mil</p>
+        <p class="num-rotulo">coletas reais da ANP, de 9.307 postos, com contrato e testes (caso 04)</p>
       </div>
     </div>
   </section>
@@ -82,7 +78,7 @@
         </span>
         <span>
           assistente e estagiário de BI desde mai/2021<br>
-          atualizado ago/2026
+          atualizado nov/2026
         </span>
       </div>
       <div class="exp-kpis">
@@ -124,6 +120,11 @@
               <td role="cell" data-rotulo="resultado" class="exp-resultado">R$ 10 mi em risco</td>
             </tr>
             <tr role="row">
+              <td role="cell" data-rotulo="frente" class="exp-frente">Variação</td>
+              <td role="cell" data-rotulo="o que fiz">Motor em SQL que quebra a variação da receita líquida em carteira, sortimento, volume, mix, preço e cada linha da DRE, fechando no centavo em qualquer filtro</td>
+              <td role="cell" data-rotulo="resultado" class="exp-resultado">em uso no hub</td>
+            </tr>
+            <tr role="row">
               <td role="cell" data-rotulo="frente" class="exp-frente">Distribuição</td>
               <td role="cell" data-rotulo="o que fiz">Power Automate consulta o hub, monta relatório em HTML por cargo e envia por e-mail e Teams, com alertas de inconsistência para o BI</td>
               <td role="cell" data-rotulo="resultado" class="exp-resultado">sem depender de abrir painel</td>
@@ -132,11 +133,6 @@
               <td role="cell" data-rotulo="frente" class="exp-frente">Governança</td>
               <td role="cell" data-rotulo="o que fiz">Ferramenta em Python que pontua modelos de Power BI antes da publicação, com hierarquia comercial sem duplicidade e histórico mensal em SQL</td>
               <td role="cell" data-rotulo="resultado" class="exp-resultado">relatório ruim não sobe</td>
-            </tr>
-            <tr role="row">
-              <td role="cell" data-rotulo="frente" class="exp-frente">Preço</td>
-              <td role="cell" data-rotulo="o que fiz">Price index, ponte PVM e elasticidade com trade e vendas</td>
-              <td role="cell" data-rotulo="resultado" class="exp-resultado">base do módulo RGM</td>
             </tr>
           </tbody>
         </table>
@@ -147,32 +143,32 @@
         <li>Power BI e DAX</li>
         <li>SQL</li>
         <li>Python</li>
+        <li>R</li>
         <li>Power Automate</li>
         <li>SAP HANA</li>
       </ul>
     </div>
   </section>
 
-  <div id="projetos">
+  <div id="casos">
 
     <section class="secao" id="aurora" aria-labelledby="t-aurora">
       <div class="largura">
-        <h2 id="t-aurora">Aurora Alimentos</h2>
-        <p class="olho">Distribuidora fictícia de laticínios e alimentos, construída de
-        ponta a ponta. A mesma base sustenta três camadas: descrever o que aconteceu,
-        prever o que vem e prescrever o que fazer.</p>
+        <p class="rotulo caso-rotulo">Caso 01 · Aurora Alimentos</p>
+        <h2 id="t-aurora">Quanto a ruptura custa</h2>
+        <p class="olho">Distribuidora fictícia de laticínios, construída de ponta a
+        ponta para responder uma pergunta: quanto a ruptura custa em reais, onde,
+        e quem precisa agir. Do gerador de dados ao alerta no e-mail de cada cargo.</p>
 
         <div class="aur-grade">
-          <nav class="aur-indice" aria-label="Etapas do projeto Aurora">
+          <nav class="aur-indice" aria-label="Etapas do caso Aurora">
             <ul>
               <li><a href="#aurora-01">01 Geração da base</a></li>
               <li><a href="#aurora-02">02 Banco e contrato</a></li>
               <li><a href="#aurora-03">03 Modelo semântico</a></li>
               <li><a href="#aurora-04">04 Telas do painel</a></li>
-              <li><a href="#aurora-05">05 Previsão de demanda</a></li>
-              <li><a href="#aurora-06">06 Sugestão de pedido</a></li>
-              <li><a href="#aurora-07">07 Receita e preço</a></li>
-              <li><a href="#aurora-08">08 Alertas por e-mail</a></li>
+              <li><a href="#aurora-05">05 Previsão e pedido</a></li>
+              <li><a href="#aurora-06">06 Alertas por e-mail</a></li>
             </ul>
           </nav>
 
@@ -225,8 +221,7 @@
               <!-- AJUSTE: total de medidas do modelo semântico. Fonte: o arquivo
                    .pbix do Aurora. Como obter: abrir a Exibição de Modelo e contar
                    as medidas da tabela @Medidas, ou listar por DAX com
-                   EVALUATE INFO.MEASURES(). A versão anterior do site publicava 40,
-                   número que não foi localizado em arquivo deste repositório. -->
+                   EVALUATE INFO.MEASURES(). -->
               <p>Medidas de venda, estoque, cobertura e risco sobre as visões do banco:
               cobertura em dias, giro diário, dias até a entrega e estoque em unidades.
               A cobertura é sempre ponderada pela demanda, nunca média simples:
@@ -244,50 +239,35 @@
                 <h3>Telas do painel</h3>
               </div>
               <p class="aur-ferramentas"><span>HTML</span><span>CSS</span></p>
-              <p>9 telas geradas a partir de um só arquivo de estilo, do resumo
-              executivo ao próximo pedido. O visual do Power BI renderiza resultado
-              já calculado. Rodar Python ou R dentro do relatório foi descartado por
-              limite de amostragem, dependência de gateway e saída estática.</p>
+              <p>9 telas de ruptura e pedido geradas a partir de um só arquivo de
+              estilo, do resumo executivo ao próximo pedido. O visual do Power BI
+              renderiza resultado já calculado. Rodar Python ou R dentro do relatório
+              foi descartado por limite de amostragem, dependência de gateway e saída
+              estática.</p>
               <figure>
-                <img class="fig-04" src="04-telas.png" alt="Tela Ruptura em Valor do painel Aurora, com o menu das nove telas à esquerda e os cartões de valor em risco, cobertura média e pares em ruptura" width="1267" height="697" loading="lazy">
-                <figcaption>A tela de ruptura em valor, e à esquerda o menu com as nove telas.</figcaption>
+                <img class="fig-04" src="04-telas.png" alt="Tela Ruptura em Valor do painel Aurora, com o menu das telas à esquerda e os cartões de valor em risco, cobertura média e pares em ruptura" width="1267" height="697" loading="lazy">
+                <figcaption>A tela de ruptura em valor, e à esquerda o menu com as telas.</figcaption>
               </figure>
             </article>
 
             <article class="aur-etapa" id="aurora-05">
               <div class="aur-topo">
                 <span class="aur-num">05</span>
-                <h3>Previsão de demanda</h3>
+                <h3>Previsão e sugestão de pedido</h3>
               </div>
-              <p class="aur-ferramentas"><span>Python</span><span>statsforecast</span></p>
-              <!-- AJUSTE: distribuição das séries pelas quatro classes de
-                   Syntetos e Boylan (suave, errática, intermitente, irregular).
-                   Fonte: script de classificação por ADI e CV². Como obter:
-                   contar as séries de cada classe e dividir pelo total de séries. -->
-              <!-- AJUSTE: erro do modelo campeão no backtest. Fonte: saída do
-                   backtest de origem móvel do statsforecast. Como obter: MAE ou
-                   MAPE médio nas janelas de validação, e o número de janelas. -->
+              <p class="aur-ferramentas"><span>Python</span><span>statsforecast</span><span>DAX</span></p>
+              <!-- AJUSTE: erro do modelo no backtest. Valores registrados durante o
+                   desenvolvimento: WMAPE diário de 0,688, que cai para 0,218 no
+                   horizonte de 7 dias, o grão em que o pedido é decidido. Confirmar
+                   na saída do backtest antes de publicar e, se confirmados, trocar
+                   a segunda frase do parágrafo abaixo por:
+                   "O erro diário (WMAPE 0,688) cai para 0,218 no ciclo de 7 dias,
+                   que é o grão em que o pedido é decidido." -->
               <p>Cada série de loja e produto é classificada por ADI e CV², segundo
               Syntetos e Boylan, e roteada para AutoETS, CrostonOptimized ou
-              SeasonalNaive. O modelo campeão sai de backtest de origem móvel, não
-              de ajuste sobre a amostra inteira.</p>
-            </article>
-
-            <article class="aur-etapa" id="aurora-06">
-              <div class="aur-topo">
-                <span class="aur-num">06</span>
-                <h3>Sugestão de pedido</h3>
-              </div>
-              <p class="aur-ferramentas"><span>Python</span><span>DAX</span></p>
-              <!-- AJUSTE: nível de serviço alvo do estoque de segurança.
-                   Fonte: parâmetro da política order-up-to no script de sugestão
-                   de pedido. Como obter: ler o nível de serviço configurado e o z
-                   correspondente. -->
-              <!-- AJUSTE: desvio do estimador contra a simulação. A versão anterior
-                   do site publicava "erro de 5,4% para menos", número que não foi
-                   localizado em arquivo deste repositório. Fonte: script que compara
-                   a sugestão com a ruptura simulada. Como obter:
-                   (sugerido menos necessário) dividido por necessário. -->
+              SeasonalNaive, com o modelo campeão escolhido em backtest de origem
+              móvel. O alvo do treino é a venda mais a demanda não atendida: treinar
+              na venda observada ensinaria o modelo a prever a própria ruptura.</p>
               <p>A previsão entra na decisão de estoque em vez de ficar em relatório
               separado. A política é order-up-to, com estoque de segurança derivado
               do erro do próprio backtest. A tela fecha a carteira inteira: lojas com
@@ -299,33 +279,9 @@
               </figure>
             </article>
 
-            <article class="aur-etapa" id="aurora-07">
+            <article class="aur-etapa" id="aurora-06">
               <div class="aur-topo">
-                <span class="aur-num">07</span>
-                <h3>Ponte de receita e preço</h3>
-              </div>
-              <p class="aur-ferramentas"><span>Python</span><span>scipy</span><span>SQL</span></p>
-              <!-- AJUSTE: resíduo de fechamento da ponte PVM. Fonte: script da
-                   ponte de receita. Como obter: variação de receita observada menos
-                   a soma dos nove efeitos, em reais e em percentual da variação. -->
-              <!-- AJUSTE: elasticidade estimada e qualidade do ajuste. Fonte:
-                   regressão OLS log-log com preço cruzado. Como obter: coeficiente
-                   de preço próprio médio e R² do modelo. -->
-              <!-- AJUSTE: resultado do otimizador. Fonte: rotina SLSQP do scipy.
-                   Como obter: ganho de margem da solução ótima contra o cenário
-                   base, e o teto de perda de share usado como restrição. -->
-              <p>Ponte PVM com nove efeitos: preço, volume, mix, lojas novas, lojas
-              perdidas, SKUs novos, SKUs descontinuados, positivação e despositivação.
-              O fechamento é verificado, a soma dos efeitos reconstrói a variação de
-              receita. A elasticidade sai de OLS log-log com controle de preço cruzado
-              e alimenta duas peças: um simulador de preços em grade pré-calculada e
-              um otimizador SLSQP com restrição de perda de share.</p>
-              <p class="aur-nota">Telas 10 e 11 do Power BI em construção</p>
-            </article>
-
-            <article class="aur-etapa" id="aurora-08">
-              <div class="aur-topo">
-                <span class="aur-num">08</span>
+                <span class="aur-num">06</span>
                 <h3>Alertas por e-mail</h3>
               </div>
               <p class="aur-ferramentas"><span>Python</span><span>SMTP</span></p>
@@ -343,17 +299,139 @@
       </div>
     </section>
 
+    <section class="secao" id="variacao" aria-labelledby="t-variacao">
+      <div class="largura">
+        <p class="rotulo caso-rotulo">Caso 02 · Aurora Alimentos</p>
+        <h2 id="t-variacao">Por que a receita mudou</h2>
+        <p class="olho">A receita mudou contra o ano anterior. Quanto disso é loja
+        nova, quanto é preço e quanto é a loja trocando um item barato por um caro?
+        Um motor em SQL quebra a variação em pilares que somam exatamente a variação,
+        no centavo, em qualquer filtro de loja, vendedor ou produto. A versão
+        original roda em produção numa indústria de alimentos; esta é a reconstrução
+        aberta, sobre a base da Aurora.</p>
+
+        <article class="rad-placa">
+          <div class="rad-topo">
+            <span class="rad-num dado">01</span>
+            <h3>A soma fecha por construção</h3>
+          </div>
+          <p class="rad-ferramentas"><span>PostgreSQL</span><span>PL/pgSQL</span></p>
+          <p>Cada pilar é calculado e gravado no grão de loja e produto, em centavos.
+          A sobra do arredondamento fica no próprio par, não numa linha global sem
+          loja que sumiria no primeiro filtro de vendedor. A carga é abortada sem
+          gravar nada se a soma dos pilares não bater com as pontas.</p>
+          <!-- AJUSTE: trocar pela captura da tela no Power BI depois de rodar o
+               módulo na base da Aurora. A imagem atual é a prévia gerada pelo
+               montar_tela_variacao.py sobre a base de teste do módulo. -->
+          <figure>
+            <img class="fig-11" src="11-variacao.png" alt="Tela de variação de receita em cascata: receita base, pilares de carteira, sortimento, comercial e dedutor, e receita atual, com o valor e o percentual sobre a base em cada barra" width="1240" height="640" loading="lazy">
+            <figcaption>A cascata da competência: cada barra é um pilar, e a soma delas é a distância entre as pontas.</figcaption>
+          </figure>
+        </article>
+
+        <article class="rad-placa">
+          <div class="rad-topo">
+            <span class="rad-num dado">02</span>
+            <h3>Ritmo de compra não é perda</h3>
+          </div>
+          <p class="rad-ferramentas"><span>SQL</span></p>
+          <p>Loja que não comprou este mês não é loja perdida. Uma janela de atividade
+          de três meses separa perda de ritmo de compra, para a loja e para o item
+          dentro dela. Sem a janela, toda loja com pedido quinzenal alternaria entre
+          perdida e nova, inflando dois pilares com valores que se anulam.</p>
+        </article>
+
+        <article class="rad-placa">
+          <div class="rad-topo">
+            <span class="rad-num dado">03</span>
+            <h3>Mix separado do volume</h3>
+          </div>
+          <p class="rad-ferramentas"><span>SQL</span><span>pytest</span></p>
+          <p>O volume é valorizado ao preço médio da própria loja, e a diferença para o
+          preço do item vira mix. Dois testes provam a fórmula. Na troca de 50 caixas
+          de um item de R$ 10 por 50 de um item de R$ 30, o mix é +R$ 1.000 e volume
+          e preço ficam em zero. No crescimento igual de todos os itens, o mix é zero.
+          São 13 casos com resposta conhecida, rodando em banco descartável.</p>
+        </article>
+
+        <article class="rad-placa">
+          <div class="rad-topo">
+            <span class="rad-num dado">04</span>
+            <h3>Dias úteis: premissa medida</h3>
+          </div>
+          <p class="rad-ferramentas"><span>Python</span><span>numpy</span></p>
+          <!-- AJUSTE: resultado da medição na base da Aurora (estimativa,
+               intervalo de 90% e valor usado), saída do
+               medir_elasticidade_dias_uteis.py. Acrescentar como última frase. -->
+          <p>Atribuir variação a dias úteis supõe que receita é proporcional a eles.
+          Quem compra por agenda não se comporta assim. A elasticidade é medida por
+          regressão log-log com tendência e intervalo por bootstrap, e o motor só usa
+          o valor se o intervalo não contém zero. Na versão em produção a medição deu
+          0,11: assumir proporcionalidade inflava o pilar de calendário em nove vezes,
+          com valor tirado dos pilares comerciais.</p>
+        </article>
+
+        <article class="rad-placa">
+          <div class="rad-topo">
+            <span class="rad-num dado">05</span>
+            <h3>Tela e conferência</h3>
+          </div>
+          <p class="rad-ferramentas"><span>Power BI</span><span>DAX</span><span>HTML</span></p>
+          <p>A tela é uma medida DAX que devolve HTML, gerada a partir de um arquivo
+          de estilo, como as telas de ruptura. Cada barra mostra o valor na base e
+          hoje, o peso na variação e as lojas que mais pesam. Uma medida de
+          conferência tem que dar zero em qualquer filtro, e nove testes de sanidade
+          rodam depois de cada carga. Elasticidade de preço, simulador e otimizador
+          ficaram no repositório como apêndice.</p>
+        </article>
+
+        <!-- AJUSTE: endereços do repositório da Aurora e da documentação do
+             módulo (docs/VARIACAO.md), quando o repositório estiver público. -->
+        <div class="rad-links">
+          <a class="botao escuro" href="https://github.com/vitordjk" rel="noopener">Código no GitHub</a>
+          <a class="botao" href="https://github.com/vitordjk" rel="noopener">Documentação do módulo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="escala" aria-labelledby="t-escala">
+      <div class="largura">
+        <p class="rotulo caso-rotulo">Caso 03 · Vigor Alimentos</p>
+        <h2 id="t-escala">BI para 400 usuários sem trocar de capacidade</h2>
+        <div class="int-grade">
+          <div>
+            <p>O hub comercial atende até 400 usuários simultâneos numa capacidade P1
+            do Microsoft Fabric. A capacidade chegou a 146% de uso e passou a recusar
+            atualizações. A saída óbvia era subir para P2.</p>
+            <p>Antes de comprar, medi. A primeira hipótese, a atualização automática
+            de página, foi descartada pelo dado: o consumo em segundo plano vinha de
+            consultas ao modelo, e a origem eram os fluxos do Power Automate que montam
+            os relatórios por e-mail. Reescritos, passaram de cerca de 78 mil para 2 mil
+            consultas por dia. A segunda causa estava no histórico de atualização: a
+            fase de cache de consulta levava 17 minutos contra 8 da carga de dados, e o
+            cache foi desligado.</p>
+            <p>Para o problema não voltar no próximo relatório publicado, construí uma
+            ferramenta desktop em Python que lê o modelo antes da publicação e dá nota
+            de A+ a F, com simulação do ganho de cada remoção antes de alterar o
+            arquivo. A capacidade continuou na P1: US$ 60 mil por ano a menos na conta.</p>
+          </div>
+          <div class="int-nota">
+            <span class="rotulo">Sem captura</span>
+            <p>Dado e arquivos são internos, então não há tela nem repositório público.
+            O caso está aqui pelo método: medir o consumo antes de comprar capacidade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="secao" id="radar" aria-labelledby="t-radar">
       <div class="largura">
+        <p class="rotulo caso-rotulo">Caso 04 · Dados públicos da ANP</p>
         <h2 id="t-radar">Radar de Preços de Combustíveis</h2>
-        <!-- AJUSTE: volume da série da ANP. A versão anterior do site publicava
-             "873 mil coletas de 9.307 postos", números que não foram localizados
-             em arquivo deste repositório. Fonte: mart de coletas no DuckDB.
-             Como obter: SELECT COUNT(*) e COUNT(DISTINCT revenda) em
-             fct_coletas_precos. A frase abaixo está correta sem esses números. -->
         <p class="olho">Plataforma de dados sobre a série histórica de preços da ANP,
-        do download semanal ao mart pronto para análise. Dados públicos reais, dos
-        27 estados, com os arquivos oficiais.</p>
+        do download semanal ao mart pronto para análise: 873 mil coletas reais de
+        9.307 postos, nos 27 estados, com contrato nas tabelas finais e uma camada
+        semântica que define cada métrica uma vez.</p>
 
         <article class="rad-placa">
           <div class="rad-topo">
@@ -372,47 +450,67 @@
         <article class="rad-placa">
           <div class="rad-topo">
             <span class="rad-num dado">02</span>
-            <h3>Transformação em camadas e testes</h3>
+            <h3>Camadas, testes e contrato</h3>
           </div>
           <p class="rad-ferramentas"><span>dbt</span><span>SQL</span></p>
-          <!-- AJUSTE: número de testes de qualidade por execução. A versão anterior
-               do site publicava 29, e as capturas 08 e 09 deste repositório mostram
-               28 checks na execução. Os dois números não batem, e a correção é do
-               dono do projeto. Fonte: dbt build ou o resumo da execução no Dagster.
-               Como obter: contar os testes declarados nos arquivos .yml do dbt. -->
           <p>Três camadas com uma responsabilidade cada: tipar, deduplicar, modelar.
-          Os testes rodam em todo build, erro bloqueia e aviso pede investigação.
-          Na primeira execução real, um teste barrou um produto com a unidade grafada
-          de dois jeitos.</p>
+          30 testes rodam em todo build, erro bloqueia e aviso pede investigação.
+          As seis tabelas finais têm contrato: nome e tipo de cada coluna declarados,
+          e o build recusa o que não bater, antes de a tabela ser substituída. Na
+          primeira execução real, um teste barrou um produto com a unidade grafada de
+          dois jeitos.</p>
           <figure>
             <img class="fig-09" src="09-radar-execucoes.png" alt="Linha de execução do Dagster com 10 assets, 28 verificações e status de sucesso" width="1606" height="101" loading="lazy">
-            <figcaption>A execução verde depois da correção, com os 10 assets materializados.</figcaption>
+            <figcaption>A execução verde depois da correção do produto, antes da camada semântica.</figcaption>
           </figure>
         </article>
 
         <article class="rad-placa">
           <div class="rad-topo">
             <span class="rad-num dado">03</span>
-            <h3>Orquestração e linhagem</h3>
+            <h3>Camada semântica</h3>
           </div>
-          <p class="rad-ferramentas"><span>Dagster</span></p>
-          <p>Ingestão em Python e modelos do dbt como um grafo só: 10 assets, do
-          arquivo bruto da ANP ao resumo semanal. Agendamento semanal.</p>
-          <figure>
-            <img class="fig-07" src="07-radar-linhagem.png" alt="Grafo de linhagem no Dagster, da ingestão dos arquivos da ANP até o mart de resumo semanal" width="1186" height="477" loading="lazy">
-            <figcaption>Linhagem completa: ingestão, staging, intermediária, dimensões, fato e resumo semanal.</figcaption>
-          </figure>
+          <p class="rad-ferramentas"><span>dbt</span><span>MetricFlow</span></p>
+          <p>Preço mediano, margem média e taxa de margem negativa têm uma definição
+          só, versionada com os modelos, com agregação, grão e dimensões declarados.
+          É a mesma definição para o relatório, para a consulta avulsa e para um
+          agente de IA, que precisa desse contexto para não inventar a métrica. A
+          margem só é calculada sobre coletas com valor de compra: margem ausente
+          não vira zero.</p>
+          <pre class="rad-codigo"><code>- name: taxa_margem_negativa
+  type: ratio
+  type_params:
+    numerator: qtd_margem_negativa
+    denominator: qtd_coletas_com_margem
+
+$ mf query --metrics preco_mediano,taxa_margem_negativa \
+           --group-by metric_time__month,localidade__regiao</code></pre>
         </article>
 
         <article class="rad-placa">
           <div class="rad-topo">
             <span class="rad-num dado">04</span>
+            <h3>Orquestração e linhagem</h3>
+          </div>
+          <p class="rad-ferramentas"><span>Dagster</span></p>
+          <p>Ingestão em Python e modelos do dbt como um grafo só, do arquivo bruto da
+          ANP ao resumo semanal. Agendamento semanal.</p>
+          <figure>
+            <img class="fig-07" src="07-radar-linhagem.png" alt="Grafo de linhagem no Dagster, da ingestão dos arquivos da ANP até o mart de resumo semanal" width="1186" height="477" loading="lazy">
+            <figcaption>Linhagem: ingestão, staging, intermediária, dimensões, fato e resumo semanal.</figcaption>
+          </figure>
+        </article>
+
+        <article class="rad-placa">
+          <div class="rad-topo">
+            <span class="rad-num dado">05</span>
             <h3>Integração contínua e documentação</h3>
           </div>
           <p class="rad-ferramentas"><span>GitHub Actions</span><span>GitHub Pages</span></p>
           <p>A cada alteração, o GitHub roda o pipeline inteiro contra dados de exemplo
-          versionados, em 50 segundos numa máquina limpa. Sem testes verdes, sem merge.
-          A documentação do dbt é publicada automaticamente.</p>
+          versionados e valida a camada semântica contra o warehouse recém construído.
+          Sem testes verdes, sem merge. A documentação do dbt é publicada
+          automaticamente.</p>
           <figure>
             <img class="fig-10" src="10-radar-ci.png" alt="Execução do workflow ci.yml no GitHub Actions concluída com sucesso em 50 segundos" width="1438" height="460" loading="lazy">
             <figcaption>O pipeline completo rodando a cada push, numa máquina limpa do GitHub.</figcaption>
@@ -426,26 +524,6 @@
       </div>
     </section>
 
-    <section class="secao" id="interno" aria-labelledby="t-interno">
-      <div class="largura">
-        <h2 id="t-interno">Painel interno de ruptura</h2>
-        <div class="int-grade">
-          <div>
-            <p>Produto de trabalho real, em uso. Painel de risco de ruptura em rede de
-            varejo indireto: nove telas em HTML e CSS renderizadas por medidas DAX no
-            visual HTML Content, com alerta automático por e-mail e Teams.</p>
-            <p>A leitura é a mesma do Aurora, só que em ambiente de produção. O risco
-            chega a quem decide sem depender de alguém abrir relatório.</p>
-          </div>
-          <div class="int-nota">
-            <span class="rotulo">Sem captura</span>
-            <p>O dado e o arquivo são internos. Não há captura de tela nem repositório
-            público para este projeto.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </div>
 
   <section class="secao" id="ferramentas" aria-labelledby="t-ferramentas">
@@ -455,9 +533,11 @@
         <li>SQL e PostgreSQL</li>
         <li>Python</li>
         <li>Power BI e DAX</li>
-        <li>dbt</li>
+        <li>Microsoft Fabric</li>
+        <li>dbt e MetricFlow</li>
         <li>Dagster</li>
         <li>DuckDB</li>
+        <li>Power Automate</li>
         <li>Git e CI/CD</li>
       </ul>
     </div>
