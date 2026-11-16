@@ -7,6 +7,10 @@
 <meta name="description" content="Portfólio de Vitor Oliveira: ruptura em reais, variação de receita explicada no centavo, BI para 400 usuários no Fabric e plataforma de dados com dbt, contratos e camada semântica.">
 <link rel="preload" href="fontes/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="estilo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap">
+<link rel="stylesheet" href="painel-casos.css">
 </head>
 <body>
 
@@ -46,32 +50,13 @@
 
 <main id="conteudo" tabindex="-1">
 
-  <section class="num" id="numeros" aria-label="Números dos casos">
-    <div class="largura num-grade">
-      <div>
-        <p class="num-valor dado">400</p>
-        <p class="num-rotulo">usuários simultâneos no hub comercial que mantenho em produção (caso 03)</p>
-      </div>
-      <div>
-        <p class="num-valor dado">97%</p>
-        <p class="num-rotulo">menos consultas por dia ao modelo, sem trocar de capacidade (caso 03)</p>
-      </div>
-      <div>
-        <p class="num-valor dado">R$ 0,00</p>
-        <p class="num-rotulo">entre a soma dos pilares e a variação da receita, em qualquer filtro (caso 02)</p>
-      </div>
-      <div>
-        <p class="num-valor dado">873 mil</p>
-        <p class="num-rotulo">coletas reais da ANP, de 9.307 postos, com contrato e testes (caso 04)</p>
-      </div>
-    </div>
-  </section>
 
   <section class="exp placa-verde" id="experiencia" aria-labelledby="t-experiencia">
     <div class="largura">
       <h2 id="t-experiencia">Experiência</h2>
       <div class="exp-barra">
-        <span>
+        <span class="exp-empresa">
+          <img src="vigor-logo.png" alt="" width="92" height="48">
           <b>Vigor Alimentos</b>
           analista de dados e BI<br>
           fev/2024 até hoje
@@ -150,7 +135,217 @@
     </div>
   </section>
 
-  <div id="casos">
+  <!-- ===== Seção "O que mudou" (painel de casos) ===== -->
+  <section class="pc" id="casos" aria-labelledby="pc-titulo">
+    <div class="pc-wrap">
+  
+      <header class="pc-head">
+        <div class="pc-head-txt">
+          <p class="pc-eyebrow">Casos · resultado primeiro</p>
+          <h2 class="pc-title" id="pc-titulo">O que mudou<span class="pc-dot">.</span></h2>
+          <p class="pc-lead">Quatro casos e o que está em produção na Vigor, com o número que importa em cada. O texto completo continua um clique abaixo.</p>
+        </div>
+        <button class="pc-replay" type="button" data-pc-replay>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+          Rever animação
+        </button>
+      </header>
+  
+      <div class="pc-panel">
+  
+        <div class="pc-bar">
+          <span class="pc-path">vitor / <b>casos</b></span>
+          <div class="pc-chips" role="group" aria-label="Filtrar casos">
+            <button type="button" class="pc-chip" data-pc-focus="0" aria-pressed="true">Todos</button>
+            <button type="button" class="pc-chip" data-pc-focus="1" aria-pressed="false">Ruptura</button>
+            <button type="button" class="pc-chip" data-pc-focus="2" aria-pressed="false">Variação</button>
+            <button type="button" class="pc-chip" data-pc-focus="3" aria-pressed="false">Capacidade</button>
+            <button type="button" class="pc-chip" data-pc-focus="4" aria-pressed="false">Dados públicos</button>
+            <button type="button" class="pc-chip" data-pc-focus="5" aria-pressed="false">Vigor</button>
+          </div>
+        </div>
+  
+        <div class="pc-kpis">
+          <div class="pc-kpi">
+            <div class="pc-kpi-top"><span class="pc-label">Usuários simultâneos</span><span class="pc-tag">Caso 03</span></div>
+            <div class="pc-kpi-val" data-count="400">400</div>
+            <p class="pc-kpi-sub">no HUB comercial, na mesma capacidade P1</p>
+          </div>
+          <div class="pc-kpi">
+            <div class="pc-kpi-top"><span class="pc-label">Consultas a menos</span><span class="pc-tag">Caso 03</span></div>
+            <div class="pc-kpi-val" data-count="97" data-suffix="%">97%</div>
+            <p class="pc-kpi-sub">por dia, de 78 mil para 2 mil</p>
+          </div>
+          <div class="pc-kpi">
+            <div class="pc-kpi-top"><span class="pc-label">Sobra na soma</span><span class="pc-tag">Caso 02</span></div>
+            <div class="pc-kpi-val" data-count="0" data-from="287352" data-dec="2" data-prefix="R$ " data-delay="100" data-dur="1400">R$ 0,00</div>
+            <p class="pc-kpi-sub">pilares contra a variação, em qualquer filtro</p>
+          </div>
+          <div class="pc-kpi">
+            <div class="pc-kpi-top"><span class="pc-label">Coletas reais ANP</span><span class="pc-tag">Caso 04</span></div>
+            <div class="pc-kpi-val" data-count="873" data-suffix=" mil" data-delay="150">873 mil</div>
+            <p class="pc-kpi-sub">de 9.307 postos em 27 estados</p>
+          </div>
+        </div>
+  
+        <div class="pc-grid">
+  
+            <!-- VIGOR, EM PRODUÇÃO -->
+        <article class="pc-case pc-vigor" data-pc-case="5">
+          <div class="pc-vigor-head">
+            <img class="pc-vigor-logo" src="vigor-logo.png" alt="Vigor Alimentos" width="185" height="96">
+            <div class="pc-vigor-txt">
+              <div class="pc-case-top"><span>Em produção · Vigor Alimentos</span><span>analista de dados e BI · fev/2024 até hoje</span></div>
+              <h3 class="pc-case-title">O que roda no hub comercial</h3>
+            </div>
+          </div>
+          <ul class="pc-vigor-grid">
+            <li>
+              <span class="pc-label">Hub de dados</span>
+              <b data-count="40" data-prefix="+" data-delay="200">+40</b>
+              <span>fontes num warehouse em estrela (Scanntech, Nielsen, Mtrix, Neogrid, Involves), com RLS por estrutura comercial</span>
+            </li>
+            <li>
+              <span class="pc-label">Ruptura</span>
+              <b data-count="10" data-prefix="R$ " data-suffix=" mi" data-delay="300">R$ 10 mi</b>
+              <span>de receita em risco identificada por cliente, cruzando venda diária com estoque e ciclo de compra</span>
+            </li>
+            <li>
+              <span class="pc-label">Atribuição de receita</span>
+              <b>no centavo</b>
+              <span>variação da receita líquida em carteira, sortimento, volume, mix, preço e cada linha da DRE, em qualquer filtro</span>
+            </li>
+            <li>
+              <span class="pc-label">Uso do servidor</span>
+              <b data-count="22" data-from="45" data-suffix="%" data-delay="400" data-dur="1400">22%</b>
+              <span>era 45%, depois de otimizar consultas e modelos</span>
+            </li>
+            <li>
+              <span class="pc-label">Análises fora do Excel</span>
+              <!-- AJUSTE: tempo de análise antes (Excel) e depois, por análise.
+                   Quando houver o número real, trocar o <b> por ele e citar na frase. -->
+              <b data-count="4" data-delay="500">4</b>
+              <span>Ciclo de vida, Performance, Despesas e resultados da Maratona de vendas: antes montadas à mão em Excel, hoje atualizam sozinhas no hub</span>
+            </li>
+            <li>
+              <span class="pc-label">Distribuição</span>
+              <b>e-mail e Teams</b>
+              <span>Power Automate monta o relatório de cada cargo e avisa o BI quando um dado não fecha</span>
+            </li>
+          </ul>
+          <a class="pc-go" href="#experiencia">Ver a experiência <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        </article>
+
+      <!-- CASO 01 -->
+          <article class="pc-case" data-pc-case="1">
+            <div class="pc-case-top"><span>Caso 01 · Aurora Alimentos</span><span>Python · statsforecast · DAX</span></div>
+            <h3 class="pc-case-title">Quanto a ruptura custa</h3>
+            <div class="pc-chart">
+              <p class="pc-chart-title">Erro da previsão (WMAPE)</p>
+              <div class="pc-cols">
+                <div class="pc-col">
+                  <span class="pc-col-val" data-count="0.688" data-dec="3" data-delay="300">0,688</span>
+                  <span class="pc-vbar pc-vbar--dim" style="--h:108px;--d:300ms"></span>
+                  <span class="pc-col-lab">diário</span>
+                </div>
+                <div class="pc-col">
+                  <span class="pc-col-val" data-count="0.218" data-dec="3" data-delay="500">0,218</span>
+                  <span class="pc-vbar pc-vbar--hi" style="--h:34px;--d:500ms"></span>
+                  <span class="pc-col-lab">ciclo de 7 dias</span>
+                </div>
+              </div>
+            </div>
+            <div class="pc-stats">
+              <div><b data-count="80" data-delay="600">80</b><span>lojas precisando de estoque</span></div>
+              <div><b data-count="1940" data-delay="600">1.940</b><span>itens no pedido sugerido</span></div>
+              <div><b data-count="213" data-delay="600">213</b><span>críticos já em ruptura</span></div>
+            </div>
+            <a class="pc-go" href="#aurora">Ler o caso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          </article>
+  
+          <!-- CASO 02 -->
+          <article class="pc-case" data-pc-case="2">
+            <div class="pc-case-top"><span>Caso 02 · Aurora Alimentos</span><span>PostgreSQL · PL/pgSQL</span></div>
+            <h3 class="pc-case-title">Por que a receita mudou</h3>
+            <div class="pc-chart">
+              <p class="pc-chart-title">08/2026 vs 08/2025 · receita líquida</p>
+              <div class="pc-wf" role="img" aria-label="Cascata: base de 1,52 milhão, oito pilares, receita atual de 1,81 milhão">
+                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--tot" style="bottom:0;height:31.9px;--d:200ms"></span><span class="pc-wf-lab" style="bottom:35.9px;--d:200ms">1,52 mi</span></div>
+                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--pos" style="bottom:31.9px;height:72.5px;--d:280ms"></span><span class="pc-wf-lab" style="bottom:108.5px;--d:280ms">+168,3k</span></div>
+                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--neg" style="bottom:82.2px;height:22.2px;--d:360ms"></span><span class="pc-wf-lab" style="bottom:108.5px;--d:360ms">-51,6k</span></div>
+                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--neg" style="bottom:74.3px;height:7.9px;--d:440ms"></span><span class="pc-wf-lab" style="bottom:86.2px;--d:440ms">-18,4k</span></div>
+                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--pos" style="bottom:74.3px;height:22.2px;--d:520ms"></span><span class="pc-wf-lab" style="bottom:100.6px;--d:520ms">+51,6k</span></div>
+                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--neg" style="bottom:94.6px;height:2px;--d:600ms"></span><span class="pc-wf-lab" style="bottom:100.6px;--d:600ms">-2,0k</span></div>
+                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--pos" style="bottom:95.7px;height:5.9px;--d:680ms"></span><span class="pc-wf-lab" style="bottom:105.6px;--d:680ms">+13,8k</span></div>
+                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--pos" style="bottom:101.6px;height:55.5px;--d:760ms"></span><span class="pc-wf-lab" style="bottom:161.1px;--d:760ms">+128,8k</span></div>
+                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--neg" style="bottom:155.1px;height:2px;--d:840ms"></span><span class="pc-wf-lab" style="bottom:161.1px;--d:840ms">-3,3k</span></div>
+                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--tot" style="bottom:0;height:155.7px;--d:920ms"></span><span class="pc-wf-lab" style="bottom:159.7px;--d:920ms">1,81 mi</span></div>
+              </div>
+              <div class="pc-wf-axis"><span>base</span><span>8 pilares</span><span>atual</span></div>
+            </div>
+            <div class="pc-stats">
+              <div><b data-count="287352" data-prefix="+" data-delay="1000">+287.352</b><span>variação, +18,9%</span></div>
+              <div><b>R$ 0,00</b><span>de sobra em qualquer filtro</span></div>
+              <div><b>14</b><span>casos de teste com resposta conhecida</span></div>
+            </div>
+            <a class="pc-go" href="#variacao">Ler o caso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          </article>
+  
+          <!-- CASO 03 -->
+          <article class="pc-case" data-pc-case="3">
+            <div class="pc-case-top"><span class="pc-marca"><img src="vigor-logo.png" alt="" width="31" height="16">Caso 03 · Vigor Alimentos</span><span>Fabric P1 · Power Automate · Python</span></div>
+            <h3 class="pc-case-title">BI para 400 usuários sem subir capacidade</h3>
+            <div class="pc-chart pc-rows">
+              <div class="pc-row">
+                <div class="pc-row-head"><span>Uso da capacidade P1</span><b data-count="146" data-suffix="%" data-delay="150">146%</b></div>
+                <div class="pc-track"><span class="pc-fill pc-fill--over" style="--w:91.25%;--d:150ms"></span><span class="pc-limit" title="100%"></span></div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-row-head"><span>Consultas por dia dos fluxos</span><b data-count="2" data-from="78" data-suffix=" mil" data-delay="700" data-dur="900">2 mil</b></div>
+                <div class="pc-track"><span class="pc-fill pc-fill--drop"></span></div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-row-head"><span>Cache vs carga no refresh</span><b>17 min vs 8 min</b></div>
+                <div class="pc-track"><span class="pc-fill pc-fill--dim" style="--w:85%;--d:300ms"></span><span class="pc-fill pc-fill--ok" style="--w:40%;--d:450ms"></span></div>
+              </div>
+            </div>
+            <div class="pc-stats">
+              <div><b>P1</b><span>mantida, sem migrar para P2</span></div>
+              <div><b data-count="60" data-prefix="US$ " data-suffix=" mil" data-delay="1000">US$ 60 mil</b><span>de economia por ano</span></div>
+              <div><b>A+ a F</b><span>nota do relatório antes de publicar</span></div>
+            </div>
+            <a class="pc-go" href="#escala">Ler o caso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          </article>
+  
+          <!-- CASO 04 -->
+          <article class="pc-case" data-pc-case="4">
+            <div class="pc-case-top"><span>Caso 04 · Dados públicos ANP</span><span>dbt · Dagster · DuckDB</span></div>
+            <h3 class="pc-case-title">Radar de preço de combustível</h3>
+            <div class="pc-chart">
+              <p class="pc-chart-title">Do arquivo bruto ao mart, toda semana</p>
+              <ol class="pc-pipe">
+                <li style="--d:250ms"><span class="pc-node">01</span><span class="pc-node-lab">ingestão</span></li>
+                <li style="--d:500ms"><span class="pc-node">02</span><span class="pc-node-lab">camadas</span></li>
+                <li style="--d:750ms"><span class="pc-node">03</span><span class="pc-node-lab">semântica</span></li>
+                <li style="--d:1000ms"><span class="pc-node">04</span><span class="pc-node-lab">orquestra</span></li>
+                <li style="--d:1250ms"><span class="pc-node">05</span><span class="pc-node-lab">CI</span></li>
+              </ol>
+            </div>
+            <div class="pc-stats">
+              <div><b data-count="30" data-delay="1300">30</b><span>testes a cada build</span></div>
+              <div><b data-count="28" data-delay="1400">28</b><span>checks passando no Dagster</span></div>
+              <div><b data-count="50" data-suffix=" s" data-delay="1500">50 s</b><span>pipeline completo no CI</span></div>
+            </div>
+            <a class="pc-go" href="#radar">Ler o caso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+          </article>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== fim da seção "O que mudou" ===== -->
+
+  <div id="casos-detalhe">
 
     <section class="secao" id="aurora" aria-labelledby="t-aurora">
       <div class="largura">
@@ -545,5 +740,6 @@ $ mf query --metrics preco_mediano,taxa_margem_negativa \
   </div>
 </footer>
 
+<script src="painel-casos.js" defer></script>
 </body>
 </html>

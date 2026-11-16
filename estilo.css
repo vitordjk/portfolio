@@ -600,6 +600,13 @@
     font-weight: 700;
   }
 
+  .exp-empresa img {
+    display: block;
+    width: 92px;
+    height: auto;
+    margin-bottom: var(--e2);
+  }
+
   .exp-kpis {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
