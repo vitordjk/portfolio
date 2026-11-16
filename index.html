@@ -179,13 +179,9 @@
                 <h3>Geração da base</h3>
               </div>
               <p class="aur-ferramentas"><span>Python</span><span>pandas</span><span>numpy</span></p>
-              <!-- AJUSTE: número de distribuidores e de lojas da base sintética.
-                   Fonte: parâmetros do gerar_rgm.py. Como obter: ler as constantes
-                   de quantidade de distribuidores e de lojas, ou contar as linhas
-                   de dim_distribuidor e dim_loja no PostgreSQL. A frase abaixo
-                   está correta sem esses dois números. -->
-              <p>48 produtos, 7.528 pares de loja e produto e 18 meses de sell-in,
-              de fevereiro de 2025 a julho de 2026: 3,4 milhões de linhas de fato
+              <p>30 distribuidores, 250 lojas, 48 produtos, 7.528 pares de loja e produto
+              e 19 meses de sell-in, de fevereiro de 2025 a agosto de 2026: 3,8 milhões
+              de linhas de fato
               com semente fixa. Os parâmetros verdadeiros ficam ocultos no gerador,
               o que permite comparar cada estimativa com o valor que a produziu.
               A ruptura não é semeada: ela emerge do estoque dia a dia, em 11,2%
@@ -248,6 +244,7 @@
                 <img class="fig-04" src="04-telas.png" alt="Tela Ruptura em Valor do painel Aurora, com o menu das telas à esquerda e os cartões de valor em risco, cobertura média e pares em ruptura" width="1267" height="697" loading="lazy">
                 <figcaption>A tela de ruptura em valor, e à esquerda o menu com as telas.</figcaption>
               </figure>
+              <p><a href="aurora/">Ver as telas online, com os dados da base</a></p>
             </article>
 
             <article class="aur-etapa" id="aurora-05">
@@ -256,17 +253,11 @@
                 <h3>Previsão e sugestão de pedido</h3>
               </div>
               <p class="aur-ferramentas"><span>Python</span><span>statsforecast</span><span>DAX</span></p>
-              <!-- AJUSTE: erro do modelo no backtest. Valores registrados durante o
-                   desenvolvimento: WMAPE diário de 0,688, que cai para 0,218 no
-                   horizonte de 7 dias, o grão em que o pedido é decidido. Confirmar
-                   na saída do backtest antes de publicar e, se confirmados, trocar
-                   a segunda frase do parágrafo abaixo por:
-                   "O erro diário (WMAPE 0,688) cai para 0,218 no ciclo de 7 dias,
-                   que é o grão em que o pedido é decidido." -->
               <p>Cada série de loja e produto é classificada por ADI e CV², segundo
               Syntetos e Boylan, e roteada para AutoETS, CrostonOptimized ou
               SeasonalNaive, com o modelo campeão escolhido em backtest de origem
-              móvel. O alvo do treino é a venda mais a demanda não atendida: treinar
+              móvel. O erro diário (WMAPE 0,688) cai para 0,218 no ciclo de 7 dias, que é
+              o grão em que o pedido é decidido. O alvo do treino é a venda mais a demanda não atendida: treinar
               na venda observada ensinaria o modelo a prever a própria ruptura.</p>
               <p>A previsão entra na decisão de estoque em vez de ficar em relatório
               separado. A política é order-up-to, com estoque de segurança derivado
@@ -320,12 +311,9 @@
           A sobra do arredondamento fica no próprio par, não numa linha global sem
           loja que sumiria no primeiro filtro de vendedor. A carga é abortada sem
           gravar nada se a soma dos pilares não bater com as pontas.</p>
-          <!-- AJUSTE: trocar pela captura da tela no Power BI depois de rodar o
-               módulo na base da Aurora. A imagem atual é a prévia gerada pelo
-               montar_tela_variacao.py sobre a base de teste do módulo. -->
           <figure>
-            <img class="fig-11" src="11-variacao.png" alt="Tela de variação de receita em cascata: receita base, pilares de carteira, sortimento, comercial e dedutor, e receita atual, com o valor e o percentual sobre a base em cada barra" width="1240" height="640" loading="lazy">
-            <figcaption>A cascata da competência: cada barra é um pilar, e a soma delas é a distância entre as pontas.</figcaption>
+            <img class="fig-11" src="11-variacao.png" alt="Tela de variação de receita de agosto de 2026 contra agosto de 2025 em cascata: receita base de 1.524.144, pilares de carteira, sortimento e comercial, e receita atual de 1.811.496, com o valor e o percentual sobre a base em cada barra" width="1240" height="640" loading="lazy">
+            <figcaption>A cascata de agosto de 2026 na base da Aurora: cada barra é um pilar, e a soma delas é a distância entre as pontas.</figcaption>
           </figure>
         </article>
 
@@ -351,7 +339,7 @@
           preço do item vira mix. Dois testes provam a fórmula. Na troca de 50 caixas
           de um item de R$ 10 por 50 de um item de R$ 30, o mix é +R$ 1.000 e volume
           e preço ficam em zero. No crescimento igual de todos os itens, o mix é zero.
-          São 13 casos com resposta conhecida, rodando em banco descartável.</p>
+          São 14 casos com resposta conhecida, rodando em banco descartável.</p>
         </article>
 
         <article class="rad-placa">
@@ -360,15 +348,14 @@
             <h3>Dias úteis: premissa medida</h3>
           </div>
           <p class="rad-ferramentas"><span>Python</span><span>numpy</span></p>
-          <!-- AJUSTE: resultado da medição na base da Aurora (estimativa,
-               intervalo de 90% e valor usado), saída do
-               medir_elasticidade_dias_uteis.py. Acrescentar como última frase. -->
           <p>Atribuir variação a dias úteis supõe que receita é proporcional a eles.
           Quem compra por agenda não se comporta assim. A elasticidade é medida por
           regressão log-log com tendência e intervalo por bootstrap, e o motor só usa
           o valor se o intervalo não contém zero. Na versão em produção a medição deu
           0,11: assumir proporcionalidade inflava o pilar de calendário em nove vezes,
-          com valor tirado dos pilares comerciais.</p>
+          com valor tirado dos pilares comerciais. Na base da Aurora a estimativa foi
+          0,59, com intervalo de 90% de -0,06 a 1,34. O intervalo contém zero, então o
+          motor usou zero.</p>
         </article>
 
         <article class="rad-placa">
@@ -388,7 +375,8 @@
         <!-- AJUSTE: endereços do repositório da Aurora e da documentação do
              módulo (docs/VARIACAO.md), quando o repositório estiver público. -->
         <div class="rad-links">
-          <a class="botao escuro" href="https://github.com/vitordjk" rel="noopener">Código no GitHub</a>
+          <a class="botao escuro" href="aurora/#variacao">Ver a tela online</a>
+          <a class="botao" href="https://github.com/vitordjk" rel="noopener">Código no GitHub</a>
           <a class="botao" href="https://github.com/vitordjk" rel="noopener">Documentação do módulo</a>
         </div>
       </div>

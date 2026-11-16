@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="pt-br"><head><meta charset="utf-8">
+<title>Aurora Alimentos | tela</title><style>/* ======================================================================
+   AURORA ALIMENTOS | estilo.css
+   Fonte unica do visual das telas. O montar_telas.py injeta este arquivo
+   dentro de cada medida DAX, e o preview_telas.py le o mesmo arquivo.
+   Mudou aqui, mudou em todo lugar.
+
+   REGRAS DO SANITIZADOR DO "HTML Content (lite)" - nao violar:
+     1. nenhum sinal de menor/maior neste arquivo, nem em comentario, nem
+        em seletor filho. Só seletor descendente e classe composta.
+     2. color explicito em toda regra que tem texto: o lite nao herda
+        color do body.
+     3. tela cheia sem rolagem = alturas fixas somadas + min-height 0 +
+        overflow hidden em todo container flex.
+
+   Grade: 1280 x 720. Barra lateral 172px, conteudo 1098px.
+   ====================================================================== */
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#10141B;font-family:'Segoe UI',Segoe,Tahoma,Arial,sans-serif}
+
+.app{height:100vh;width:100%;background:#EFF1F5;border:5px solid #10141B;display:flex;overflow:hidden}
+
+/* ---------------------------------------------------------- barra lateral */
+.nav{flex:0 0 172px;background:linear-gradient(185deg,#171A21 0%,#232A38 100%);display:flex;flex-direction:column;padding:18px 0 14px 0;overflow:hidden}
+.brand{padding:0 18px 18px 18px;display:flex;align-items:center;overflow:hidden}
+.bmk{flex:0 0 30px;height:30px;border-radius:8px;background:linear-gradient(150deg,#E0483F 0%,#A81A22 100%);color:#FFFFFF;font-size:15px;font-weight:700;text-align:center;line-height:30px;margin-right:11px}
+.btx{min-width:0}
+.bnm{font-size:13px;font-weight:700;color:#FFFFFF;letter-spacing:1.4px;line-height:1.1}
+.bsb{font-size:8.5px;color:#7E8798;letter-spacing:1.2px;margin-top:3px}
+.menu{flex:1 1 auto;min-height:0;overflow:hidden}
+.mi{display:flex;align-items:center;height:38px;padding:0 18px;overflow:hidden;border-left:3px solid transparent}
+.mi.on{background:linear-gradient(90deg,rgba(224,72,63,0.20) 0%,rgba(224,72,63,0) 100%);border-left:3px solid #E0483F}
+.mic{flex:0 0 16px;height:16px;border-radius:4px;background:#3A4354;margin-right:11px}
+.mi.on .mic{background:linear-gradient(150deg,#E0483F 0%,#A81A22 100%)}
+.mit{font-size:11.5px;color:#98A1B2;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mi.on .mit{color:#FFFFFF;font-weight:600}
+.mif{padding:12px 18px 0 18px;border-top:1px solid #2C3444;overflow:hidden}
+.mift{font-size:8.5px;color:#6C7688;letter-spacing:.4px;line-height:1.6}
+
+/* --------------------------------------------------------------- conteudo */
+.main{flex:1 1 auto;min-width:0;padding:14px 16px;display:flex;flex-direction:column;overflow:hidden}
+.hd{height:50px;flex:0 0 50px;display:flex;align-items:center;overflow:hidden}
+.hdb{flex:1 1 auto;min-width:0}
+.hdt{font-size:20px;font-weight:700;color:#141821;letter-spacing:-.4px;line-height:1.1}
+.hds{font-size:11px;color:#7A8394;margin-top:4px}
+.hdd{flex:0 0 auto;text-align:right}
+.hdl{font-size:9px;color:#8A93A3;letter-spacing:.9px;text-transform:uppercase}
+.hdv{font-size:14px;font-weight:700;color:#141821;margin-top:3px}
+
+/* ------------------------------------------------------------------- kpis */
+.kpis{height:98px;flex:0 0 98px;display:flex;margin-top:10px;overflow:hidden}
+.kp{flex:1 1 0;min-width:0;background:#FFFFFF;border:1px solid #E1E5EC;border-radius:12px;padding:12px 15px;margin-right:11px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;box-shadow:0 1px 3px rgba(16,20,27,0.06)}
+.kp.hero{background:linear-gradient(150deg,#FFF3F2 0%,#FFFFFF 60%);border:1px solid #F1CBC8}
+.kp.last{margin-right:0}
+.kl{font-size:9px;color:#7A8394;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.kv{font-size:25px;font-weight:700;color:#141821;line-height:1.14;margin-top:5px;white-space:nowrap;letter-spacing:-.6px}
+.kv.rd{color:#C1272D}
+.kv .un{font-size:12.5px;font-weight:600;color:#7A8394;margin-left:4px;letter-spacing:0}
+.ks{font-size:10px;color:#7A8394;margin-top:4px;white-space:nowrap}
+
+/* ------------------------------------------------------------- paineis */
+.mid{flex:1 1 auto;min-height:0;display:flex;margin-top:11px;overflow:hidden}
+.cl{background:#FFFFFF;border:1px solid #E1E5EC;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;min-height:0;overflow:hidden;box-shadow:0 1px 3px rgba(16,20,27,0.06)}
+.big{flex:1 1 60%;margin-right:11px}
+.sml{flex:1 1 40%;background:transparent;border:0;padding:0;box-shadow:none}
+.ch{font-size:10px;font-weight:700;color:#141821;text-transform:uppercase;letter-spacing:1px;padding-bottom:8px;border-bottom:1px solid #EDEFF3;flex:0 0 auto}
+.hint{font-size:10px;color:#8A93A3;margin-top:7px;flex:0 0 auto}
+.list{flex:1 1 auto;min-height:0;margin-top:4px;overflow:hidden}
+.bx{background:#FFFFFF;border:1px solid #E1E5EC;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;min-height:0;overflow:hidden;box-shadow:0 1px 3px rgba(16,20,27,0.06)}
+.bx.top{flex:1 1 54%;margin-bottom:11px}
+.bx.bot{flex:1 1 46%}
+
+/* -------------------------------------------------- barras horizontais */
+.bars{flex:1 1 auto;min-height:0;margin-top:10px;overflow:hidden}
+.cb{display:flex;align-items:center;height:22px;overflow:hidden}
+.cn{flex:0 0 40%;font-size:11px;color:#141821;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cq{display:block;font-size:9px;color:#8A93A3}
+.ct{flex:1 1 auto;height:10px;background:#F0F2F6;border-radius:5px;overflow:hidden}
+.cf{height:10px;border-radius:5px;background:linear-gradient(90deg,#EDB3AF 0%,#F5CFCC 100%)}
+.cf.cr{background:linear-gradient(90deg,#8E1A1F 0%,#D4342F 100%)}
+.cf.rd{background:linear-gradient(90deg,#A81A22 0%,#E0483F 100%)}
+.cf.gr{background:linear-gradient(90deg,#2C3342 0%,#5A6478 100%)}
+.cv{flex:0 0 70px;text-align:right;font-size:11px;font-weight:600;color:#141821}
+
+/* --------------------------------------------- colunas verticais (12 meses) */
+.mc{flex:1 1 auto;min-height:0;display:flex;align-items:flex-end;margin-top:12px;overflow:hidden}
+.mcol{flex:1 1 0;min-width:0;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3px;overflow:hidden}
+.mbv{font-size:8.5px;color:#7A8394;text-align:center;margin-bottom:4px;white-space:nowrap}
+.mbf{width:100%;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#3D4759 0%,#232A38 100%)}
+.mbf.rd{background:linear-gradient(180deg,#E0483F 0%,#A81A22 100%)}
+.mbl{font-size:8.5px;color:#8A93A3;text-align:center;margin-top:5px;white-space:nowrap}
+
+/* ------------------------------------------------ linhas de maior ofensor */
+.row{display:flex;align-items:center;height:42px;border-bottom:1px solid #F3F4F7;overflow:hidden}
+.rt{flex:1 1 46%;min-width:0;padding-right:11px}
+.r1{font-size:12px;color:#141821;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.r2{font-size:10px;color:#8A93A3;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tg{color:#C1272D;font-weight:700;margin-left:8px;letter-spacing:.4px;font-size:9px;text-transform:uppercase}
+.rb{flex:0 0 28%;height:9px;background:#F0F2F6;border-radius:5px;overflow:hidden}
+.rf{height:9px;border-radius:5px}
+.rf.par{background:linear-gradient(90deg,#A81A22 0%,#E0483F 100%)}
+.rf.pre{background:linear-gradient(90deg,#E9A9A5 0%,#F3CBC8 100%)}
+.rv{flex:0 0 84px;text-align:right;font-size:12.5px;font-weight:700;color:#141821}
+
+/* ---------------------------------------------------- ranking da equipe */
+.rw{display:flex;align-items:center;height:44px;border-bottom:1px solid #F3F4F7;overflow:hidden}
+.rn{flex:1 1 32%;min-width:0;font-size:12px;color:#141821;font-weight:600;padding-right:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rs{font-size:9.5px;color:#8A93A3;font-weight:400;margin-top:2px}
+.rc{flex:0 0 22%;min-width:0;overflow:hidden}
+.cp{display:inline-block;font-size:9px;font-weight:600;color:#5A6478;padding:2px 7px;border-radius:9px;margin-right:4px;white-space:nowrap}
+.cp.nv{background:#F0F2F6;color:#5A6478}
+.cp.rc2{background:#FBE7E6;color:#A81A22}
+.trk{flex:0 0 25%;height:9px;background:#F0F2F6;border-radius:5px;overflow:hidden;display:flex}
+.fcr{height:9px;background:linear-gradient(90deg,#7A0F16 0%,#C1272D 100%)}
+.fnv{height:9px;background:linear-gradient(90deg,#EFB9B5 0%,#F6D6D3 100%)}
+
+/* ------------------------------------------------- blocos de sugestao */
+.lj{border:1px solid #E9ECF1;border-radius:10px;margin-bottom:8px;overflow:hidden}
+.ljh{background:linear-gradient(120deg,#F5F7FA 0%,#FFFFFF 100%);padding:7px 11px;border-bottom:1px solid #EDEFF3;display:flex;align-items:center;overflow:hidden}
+.ljt{flex:0 0 40%;font-size:12px;font-weight:700;color:#141821;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ljs{flex:1 1 auto;font-size:9.5px;color:#8A93A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 9px}
+.ljv{flex:0 0 80px;text-align:right;font-size:13.5px;font-weight:700;color:#C1272D}
+.it{display:flex;align-items:center;height:24px;padding:0 11px;border-bottom:1px solid #F6F7F9;overflow:hidden}
+.itn{flex:0 0 44%;font-size:11px;color:#141821;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.itm{flex:1 1 auto;font-size:10px;color:#8A93A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:9px}
+.itq{flex:0 0 58px;text-align:right;font-size:11.5px;font-weight:700;color:#141821}
+.pr{display:inline-block;font-size:8px;font-weight:700;color:#5A6478;letter-spacing:.5px;padding:2px 6px;border-radius:4px;margin-right:7px;text-transform:uppercase}
+.pr.c{background:linear-gradient(120deg,#A81A22 0%,#D4342F 100%);color:#FFFFFF}
+.pr.a{background:#FBE7E6;color:#A81A22}
+.pr.n{background:#F0F2F6;color:#5A6478}
+
+/* ------------------------------------------------------------- diversos */
+.sp{display:flex;height:13px;margin-top:12px;overflow:hidden;flex:0 0 auto;border-radius:7px;background:#F0F2F6}
+.sa{background:linear-gradient(90deg,#A81A22 0%,#E0483F 100%);height:13px}
+.sb2{background:linear-gradient(90deg,#EFB9B5 0%,#F6D6D3 100%);height:13px;flex:1 1 auto}
+.leg{display:flex;margin-top:10px;flex:0 0 auto}
+.lgi{flex:1 1 0;min-width:0}
+.lgd{width:8px;height:8px;border-radius:2px;display:inline-block;margin-right:6px}
+.lgd.a{background:#C1272D}
+.lgd.b{background:#EFB9B5}
+.lgl{font-size:10px;color:#7A8394}
+.lgv{font-size:14px;font-weight:700;color:#141821;margin-top:3px}
+.st{display:flex;align-items:center;height:34px;border-bottom:1px solid #F3F4F7;overflow:hidden}
+.stl{flex:1 1 auto;font-size:11px;color:#5A6478;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stv{flex:0 0 auto;font-size:15px;font-weight:700;color:#141821}
+.stv.rd{color:#C1272D}
+.stu{font-size:10px;color:#8A93A3;font-weight:600;margin-left:3px}
+.pas{flex:1 1 auto;min-height:0;margin-top:10px;overflow:hidden}
+.ps{display:flex;margin-bottom:10px;overflow:hidden}
+.pn{flex:0 0 21px;height:21px;border-radius:11px;background:linear-gradient(150deg,#2C3342 0%,#5A6478 100%);color:#FFFFFF;font-size:10.5px;font-weight:700;text-align:center;line-height:21px;margin-right:10px}
+.pt{flex:1 1 auto;font-size:10.5px;color:#4A5261;line-height:1.45}
+.pt b{color:#141821;font-weight:600}
+.ft{height:28px;flex:0 0 28px;margin-top:10px;display:flex;align-items:center;overflow:hidden}
+.fx{font-size:10px;color:#8A93A3;letter-spacing:.2px}
+.fx b{color:#141821;font-weight:600}
+</style></head><body>
+<div class="app"><div class="nav">
+  <div class="brand"><div class="bmk">A</div>
+    <div class="btx"><div class="bnm">AURORA</div><div class="bsb">ALIMENTOS</div></div>
+  </div>
+  <div class="menu"><div class="mi"><div class="mic"></div><div class="mit">Visão Executiva</div></div><div class="mi"><div class="mic"></div><div class="mit">Ruptura em Valor</div></div><div class="mi"><div class="mic"></div><div class="mit">Gestão da Equipe</div></div><div class="mi on"><div class="mic"></div><div class="mit">Próximo Pedido</div></div></div>
+  <div class="mif"><div class="mift">Base sintética<br>Projeto de portfólio</div></div>
+</div><div class="main"><div class="hd"><div class="hdb"><div class="hdt">Próximo Pedido</div><div class="hds">carla.mendes &middot; o que pedir em cada loja na próxima visita</div></div><div class="hdd"><div class="hdl">Primeira negociação</div><div class="hdv">01/09/2026</div></div></div>
+<div class="kpis">
+  <div class="kp hero"><div class="kl">Pedido sugerido</div>
+    <div class="kv rd">R$ 221.940</div>
+    <div class="ks">2.739 caixas fechadas</div></div>
+  <div class="kp"><div class="kl">Lojas para atender</div>
+    <div class="kv">56</div><div class="ks">com necessidade calculada</div></div>
+  <div class="kp"><div class="kl">Itens no pedido</div>
+    <div class="kv">1.424</div><div class="ks">já em caixa fechada</div></div>
+  <div class="kp last"><div class="kl">Itens críticos</div>
+    <div class="kv rd">147</div>
+    <div class="ks">a loja já está sem o produto</div></div>
+</div>
+<div class="mid">
+  <div class="cl big"><div class="ch">Leve este pedido</div>
+    <div class="hint">Quantidade em caixa fechada e motivo já calculados. Não precisa conferir conta, só conferir gôndola.</div>
+    <div class="list"><div class="lj"><div class="ljh"><div class="ljt">Loja Independente &middot; L0100</div><div class="ljs">Sao Paulo/SP &nbsp;&middot;&nbsp; pedido em 14/09 &nbsp;&middot;&nbsp; 40 itens, 181 caixas</div><div class="ljv">R$ 14.643</div></div><div class="it"><div class="itn"><span class="pr c">Crítico</span>Mussarela Peca 500g</div><div class="itm">Ja esta sem estoque na loja</div><div class="itq">6 cx</div></div><div class="it"><div class="itn"><span class="pr c">Crítico</span>Requeijao Cremoso 400g</div><div class="itm">Ja esta sem estoque na loja</div><div class="itq">9 cx</div></div><div class="it"><div class="itn"><span class="pr c">Crítico</span>Creme de Leite 200g</div><div class="itm">Ja esta sem estoque na loja</div><div class="itq">9 cx</div></div></div><div class="lj"><div class="ljh"><div class="ljt">Mini Preco &middot; L0108</div><div class="ljs">Recife/PE &nbsp;&middot;&nbsp; pedido em 08/09 &nbsp;&middot;&nbsp; 47 itens, 134 caixas</div><div class="ljv">R$ 11.116</div></div><div class="it"><div class="itn"><span class="pr a">Alto</span>Mussarela Peca 500g</div><div class="itm">O estoque acaba 1 dia(s) antes da entrega chegar</div><div class="itq">4 cx</div></div><div class="it"><div class="itn"><span class="pr a">Alto</span>Mussarela Fatiada 400g</div><div class="itm">O estoque acaba 5 dia(s) antes da entrega chegar</div><div class="itq">3 cx</div></div><div class="it"><div class="itn"><span class="pr a">Alto</span>Queijo Branco Fatiado 150g</div><div class="itm">O estoque acaba 2 dia(s) antes da entrega chegar</div><div class="itq">4 cx</div></div></div><div class="lj"><div class="ljh"><div class="ljt">Rede Bom Preco &middot; L0182</div><div class="ljs">Belo Horizonte/MG &nbsp;&middot;&nbsp; pedido em 03/09 &nbsp;&middot;&nbsp; 48 itens, 134 caixas</div><div class="ljv">R$ 10.854</div></div><div class="it"><div class="itn"><span class="pr c">Crítico</span>Manteiga Ghee 200g</div><div class="itm">Ja esta sem estoque na loja</div><div class="itq">1 cx</div></div><div class="it"><div class="itn"><span class="pr a">Alto</span>Manteiga com Sal 200g</div><div class="itm">O estoque acaba 3 dia(s) antes da entrega chegar</div><div class="itq">6 cx</div></div><div class="it"><div class="itn"><span class="pr a">Alto</span>Creme de Leite 200g</div><div class="itm">O estoque acaba 2 dia(s) antes da entrega chegar</div><div class="itq">9 cx</div></div></div></div></div>
+  <div class="sml">
+    <div class="bx top"><div class="ch">Por urgência</div>
+      <div class="bars"><div class="cb"><div class="cn">Crítico<span class="cq">147 itens</span></div><div class="ct"><div class="cf cr" style="width:24%"></div></div><div class="cv">25.109</div></div><div class="cb"><div class="cn">Alto<span class="cq">505 itens</span></div><div class="ct"><div class="cf cr" style="width:100%"></div></div><div class="cv">102.711</div></div><div class="cb"><div class="cn">Atenção<span class="cq">287 itens</span></div><div class="ct"><div class="cf " style="width:44%"></div></div><div class="cv">45.165</div></div><div class="cb"><div class="cn">Repor<span class="cq">485 itens</span></div><div class="ct"><div class="cf " style="width:48%"></div></div><div class="cv">48.954</div></div></div></div>
+    <div class="bx bot"><div class="ch">Como a quantidade sai</div>
+      <div class="pas">
+        <div class="ps"><div class="pn">1</div><div class="pt">Pego o <b>giro diário</b> dos últimos 28 dias de cada produto naquela loja.</div></div>
+        <div class="ps"><div class="pn">2</div><div class="pt">Multiplico pelos <b>dias até a entrega mais o ciclo de compra</b> da loja &mdash; a próxima reposição só vem no pedido seguinte.</div></div>
+        <div class="ps"><div class="pn">3</div><div class="pt">Desconto o <b>estoque que ela ainda tem</b> e arredondo para cima na caixa fechada.</div></div>
+      </div></div>
+  </div>
+</div>
+<div class="ft"><div class="fx"><b>Crítico</b> = a loja já está sem o produto &nbsp;&middot;&nbsp; <b>alto</b> = o estoque acaba antes da entrega chegar &nbsp;&middot;&nbsp; <b>repor</b> = completar a cobertura do ciclo</div></div></div></div>
+</body></html>
