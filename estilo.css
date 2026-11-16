@@ -572,6 +572,50 @@
     line-height: var(--l-titulo);
   }
 
+  /* Cada destaque leva à parada da rota em que o número é explicado. */
+  .num-grade > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Os destaques agora têm moeda e unidade ("US$ 60 mil"); no tamanho
+     antigo, pensado para "400", quebravam em duas linhas nas quatro colunas. */
+  .num-grade .num-valor {
+    font-size: clamp(var(--t3), 2.6vw, var(--t5));
+    white-space: nowrap;
+  }
+
+  .num-ir {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: var(--e2);
+    margin-top: var(--e3);
+    padding: var(--e1) var(--e3) var(--e1) var(--e1);
+    border: var(--traco) solid var(--verde);
+    border-radius: 999px;
+    color: var(--verde);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .num-ir span {
+    display: inline-grid;
+    place-items: center;
+    width: var(--e4);
+    height: var(--e4);
+    border-radius: 999px;
+    background: var(--verde);
+    color: var(--ambar);
+  }
+
+  .num-ir:hover {
+    background: var(--verde);
+    color: var(--ambar);
+  }
+
   /* --- experiência --- */
   .exp {
     padding-block: var(--e7);
