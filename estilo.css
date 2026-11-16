@@ -647,6 +647,58 @@
     line-height: var(--l-titulo);
   }
 
+  /* Do Excel para o hub: análises que eram montadas à mão. O antes riscado
+     e o depois em âmbar repetem o par rótulo e valor dos .exp-kpi. */
+  .exp-auto {
+    margin-top: var(--e5);
+  }
+
+  .exp-auto-titulo {
+    margin-bottom: var(--e3);
+    color: var(--ambar);
+    font-family: var(--fonte-mono);
+    font-size: var(--t1);
+    font-weight: 700;
+    letter-spacing: var(--tk-rotulo);
+    text-transform: uppercase;
+  }
+
+  .exp-auto-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--fio);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: var(--verde-linha);
+  }
+
+  .exp-auto-lista li {
+    background: var(--verde);
+    padding: var(--e4);
+  }
+
+  .exp-auto-antes {
+    display: block;
+    margin-top: var(--e2);
+    color: var(--creme-fraco);
+    font-family: var(--fonte-mono);
+    font-size: var(--t3);
+    text-decoration: line-through;
+    text-decoration-thickness: var(--traco);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .exp-auto-depois {
+    display: block;
+    margin-top: var(--e1);
+    color: var(--ambar);
+    font-family: var(--fonte-mono);
+    font-size: var(--t4);
+    font-weight: 700;
+    line-height: var(--l-solida);
+  }
+
   .exp-tabela {
     padding: var(--e4);
   }
@@ -977,6 +1029,10 @@
   .num-grade,
   .exp-kpis {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .exp-auto-lista {
+    grid-template-columns: 1fr;
   }
 
   /* Abaixo de 760 a tabela vira registro empilhado. Três coisas precisam

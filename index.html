@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap">
-<link rel="stylesheet" href="painel-casos.css">
+<link rel="stylesheet" href="rota-casos.css">
 </head>
 <body>
 
@@ -20,8 +20,8 @@
   <div class="largura">
     <span class="nav-marca">Vitor Oliveira</span>
     <ul class="nav-lista">
-      <li><a href="#experiencia">Experiência</a></li>
       <li><a href="#casos">Casos</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
       <li><a href="#ferramentas">Ferramentas</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -50,6 +50,558 @@
 
 <main id="conteudo" tabindex="-1">
 
+
+  <section class="num" id="numeros" aria-label="Números dos casos">
+    <div class="largura num-grade">
+      <div>
+        <p class="num-valor dado">400</p>
+        <p class="num-rotulo">usuários simultâneos no hub comercial que mantenho em produção (caso 03)</p>
+      </div>
+      <div>
+        <p class="num-valor dado">97%</p>
+        <p class="num-rotulo">menos consultas por dia ao modelo, sem trocar de capacidade (caso 03)</p>
+      </div>
+      <div>
+        <p class="num-valor dado">R$ 0,00</p>
+        <p class="num-rotulo">entre a soma dos pilares e a variação da receita, em qualquer filtro (caso 02)</p>
+      </div>
+      <div>
+        <p class="num-valor dado">873 mil</p>
+        <p class="num-rotulo">coletas reais da ANP, de 9.307 postos, com contrato e testes (caso 04)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rt" id="casos" aria-labelledby="rt-titulo">
+    <div class="rt-wrap">
+
+      <header class="rt-head">
+        <div class="rt-head-txt">
+          <p class="rt-eyebrow">Casos · siga a rota</p>
+          <h2 class="rt-title" id="rt-titulo">Uma rota, quatro problemas<span>.</span></h2>
+          <p class="rt-lead">Cada parada é um lugar onde o dinheiro escapava. Passe o mouse ou toque nos números, na ordem.</p>
+        </div>
+        <div class="rt-progress" aria-live="polite">
+          <span class="rt-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span data-rt-seen>0 de 4 paradas vistas</span>
+        </div>
+      </header>
+
+      <!-- CENA -->
+      <div class="rt-scene">
+        <div class="rt-scene-in">
+          <div class="rt-road" aria-hidden="true"></div>
+          <div class="rt-lane" aria-hidden="true"></div>
+          <div class="rt-truck" aria-hidden="true"><i></i><b></b></div>
+          <p class="rt-scene-cap" aria-hidden="true">estoque · receita · servidor · dado público</p>
+
+          <div class="rt-stop" data-rt-stop="0" style="--x:14%">
+            <button type="button" class="rt-hot" aria-label="Parada 01, loja: ruptura" aria-controls="rt-sum-0">01</button>
+            <div class="rt-bld rt-bld--loja" aria-hidden="true">
+              <div class="rt-awning"></div>
+              <div class="rt-shop">
+                <div class="rt-shelf"><i></i><i></i><i class="rt-gap"></i><i></i></div>
+                <b>Loja</b>
+              </div>
+            </div>
+          </div>
+
+          <div class="rt-stop" data-rt-stop="1" style="--x:38%">
+            <button type="button" class="rt-hot" aria-label="Parada 02, comercial: variação de receita" aria-controls="rt-sum-1">02</button>
+            <div class="rt-bld rt-bld--office" aria-hidden="true">
+              <div class="rt-windows"><i class="y"></i><i></i><i class="y"></i><i></i><i class="y"></i><i class="y"></i><i class="y"></i><i class="y"></i><i></i><i></i><i class="y"></i><i class="y"></i></div>
+              <b>Comercial</b>
+            </div>
+          </div>
+
+          <div class="rt-stop" data-rt-stop="2" style="--x:62%">
+            <button type="button" class="rt-hot" aria-label="Parada 03, servidor de BI: capacidade" aria-controls="rt-sum-2">03</button>
+            <div class="rt-bld rt-bld--rack" aria-hidden="true">
+              <div class="rt-slot"><i></i><span></span></div>
+              <div class="rt-slot"><i></i><span></span></div>
+              <div class="rt-slot"><i class="rt-led"></i><span></span></div>
+              <b>Servidor BI</b>
+            </div>
+          </div>
+
+          <div class="rt-stop" data-rt-stop="3" style="--x:86%">
+            <button type="button" class="rt-hot" aria-label="Parada 04, posto: dados públicos da ANP" aria-controls="rt-sum-3">04</button>
+            <div class="rt-bld rt-bld--posto" aria-hidden="true">
+              <div class="rt-canopy"></div>
+              <div class="rt-pumps"><span class="rt-pole"></span><span class="rt-pump"><i></i></span><span class="rt-pole"></span></div>
+              <b>Posto · ANP</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAINEL DE RESUMO (hover) -->
+      <div class="rt-panel">
+
+        <div class="rt-intro" data-rt-intro>
+          <p class="rt-k">Como ler</p>
+          <p class="rt-intro-txt">Comece pela loja. Cada parada mostra por que o projeto existe, o que eu fiz e quanto isso vale. O caso completo abre aqui mesmo.</p>
+          <button type="button" class="rt-btn" data-rt-go="0">Começar pela parada 01</button>
+        </div>
+
+        <!-- RESUMO 01 -->
+        <div class="rt-sum" id="rt-sum-0" data-rt-sum="0">
+          <div class="rt-sum-txt">
+            <p class="rt-k">Parada 01 · Loja · Ruptura</p>
+            <h3>O produto que falta não aparece no faturamento</h3>
+            <div class="rt-pair"><p class="rt-k rt-k--y">Por que existe</p><p>Prateleira vazia não gera nota fiscal. A venda que não aconteceu some dos relatórios, e ninguém cobra o que não vê.</p></div>
+            <div class="rt-pair"><p class="rt-k rt-k--y">O que eu fiz</p><p>Cruzei a venda diária de cada loja com o estoque para prever o dia em que o produto acaba e avisar quem precisa agir antes do pedido.</p></div>
+            <div class="rt-actions">
+              <button type="button" class="rt-btn" data-rt-open="0">Abrir o caso completo</button>
+              <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="1">Próxima parada</button>
+            </div>
+          </div>
+          <div class="rt-sum-viz">
+            <p class="rt-hero"><span data-count="10" data-prefix="R$ " data-suffix=" mi">R$ 10 mi</span></p>
+            <p class="rt-hero-sub">de receita em risco identificada por cliente na Vigor, antes de a prateleira esvaziar</p>
+            <div class="rt-chart">
+              <p class="rt-k">Como a perda nasce (esquema)</p>
+              <div class="rt-scheme" role="img" aria-label="Esquema: o estoque cai até zero e, a partir daí, a venda perdida se acumula">
+                <span class="up" style="--h:57.6px;--d:0ms"></span><span class="up" style="--h:50.4px;--d:50ms"></span><span class="up" style="--h:43.2px;--d:100ms"></span><span class="up" style="--h:36px;--d:150ms"></span><span class="up" style="--h:28.8px;--d:200ms"></span><span class="up" style="--h:21.6px;--d:250ms"></span><span class="up" style="--h:14.4px;--d:300ms"></span><span class="up" style="--h:7.2px;--d:350ms"></span><span class="dn" style="--h:10.8px;--d:450ms"></span><span class="dn" style="--h:21.6px;--d:500ms"></span><span class="dn" style="--h:32.4px;--d:550ms"></span><span class="dn" style="--h:43.2px;--d:600ms"></span><span class="dn" style="--h:54px;--d:650ms"></span><span class="dn" style="--h:64.8px;--d:700ms"></span>
+              </div>
+              <div class="rt-axis"><span>estoque acima da linha</span><span>venda perdida abaixo</span></div>
+            </div>
+            <p class="rt-ajuste">Na Aurora: R$ 209 mil de venda perdida em ago/2026</p>
+          </div>
+        </div>
+
+        <!-- RESUMO 02 -->
+        <div class="rt-sum" id="rt-sum-1" data-rt-sum="1">
+          <div class="rt-sum-txt">
+            <p class="rt-k">Parada 02 · Comercial · Variação</p>
+            <h3>A receita subiu 18,9%. Quanto foi preço?</h3>
+            <div class="rt-pair"><p class="rt-k rt-k--y">Por que existe</p><p>Sem separar loja nova, preço e mix, cada área defende a própria explicação e a reunião termina sem decisão.</p></div>
+            <div class="rt-pair"><p class="rt-k rt-k--y">O que eu fiz</p><p>Um motor em SQL que quebra a variação em pilares por loja e produto, em centavos. Se a soma não fecha, a carga não grava nada.</p></div>
+            <div class="rt-actions">
+              <button type="button" class="rt-btn" data-rt-open="1">Abrir o caso completo</button>
+              <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="2">Próxima parada</button>
+            </div>
+          </div>
+          <div class="rt-sum-viz">
+            <p class="rt-hero"><span data-count="0" data-from="287352" data-dec="2" data-prefix="R$ " data-dur="1400">R$ 0,00</span></p>
+            <p class="rt-hero-sub">de diferença entre a soma dos pilares e a variação, em qualquer filtro de loja, vendedor ou produto</p>
+            <div class="rt-chart">
+              <p class="rt-k">08/2026 vs 08/2025 · receita líquida</p>
+              <div class="rt-wf" role="img" aria-label="Cascata: base de 1,52 milhão, oito pilares, receita atual de 1,81 milhão">
+                <div><span class="t" style="bottom:0;height:31.9px;--d:100ms"></span></div>
+                <div><span class="p" style="bottom:31.9px;height:72.5px;--d:180ms"></span></div>
+                <div><span class="n" style="bottom:82.2px;height:22.2px;--d:260ms"></span></div>
+                <div><span class="n" style="bottom:74.3px;height:7.9px;--d:340ms"></span></div>
+                <div><span class="p" style="bottom:74.3px;height:22.2px;--d:420ms"></span></div>
+                <div><span class="n" style="bottom:94.6px;height:2px;--d:500ms"></span></div>
+                <div><span class="p" style="bottom:95.7px;height:5.9px;--d:580ms"></span></div>
+                <div><span class="p" style="bottom:101.6px;height:55.5px;--d:660ms"></span></div>
+                <div><span class="n" style="bottom:155.1px;height:2px;--d:740ms"></span></div>
+                <div><span class="t" style="bottom:0;height:155.7px;--d:820ms"></span></div>
+              </div>
+              <div class="rt-axis"><span>base 1.524.144</span><span>atual 1.811.496</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESUMO 03 -->
+        <div class="rt-sum" id="rt-sum-2" data-rt-sum="2">
+          <div class="rt-sum-txt">
+            <p class="rt-k">Parada 03 · Servidor · Capacidade</p>
+            <h3>400 pessoas no mesmo HUB, sem subir de P1</h3>
+            <div class="rt-pair"><p class="rt-k rt-k--y">Por que existe</p><p>A capacidade P1 bateu 146% de uso e as atualizações começaram a ser recusadas. O caminho óbvio era pagar pela P2.</p></div>
+            <div class="rt-pair"><p class="rt-k rt-k--y">O que eu fiz</p><p>Medi antes de comprar: a carga vinha dos fluxos de e-mail, não dos usuários. Reescritos, caíram de 78 mil para 2 mil consultas por dia.</p></div>
+            <div class="rt-actions">
+              <button type="button" class="rt-btn" data-rt-open="2">Abrir o caso completo</button>
+              <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="3">Próxima parada</button>
+            </div>
+          </div>
+          <div class="rt-sum-viz">
+            <p class="rt-hero"><span data-count="60" data-prefix="US$ " data-suffix=" mil">US$ 60 mil</span></p>
+            <p class="rt-hero-sub">por ano de economia, com os mesmos 400 usuários na P1</p>
+            <div class="rt-chart">
+              <p class="rt-k">Consultas por dia dos fluxos de e-mail</p>
+              <div class="rt-cols">
+                <div class="rt-col"><span class="rt-col-v">78 mil</span><span class="rt-col-b dim" style="--h:117px;--d:100ms"></span><span class="rt-col-l">antes</span></div>
+                <div class="rt-col"><span class="rt-col-v">2 mil</span><span class="rt-col-b hi rt-col-b--drop" style="--h:117px"></span><span class="rt-col-l">depois</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESUMO 04 -->
+        <div class="rt-sum" id="rt-sum-3" data-rt-sum="3">
+          <div class="rt-sum-txt">
+            <p class="rt-k">Parada 04 · Posto · Dado público</p>
+            <h3>O mesmo rigor com dado que qualquer um confere</h3>
+            <div class="rt-pair"><p class="rt-k rt-k--y">Por que existe</p><p>Mostrar que o método funciona fora da empresa, com dados abertos que qualquer pessoa pode baixar e conferir.</p></div>
+            <div class="rt-pair"><p class="rt-k rt-k--y">O que eu fiz</p><p>Pipeline semanal da ANP com ingestão idempotente, contratos nas tabelas finais e métricas definidas uma vez. Sem teste verde, nada entra.</p></div>
+            <div class="rt-actions">
+              <button type="button" class="rt-btn" data-rt-open="3">Abrir o caso completo</button>
+              <button type="button" class="rt-btn rt-btn--ghost" data-rt-go="0">Voltar ao início</button>
+            </div>
+          </div>
+          <div class="rt-sum-viz">
+            <p class="rt-hero"><span data-count="873" data-suffix=" mil">873 mil</span></p>
+            <p class="rt-hero-sub">coletas reais de 9.307 postos em 27 estados</p>
+            <div class="rt-chart">
+              <p class="rt-k">O que roda a cada build</p>
+              <div class="rt-cols">
+                <div class="rt-col"><span class="rt-col-v">30</span><span class="rt-col-b hi" style="--h:112px;--d:100ms"></span><span class="rt-col-l">testes</span></div>
+                <div class="rt-col"><span class="rt-col-v">28</span><span class="rt-col-b ok" style="--h:105px;--d:200ms"></span><span class="rt-col-l">checks</span></div>
+                <div class="rt-col"><span class="rt-col-v">10</span><span class="rt-col-b ok" style="--h:37px;--d:300ms"></span><span class="rt-col-l">assets</span></div>
+                <div class="rt-col"><span class="rt-col-v">6</span><span class="rt-col-b ok" style="--h:22px;--d:400ms"></span><span class="rt-col-l">contratos</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================== CASOS COMPLETOS ===================== -->
+      <!-- Abrem aqui, um por vez, no mesmo design. Cada passo: título, duas frases, um visual. -->
+      <div class="rt-cases" data-rt-cases>
+
+        <!-- CASO 01 -->
+        <article class="rt-case" id="caso-01" data-rt-case="0" aria-labelledby="rt-c1-t">
+          <header class="rt-case-head">
+            <div class="rt-case-id"><span class="rt-num">01</span><div><p class="rt-k">Caso 01 · Aurora Alimentos · distribuidora fictícia de laticínios</p><h3 id="rt-c1-t">Quanto a ruptura custa</h3></div></div>
+            <button type="button" class="rt-close" data-rt-close aria-label="Fechar o caso e voltar à rota">Voltar à rota</button>
+            <p class="rt-case-lead">Do gerador de dados ao alerta no e-mail de cada cargo, para responder em reais: quanto a ruptura custa, onde, e quem precisa agir.</p>
+            <div class="rt-kpis">
+              <div><b data-count="209" data-prefix="R$ " data-suffix=" mil">R$ 209 mil</b><span>de venda perdida em ago/2026</span></div>
+              <div><b data-count="213">213</b><span>itens críticos já sem estoque na loja</span></div>
+              <div><b data-count="1940">1.940</b><span>itens no pedido sugerido, em 80 lojas</span></div>
+            </div>
+          </header>
+          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso 01">
+            <button type="button" role="tab" data-rt-tab="0">01 Base</button>
+            <button type="button" role="tab" data-rt-tab="1">02 Banco</button>
+            <button type="button" role="tab" data-rt-tab="2">03 Modelo</button>
+            <button type="button" role="tab" data-rt-tab="3">04 Telas</button>
+            <button type="button" role="tab" data-rt-tab="4">05 Pedido</button>
+            <button type="button" role="tab" data-rt-tab="5">06 Alertas</button>
+          </div>
+          <section class="rt-step" role="tabpanel" data-rt-step="0">
+            <div class="rt-step-txt">
+              <h4>Uma base onde a ruptura não é sorteada</h4>
+              <p>30 distribuidores, 250 lojas, 48 produtos e 19 meses de sell-in. A ruptura nasce do estoque dia a dia e atinge 11,2% dos pares de loja e produto.</p>
+              <p>Os parâmetros verdadeiros ficam ocultos no gerador, então cada estimativa pode ser comparada com o valor que a produziu.</p>
+              <ul class="rt-tags"><li>Python</li><li>pandas</li><li>numpy</li></ul>
+            </div>
+            <div class="rt-viz rt-stats4">
+              <div><b data-count="3.8" data-dec="1" data-suffix=" mi">3,8 mi</b><span>linhas de fato</span></div>
+              <div><b data-count="7528">7.528</b><span>pares de loja e produto</span></div>
+              <div><b data-count="11.2" data-dec="1" data-suffix="%">11,2%</b><span>dos pares em ruptura por dia</span></div>
+              <div><b>19</b><span>meses, fev/2025 a ago/2026</span></div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="1">
+            <div class="rt-step-txt">
+              <h4>Estrela com contrato</h4>
+              <p>Sell-in, sell-out, estoque e agenda de compra no PostgreSQL 18, com dimensões compartilhadas e views materializadas.</p>
+              <p>Um arquivo de contrato fixa nomes, tipos e chaves. Se algo muda, quebra no banco, não no painel.</p>
+              <ul class="rt-tags"><li>PostgreSQL 18</li><li>SQL</li></ul>
+            </div>
+            <figure class="rt-viz rt-shot"><img src="03-modelo.png" alt="Modelo semântico da Aurora no Power BI Desktop, com as tabelas de fato, as dimensões e as visões de ruptura e de sugestão de pedido" width="1327" height="742" loading="lazy"><figcaption>Modelo e relacionamentos no Power BI Desktop</figcaption></figure>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="2">
+            <div class="rt-step-txt">
+              <h4>Cobertura que não engana a compra</h4>
+              <p>A cobertura ponderada pela demanda dá 9,43 dias onde a média simples dizia 15,21. Essa diferença inverte uma decisão de compra.</p>
+              <p>O risco usa a data de entrega, não a data do pedido.</p>
+              <ul class="rt-tags"><li>Power BI</li><li>DAX</li></ul>
+            </div>
+            <div class="rt-viz rt-hbars">
+              <p class="rt-k">Cobertura de estoque, em dias</p>
+              <div class="rt-hrow"><span class="rt-hl">média simples</span><span class="rt-track"><i class="dim" style="--w:95%;--d:100ms"></i></span><b>15,21</b></div>
+              <div class="rt-hrow"><span class="rt-hl">ponderada</span><span class="rt-track"><i class="hi" style="--w:59%;--d:250ms"></i></span><b>9,43</b></div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="3">
+            <div class="rt-step-txt">
+              <h4>9 telas, uma folha de estilo</h4>
+              <p>As telas saem de uma folha de estilo só. O Power BI mostra o que já foi calculado no banco.</p>
+              <p>Rodar Python ou R dentro do relatório foi descartado: o painel não recalcula o que o pipeline já entregou.</p>
+              <ul class="rt-tags"><li>HTML</li><li>CSS</li><li>DAX</li></ul>
+            </div>
+            <figure class="rt-viz rt-shot"><img src="04-telas.png" alt="Tela Ruptura em Valor do painel Aurora, com o valor em risco, a cobertura, os pares em ruptura e os maiores ofensores" width="1267" height="697" loading="lazy"><figcaption>Tela de ruptura valorizada</figcaption></figure>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="4">
+            <div class="rt-step-txt">
+              <h4>Do risco ao pedido sugerido</h4>
+              <p>Cada série vai para o modelo que ganhou no backtest. O pedido cobre o ciclo de compra da loja, com estoque de segurança tirado do erro medido.</p>
+              <p>O treino usa venda mais demanda não atendida, para o modelo não aprender a própria ruptura.</p>
+              <ul class="rt-tags"><li>statsforecast</li><li>Python</li><li>DAX</li></ul>
+            </div>
+            <div class="rt-viz rt-stats3">
+              <div><b data-count="80">80</b><span>lojas precisando de estoque</span></div>
+              <div><b data-count="1940">1.940</b><span>itens no pedido</span></div>
+              <div><b data-count="213">213</b><span>críticos já em ruptura</span></div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="5">
+            <div class="rt-step-txt">
+              <h4>Cada cargo recebe a sua parte</h4>
+              <p>Vendedor, gestor, diretor e reposição recebem por e-mail a versão do seu cargo: pedido sugerido, lojas e itens críticos.</p>
+              <p>Ninguém precisa abrir o painel para saber o que fazer hoje.</p>
+              <ul class="rt-tags"><li>Python</li><li>SMTP</li></ul>
+            </div>
+            <div class="rt-viz rt-roles">
+              <span style="--d:100ms">Vendedor</span><span style="--d:220ms">Gestor</span><span style="--d:340ms">Diretor</span><span style="--d:460ms">Reposição</span>
+            </div>
+          </section>
+          <footer class="rt-case-foot">
+            <button type="button" class="rt-btn rt-btn--ghost" data-rt-prev>Etapa anterior</button>
+            <button type="button" class="rt-btn" data-rt-next>Próxima etapa</button>
+            <div class="rt-links"><a href="aurora/">Ver as telas online</a></div>
+          </footer>
+        </article>
+
+        <!-- CASO 02 -->
+        <article class="rt-case" id="caso-02" data-rt-case="1" aria-labelledby="rt-c2-t">
+          <header class="rt-case-head">
+            <div class="rt-case-id"><span class="rt-num">02</span><div><p class="rt-k">Caso 02 · Aurora Alimentos · reconstrução aberta de um motor em produção</p><h3 id="rt-c2-t">Por que a receita mudou</h3></div></div>
+            <button type="button" class="rt-close" data-rt-close aria-label="Fechar o caso e voltar à rota">Voltar à rota</button>
+            <p class="rt-case-lead">Quanto da variação é loja nova, quanto é preço e quanto é troca de item barato por caro, numa resposta que fecha no centavo.</p>
+            <div class="rt-kpis">
+              <div><b data-count="287352" data-prefix="+">+287.352</b><span>de variação, +18,9% contra o ano anterior</span></div>
+              <div><b>R$ 0,00</b><span>de sobra entre pilares e variação</span></div>
+              <div><b data-count="14">14</b><span>casos de teste com resposta conhecida</span></div>
+            </div>
+          </header>
+          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso 02">
+            <button type="button" role="tab" data-rt-tab="0">01 Soma</button>
+            <button type="button" role="tab" data-rt-tab="1">02 Ritmo</button>
+            <button type="button" role="tab" data-rt-tab="2">03 Mix</button>
+            <button type="button" role="tab" data-rt-tab="3">04 Calendário</button>
+            <button type="button" role="tab" data-rt-tab="4">05 Tela</button>
+          </div>
+          <section class="rt-step" role="tabpanel" data-rt-step="0">
+            <div class="rt-step-txt">
+              <h4>A soma fecha por construção</h4>
+              <p>Cada pilar é gravado no grão de loja e produto, em centavos. A sobra do arredondamento fica no próprio par, não numa linha global que sumiria no filtro.</p>
+              <p>Se a soma não bate com as pontas, a carga é abortada sem gravar nada.</p>
+              <ul class="rt-tags"><li>PostgreSQL</li><li>PL/pgSQL</li></ul>
+            </div>
+            <div class="rt-viz rt-chart rt-chart--light">
+              <p class="rt-k">08/2026 vs 08/2025 · receita líquida</p>
+              <div class="rt-wf" role="img" aria-label="Cascata da variação de receita">
+                <div><span class="t" style="bottom:0;height:31.9px;--d:100ms"></span></div>
+                <div><span class="p" style="bottom:31.9px;height:72.5px;--d:180ms"></span></div>
+                <div><span class="n" style="bottom:82.2px;height:22.2px;--d:260ms"></span></div>
+                <div><span class="n" style="bottom:74.3px;height:7.9px;--d:340ms"></span></div>
+                <div><span class="p" style="bottom:74.3px;height:22.2px;--d:420ms"></span></div>
+                <div><span class="n" style="bottom:94.6px;height:2px;--d:500ms"></span></div>
+                <div><span class="p" style="bottom:95.7px;height:5.9px;--d:580ms"></span></div>
+                <div><span class="p" style="bottom:101.6px;height:55.5px;--d:660ms"></span></div>
+                <div><span class="n" style="bottom:155.1px;height:2px;--d:740ms"></span></div>
+                <div><span class="t" style="bottom:0;height:155.7px;--d:820ms"></span></div>
+              </div>
+              <div class="rt-axis"><span>base 1.524.144</span><span>atual 1.811.496</span></div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="1">
+            <div class="rt-step-txt">
+              <h4>Ritmo de compra não é perda</h4>
+              <p>Uma janela de três meses de atividade separa a loja que parou de comprar da loja que só compra em outro ciclo.</p>
+              <p>A mesma regra vale para os itens dentro de cada loja.</p>
+              <ul class="rt-tags"><li>SQL</li></ul>
+            </div>
+            <div class="rt-viz rt-stats3">
+              <div><b>3 meses</b><span>de janela de atividade</span></div>
+              <div><b>loja</b><span>perda real ou ciclo</span></div>
+              <div><b>item</b><span>a mesma regra dentro da loja</span></div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="2">
+            <div class="rt-step-txt">
+              <h4>Mix separado de volume</h4>
+              <p>O volume é valorizado ao preço médio da loja. A diferença para o preço do item vira mix.</p>
+              <p>14 casos de teste com resposta conhecida rodam num banco descartável a cada mudança.</p>
+              <ul class="rt-tags"><li>PostgreSQL</li><li>pytest</li></ul>
+            </div>
+            <div class="rt-viz rt-stats3">
+              <div><b data-count="14">14</b><span>casos de teste com resposta conhecida</span></div>
+              <div><b data-count="9">9</b><span>testes de sanidade depois de cada carga</span></div>
+              <div><b>0</b><span>linhas gravadas se a soma não fecha</span></div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="3">
+            <div class="rt-step-txt">
+              <h4>Dias úteis medidos, não supostos</h4>
+              <p>A elasticidade aos dias úteis é estimada com intervalo de confiança e só entra se o intervalo exclui zero.</p>
+              <p>Em produção ela mediu 0,11. Supor proporcionalidade inflaria o pilar de calendário nove vezes. Na Aurora o intervalo incluiu zero, e o motor usou zero.</p>
+              <ul class="rt-tags"><li>Python</li><li>regressão log-log</li><li>bootstrap</li></ul>
+            </div>
+            <div class="rt-viz rt-hbars">
+              <p class="rt-k">Peso dos dias úteis na receita</p>
+              <div class="rt-hrow"><span class="rt-hl">proporcional</span><span class="rt-track"><i class="dim" style="--w:100%;--d:100ms"></i></span><b>1,00</b></div>
+              <div class="rt-hrow"><span class="rt-hl">medido</span><span class="rt-track"><i class="hi" style="--w:11%;--d:250ms"></i></span><b>0,11</b></div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="4">
+            <div class="rt-step-txt">
+              <h4>Uma tela que se confere sozinha</h4>
+              <p>Uma medida DAX devolve a tela em HTML. Uma medida de controle tem que dar zero em qualquer filtro.</p>
+              <p>Elasticidade de preço, simulador e otimizador ficam no repositório como apêndice.</p>
+              <ul class="rt-tags"><li>DAX</li><li>HTML</li></ul>
+            </div>
+            <figure class="rt-viz rt-shot"><img src="11-variacao.png" alt="Tela de variação de receita de agosto de 2026 contra agosto de 2025, em cascata da base de 1.524.144 à receita atual de 1.811.496" width="1240" height="640" loading="lazy"><figcaption>Tela de variação no Power BI</figcaption></figure>
+          </section>
+          <footer class="rt-case-foot">
+            <button type="button" class="rt-btn rt-btn--ghost" data-rt-prev>Etapa anterior</button>
+            <button type="button" class="rt-btn" data-rt-next>Próxima etapa</button>
+            <div class="rt-links"><a href="aurora/#variacao">Ver a tela online</a></div>
+          </footer>
+        </article>
+
+        <!-- CASO 03 -->
+        <article class="rt-case" id="caso-03" data-rt-case="2" aria-labelledby="rt-c3-t">
+          <header class="rt-case-head">
+            <div class="rt-case-id"><span class="rt-num">03</span><div><p class="rt-k">Caso 03 · Vigor Alimentos · HUB comercial em produção</p><h3 id="rt-c3-t">BI para 400 usuários sem subir capacidade</h3></div></div>
+            <button type="button" class="rt-close" data-rt-close aria-label="Fechar o caso e voltar à rota">Voltar à rota</button>
+            <p class="rt-case-lead">O HUB comercial atende até 400 pessoas ao mesmo tempo numa capacidade P1 do Microsoft Fabric. Quando ela travou, a resposta foi medir antes de comprar.</p>
+            <div class="rt-kpis">
+              <div><b data-count="60" data-prefix="US$ " data-suffix=" mil">US$ 60 mil</b><span>por ano, sem migrar para P2</span></div>
+              <div><b data-count="97" data-suffix="%">97%</b><span>menos consultas por dia</span></div>
+              <div><b data-count="400">400</b><span>usuários simultâneos</span></div>
+            </div>
+          </header>
+          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso 03">
+            <button type="button" role="tab" data-rt-tab="0">01 Problema</button>
+            <button type="button" role="tab" data-rt-tab="1">02 Medir</button>
+            <button type="button" role="tab" data-rt-tab="2">03 Cache</button>
+            <button type="button" role="tab" data-rt-tab="3">04 Nota</button>
+          </div>
+          <section class="rt-step" role="tabpanel" data-rt-step="0">
+            <div class="rt-step-txt">
+              <h4>146% de uso e atualização recusada</h4>
+              <p>A capacidade P1 passou do limite e as atualizações começaram a ser recusadas. O caminho óbvio era subir para P2.</p>
+              <p>Antes de comprar, a pergunta foi outra: quem está consumindo?</p>
+              <ul class="rt-tags"><li>Microsoft Fabric</li><li>P1</li></ul>
+            </div>
+            <div class="rt-viz rt-hbars">
+              <p class="rt-k">Uso da capacidade P1 (linha branca = 100%)</p>
+              <div class="rt-hrow"><span class="rt-hl">pico</span><span class="rt-track"><i class="neg" style="--w:91%;--d:100ms"></i><em class="rt-limit" style="left:62.5%"></em></span><b>146%</b></div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="1">
+            <div class="rt-step-txt">
+              <h4>A carga vinha dos fluxos, não das pessoas</h4>
+              <p>Atualização automática de página foi descartada. O peso estava nos fluxos do Power Automate que montavam relatórios por e-mail.</p>
+              <p>Reescritos, caíram de 78 mil para 2 mil consultas por dia.</p>
+              <ul class="rt-tags"><li>Power Automate</li><li>DAX</li></ul>
+            </div>
+            <div class="rt-viz rt-chart">
+              <p class="rt-k">Consultas por dia dos fluxos</p>
+              <div class="rt-cols">
+                <div class="rt-col"><span class="rt-col-v">78 mil</span><span class="rt-col-b dim" style="--h:117px;--d:100ms"></span><span class="rt-col-l">antes</span></div>
+                <div class="rt-col"><span class="rt-col-v">2 mil</span><span class="rt-col-b hi rt-col-b--drop" style="--h:117px"></span><span class="rt-col-l">depois</span></div>
+              </div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="2">
+            <div class="rt-step-txt">
+              <h4>O cache levava mais que os dados</h4>
+              <p>O histórico de atualização mostrou 17 minutos na fase de cache contra 8 na carga de dados.</p>
+              <p>O cache de consultas foi desligado.</p>
+              <ul class="rt-tags"><li>Fabric</li><li>histórico de refresh</li></ul>
+            </div>
+            <div class="rt-viz rt-hbars">
+              <p class="rt-k">Tempo por fase da atualização</p>
+              <div class="rt-hrow"><span class="rt-hl">cache</span><span class="rt-track"><i class="neg" style="--w:85%;--d:100ms"></i></span><b>17 min</b></div>
+              <div class="rt-hrow"><span class="rt-hl">dados</span><span class="rt-track"><i class="ok" style="--w:40%;--d:250ms"></i></span><b>8 min</b></div>
+            </div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="3">
+            <div class="rt-step-txt">
+              <h4>Relatório fraco não publica</h4>
+              <p>Uma ferramenta em Python dá nota de A+ a F a cada relatório antes da publicação e simula o ganho de cada remoção antes de mexer no arquivo.</p>
+              <p>Sem capturas nem repositório público: os dados e arquivos são internos.</p>
+              <ul class="rt-tags"><li>Python</li><li>governança</li></ul>
+            </div>
+            <div class="rt-viz rt-grades">
+              <span class="g1" style="--d:100ms">A+</span><span style="--d:180ms">A</span><span style="--d:260ms">B</span><span style="--d:340ms">C</span><span style="--d:420ms">D</span><span class="g5" style="--d:500ms">F</span>
+            </div>
+          </section>
+          <footer class="rt-case-foot">
+            <button type="button" class="rt-btn rt-btn--ghost" data-rt-prev>Etapa anterior</button>
+            <button type="button" class="rt-btn" data-rt-next>Próxima etapa</button>
+          </footer>
+        </article>
+
+        <!-- CASO 04 -->
+        <article class="rt-case" id="caso-04" data-rt-case="3" aria-labelledby="rt-c4-t">
+          <header class="rt-case-head">
+            <div class="rt-case-id"><span class="rt-num">04</span><div><p class="rt-k">Caso 04 · dados públicos da ANP</p><h3 id="rt-c4-t">Radar de preço de combustível</h3></div></div>
+            <button type="button" class="rt-close" data-rt-close aria-label="Fechar o caso e voltar à rota">Voltar à rota</button>
+            <p class="rt-case-lead">A série histórica de preços da ANP, do download semanal ao mart pronto para análise, com contrato nas tabelas e cada métrica definida uma vez.</p>
+            <div class="rt-kpis">
+              <div><b data-count="873" data-suffix=" mil">873 mil</b><span>coletas reais de preço</span></div>
+              <div><b data-count="9307">9.307</b><span>postos em 27 estados</span></div>
+              <div><b data-count="30">30</b><span>testes a cada build</span></div>
+            </div>
+          </header>
+          <div class="rt-tabs" role="tablist" aria-label="Etapas do caso 04">
+            <button type="button" role="tab" data-rt-tab="0">01 Ingestão</button>
+            <button type="button" role="tab" data-rt-tab="1">02 Camadas</button>
+            <button type="button" role="tab" data-rt-tab="2">03 Semântica</button>
+            <button type="button" role="tab" data-rt-tab="3">04 Orquestra</button>
+            <button type="button" role="tab" data-rt-tab="4">05 CI</button>
+          </div>
+          <section class="rt-step" role="tabpanel" data-rt-step="0">
+            <div class="rt-step-txt">
+              <h4>Só reprocessa o que mudou</h4>
+              <p>A comparação por hash faz cada arquivo da ANP ser processado uma vez. A camada bronze guarda o bruto com origem e data de ingestão em cada linha.</p>
+              <ul class="rt-tags"><li>Python</li><li>Parquet</li><li>DuckDB</li></ul>
+            </div>
+            <div class="rt-viz rt-pipe" data-on="0"><span>ingestão</span><span>camadas</span><span>semântica</span><span>orquestra</span><span>CI</span></div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="1">
+            <div class="rt-step-txt">
+              <h4>Três camadas, um trabalho cada</h4>
+              <p>Tipagem, deduplicação e modelagem. 30 testes por build, com erro bloqueando. As 6 tabelas finais têm contrato de nome e tipo.</p>
+              <p>A primeira execução real pegou um produto com a unidade escrita de dois jeitos.</p>
+              <ul class="rt-tags"><li>dbt</li><li>SQL</li></ul>
+            </div>
+            <div class="rt-viz rt-pipe" data-on="1"><span>ingestão</span><span>camadas</span><span>semântica</span><span>orquestra</span><span>CI</span></div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="2">
+            <div class="rt-step-txt">
+              <h4>Cada métrica definida uma vez</h4>
+              <p>Preço mediano, margem média e taxa de margem negativa têm agregação, grão e dimensões declarados.</p>
+              <p>A margem só é calculada onde há valor de compra, então margem ausente nunca vira zero.</p>
+              <ul class="rt-tags"><li>dbt</li><li>MetricFlow</li></ul>
+            </div>
+            <div class="rt-viz rt-pipe" data-on="2"><span>ingestão</span><span>camadas</span><span>semântica</span><span>orquestra</span><span>CI</span></div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="3">
+            <div class="rt-step-txt">
+              <h4>Um grafo só, do arquivo ao resumo</h4>
+              <p>Ingestão em Python e modelos dbt no mesmo grafo, com agenda semanal. A execução mostrou 10 assets e 28 checks passando.</p>
+              <ul class="rt-tags"><li>Dagster</li></ul>
+            </div>
+            <div class="rt-viz rt-pipe" data-on="3"><span>ingestão</span><span>camadas</span><span>semântica</span><span>orquestra</span><span>CI</span></div>
+          </section>
+          <section class="rt-step" role="tabpanel" data-rt-step="4">
+            <div class="rt-step-txt">
+              <h4>Sem teste verde, nada entra</h4>
+              <p>Cada mudança roda o pipeline completo sobre uma amostra versionada e valida a camada semântica num warehouse recém-construído, em 50 segundos.</p>
+              <p>A documentação do dbt publica sozinha.</p>
+              <ul class="rt-tags"><li>GitHub Actions</li><li>GitHub Pages</li></ul>
+            </div>
+            <div class="rt-viz rt-pipe" data-on="4"><span>ingestão</span><span>camadas</span><span>semântica</span><span>orquestra</span><span>CI</span></div>
+          </section>
+          <footer class="rt-case-foot">
+            <button type="button" class="rt-btn rt-btn--ghost" data-rt-prev>Etapa anterior</button>
+            <button type="button" class="rt-btn" data-rt-next>Próxima etapa</button>
+            <div class="rt-links"><a href="https://github.com/vitordjk/radar-precos-combustiveis" rel="noopener">Repositório</a><a href="https://vitordjk.github.io/radar-precos-combustiveis/" rel="noopener">dbt docs</a></div>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </section>
 
   <section class="exp placa-verde" id="experiencia" aria-labelledby="t-experiencia">
     <div class="largura">
@@ -122,6 +674,29 @@
           </tbody>
         </table>
       </div>
+      <div class="exp-auto" aria-labelledby="t-exp-auto">
+        <p class="exp-auto-titulo" id="t-exp-auto">do Excel para o hub</p>
+        <ul class="exp-auto-lista">
+          <li>
+            <span class="exp-kpi-rotulo">Maratona Vigor</span>
+            <span class="exp-auto-antes">3 dias</span>
+            <span class="exp-auto-depois">automático</span>
+            <span class="exp-kpi-nota">de apuração ao fim de cada campanha; o resultado sai com o fechamento do mês</span>
+          </li>
+          <li>
+            <span class="exp-kpi-rotulo">Ciclo de vida</span>
+            <span class="exp-auto-antes">+3 h</span>
+            <span class="exp-auto-depois">automático</span>
+            <span class="exp-kpi-nota">de trabalho manual do analista a cada atualização; agora atualiza junto com o hub</span>
+          </li>
+          <li>
+            <span class="exp-kpi-rotulo">Performance</span>
+            <span class="exp-auto-antes">4 h</span>
+            <span class="exp-auto-depois">automático</span>
+            <span class="exp-kpi-nota">por atualização dos clientes a recuperar e dos sem compra há mais de 14 meses; consulta e análise prontas no hub</span>
+          </li>
+        </ul>
+      </div>
       <ul class="exp-rodape">
         <li>Ciência e Tecnologia, UFABC</li>
         <li>inglês C1</li>
@@ -136,579 +711,6 @@
   </section>
 
   <!-- ===== Seção "O que mudou" (painel de casos) ===== -->
-  <section class="pc" id="casos" aria-labelledby="pc-titulo">
-    <div class="pc-wrap">
-  
-      <header class="pc-head">
-        <div class="pc-head-txt">
-          <p class="pc-eyebrow">Casos · resultado primeiro</p>
-          <h2 class="pc-title" id="pc-titulo">O que mudou<span class="pc-dot">.</span></h2>
-          <p class="pc-lead">Quatro casos e o que está em produção na Vigor, com o número que importa em cada. O texto completo continua um clique abaixo.</p>
-        </div>
-        <button class="pc-replay" type="button" data-pc-replay>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
-          Rever animação
-        </button>
-      </header>
-  
-      <div class="pc-panel">
-  
-        <div class="pc-bar">
-          <span class="pc-path">vitor / <b>casos</b></span>
-          <div class="pc-chips" role="group" aria-label="Filtrar casos">
-            <button type="button" class="pc-chip" data-pc-focus="0" aria-pressed="true">Todos</button>
-            <button type="button" class="pc-chip" data-pc-focus="1" aria-pressed="false">Ruptura</button>
-            <button type="button" class="pc-chip" data-pc-focus="2" aria-pressed="false">Variação</button>
-            <button type="button" class="pc-chip" data-pc-focus="3" aria-pressed="false">Capacidade</button>
-            <button type="button" class="pc-chip" data-pc-focus="4" aria-pressed="false">Dados públicos</button>
-            <button type="button" class="pc-chip" data-pc-focus="5" aria-pressed="false">Vigor</button>
-          </div>
-        </div>
-  
-        <div class="pc-kpis">
-          <div class="pc-kpi">
-            <div class="pc-kpi-top"><span class="pc-label">Usuários simultâneos</span><span class="pc-tag">Caso 03</span></div>
-            <div class="pc-kpi-val" data-count="400">400</div>
-            <p class="pc-kpi-sub">no HUB comercial, na mesma capacidade P1</p>
-          </div>
-          <div class="pc-kpi">
-            <div class="pc-kpi-top"><span class="pc-label">Consultas a menos</span><span class="pc-tag">Caso 03</span></div>
-            <div class="pc-kpi-val" data-count="97" data-suffix="%">97%</div>
-            <p class="pc-kpi-sub">por dia, de 78 mil para 2 mil</p>
-          </div>
-          <div class="pc-kpi">
-            <div class="pc-kpi-top"><span class="pc-label">Sobra na soma</span><span class="pc-tag">Caso 02</span></div>
-            <div class="pc-kpi-val" data-count="0" data-from="287352" data-dec="2" data-prefix="R$ " data-delay="100" data-dur="1400">R$ 0,00</div>
-            <p class="pc-kpi-sub">pilares contra a variação, em qualquer filtro</p>
-          </div>
-          <div class="pc-kpi">
-            <div class="pc-kpi-top"><span class="pc-label">Coletas reais ANP</span><span class="pc-tag">Caso 04</span></div>
-            <div class="pc-kpi-val" data-count="873" data-suffix=" mil" data-delay="150">873 mil</div>
-            <p class="pc-kpi-sub">de 9.307 postos em 27 estados</p>
-          </div>
-        </div>
-  
-        <div class="pc-grid">
-  
-            <!-- VIGOR, EM PRODUÇÃO -->
-        <article class="pc-case pc-vigor" data-pc-case="5">
-          <div class="pc-vigor-head">
-            <img class="pc-vigor-logo" src="vigor-logo.png" alt="Vigor Alimentos" width="185" height="96">
-            <div class="pc-vigor-txt">
-              <div class="pc-case-top"><span>Em produção · Vigor Alimentos</span><span>analista de dados e BI · fev/2024 até hoje</span></div>
-              <h3 class="pc-case-title">O que roda no hub comercial</h3>
-            </div>
-          </div>
-          <ul class="pc-vigor-grid">
-            <li>
-              <span class="pc-label">Hub de dados</span>
-              <b data-count="40" data-prefix="+" data-delay="200">+40</b>
-              <span>fontes num warehouse em estrela (Scanntech, Nielsen, Mtrix, Neogrid, Involves), com RLS por estrutura comercial</span>
-            </li>
-            <li>
-              <span class="pc-label">Ruptura</span>
-              <b data-count="10" data-prefix="R$ " data-suffix=" mi" data-delay="300">R$ 10 mi</b>
-              <span>de receita em risco identificada por cliente, cruzando venda diária com estoque e ciclo de compra</span>
-            </li>
-            <li>
-              <span class="pc-label">Atribuição de receita</span>
-              <b>no centavo</b>
-              <span>variação da receita líquida em carteira, sortimento, volume, mix, preço e cada linha da DRE, em qualquer filtro</span>
-            </li>
-            <li>
-              <span class="pc-label">Uso do servidor</span>
-              <b data-count="22" data-from="45" data-suffix="%" data-delay="400" data-dur="1400">22%</b>
-              <span>era 45%, depois de otimizar consultas e modelos</span>
-            </li>
-            <li>
-              <span class="pc-label">Análises fora do Excel</span>
-              <!-- AJUSTE: tempo de análise antes (Excel) e depois, por análise.
-                   Quando houver o número real, trocar o <b> por ele e citar na frase. -->
-              <b data-count="4" data-delay="500">4</b>
-              <span>Ciclo de vida, Performance, Despesas e resultados da Maratona de vendas: antes montadas à mão em Excel, hoje atualizam sozinhas no hub</span>
-            </li>
-            <li>
-              <span class="pc-label">Distribuição</span>
-              <b>e-mail e Teams</b>
-              <span>Power Automate monta o relatório de cada cargo e avisa o BI quando um dado não fecha</span>
-            </li>
-          </ul>
-          <a class="pc-go" href="#experiencia">Ver a experiência <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-        </article>
-
-      <!-- CASO 01 -->
-          <article class="pc-case" data-pc-case="1">
-            <div class="pc-case-top"><span>Caso 01 · Aurora Alimentos</span><span>Python · statsforecast · DAX</span></div>
-            <h3 class="pc-case-title">Quanto a ruptura custa</h3>
-            <div class="pc-chart">
-              <p class="pc-chart-title">Erro da previsão (WMAPE)</p>
-              <div class="pc-cols">
-                <div class="pc-col">
-                  <span class="pc-col-val" data-count="0.688" data-dec="3" data-delay="300">0,688</span>
-                  <span class="pc-vbar pc-vbar--dim" style="--h:108px;--d:300ms"></span>
-                  <span class="pc-col-lab">diário</span>
-                </div>
-                <div class="pc-col">
-                  <span class="pc-col-val" data-count="0.218" data-dec="3" data-delay="500">0,218</span>
-                  <span class="pc-vbar pc-vbar--hi" style="--h:34px;--d:500ms"></span>
-                  <span class="pc-col-lab">ciclo de 7 dias</span>
-                </div>
-              </div>
-            </div>
-            <div class="pc-stats">
-              <div><b data-count="80" data-delay="600">80</b><span>lojas precisando de estoque</span></div>
-              <div><b data-count="1940" data-delay="600">1.940</b><span>itens no pedido sugerido</span></div>
-              <div><b data-count="213" data-delay="600">213</b><span>críticos já em ruptura</span></div>
-            </div>
-            <a class="pc-go" href="#aurora">Ler o caso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-          </article>
-  
-          <!-- CASO 02 -->
-          <article class="pc-case" data-pc-case="2">
-            <div class="pc-case-top"><span>Caso 02 · Aurora Alimentos</span><span>PostgreSQL · PL/pgSQL</span></div>
-            <h3 class="pc-case-title">Por que a receita mudou</h3>
-            <div class="pc-chart">
-              <p class="pc-chart-title">08/2026 vs 08/2025 · receita líquida</p>
-              <div class="pc-wf" role="img" aria-label="Cascata: base de 1,52 milhão, oito pilares, receita atual de 1,81 milhão">
-                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--tot" style="bottom:0;height:31.9px;--d:200ms"></span><span class="pc-wf-lab" style="bottom:35.9px;--d:200ms">1,52 mi</span></div>
-                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--pos" style="bottom:31.9px;height:72.5px;--d:280ms"></span><span class="pc-wf-lab" style="bottom:108.5px;--d:280ms">+168,3k</span></div>
-                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--neg" style="bottom:82.2px;height:22.2px;--d:360ms"></span><span class="pc-wf-lab" style="bottom:108.5px;--d:360ms">-51,6k</span></div>
-                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--neg" style="bottom:74.3px;height:7.9px;--d:440ms"></span><span class="pc-wf-lab" style="bottom:86.2px;--d:440ms">-18,4k</span></div>
-                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--pos" style="bottom:74.3px;height:22.2px;--d:520ms"></span><span class="pc-wf-lab" style="bottom:100.6px;--d:520ms">+51,6k</span></div>
-                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--neg" style="bottom:94.6px;height:2px;--d:600ms"></span><span class="pc-wf-lab" style="bottom:100.6px;--d:600ms">-2,0k</span></div>
-                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--pos" style="bottom:95.7px;height:5.9px;--d:680ms"></span><span class="pc-wf-lab" style="bottom:105.6px;--d:680ms">+13,8k</span></div>
-                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--pos" style="bottom:101.6px;height:55.5px;--d:760ms"></span><span class="pc-wf-lab" style="bottom:161.1px;--d:760ms">+128,8k</span></div>
-                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--neg" style="bottom:155.1px;height:2px;--d:840ms"></span><span class="pc-wf-lab" style="bottom:161.1px;--d:840ms">-3,3k</span></div>
-                <div class="pc-wf-col"><span class="pc-wf-bar pc-wf--tot" style="bottom:0;height:155.7px;--d:920ms"></span><span class="pc-wf-lab" style="bottom:159.7px;--d:920ms">1,81 mi</span></div>
-              </div>
-              <div class="pc-wf-axis"><span>base</span><span>8 pilares</span><span>atual</span></div>
-            </div>
-            <div class="pc-stats">
-              <div><b data-count="287352" data-prefix="+" data-delay="1000">+287.352</b><span>variação, +18,9%</span></div>
-              <div><b>R$ 0,00</b><span>de sobra em qualquer filtro</span></div>
-              <div><b>14</b><span>casos de teste com resposta conhecida</span></div>
-            </div>
-            <a class="pc-go" href="#variacao">Ler o caso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-          </article>
-  
-          <!-- CASO 03 -->
-          <article class="pc-case" data-pc-case="3">
-            <div class="pc-case-top"><span class="pc-marca"><img src="vigor-logo.png" alt="" width="31" height="16">Caso 03 · Vigor Alimentos</span><span>Fabric P1 · Power Automate · Python</span></div>
-            <h3 class="pc-case-title">BI para 400 usuários sem subir capacidade</h3>
-            <div class="pc-chart pc-rows">
-              <div class="pc-row">
-                <div class="pc-row-head"><span>Uso da capacidade P1</span><b data-count="146" data-suffix="%" data-delay="150">146%</b></div>
-                <div class="pc-track"><span class="pc-fill pc-fill--over" style="--w:91.25%;--d:150ms"></span><span class="pc-limit" title="100%"></span></div>
-              </div>
-              <div class="pc-row">
-                <div class="pc-row-head"><span>Consultas por dia dos fluxos</span><b data-count="2" data-from="78" data-suffix=" mil" data-delay="700" data-dur="900">2 mil</b></div>
-                <div class="pc-track"><span class="pc-fill pc-fill--drop"></span></div>
-              </div>
-              <div class="pc-row">
-                <div class="pc-row-head"><span>Cache vs carga no refresh</span><b>17 min vs 8 min</b></div>
-                <div class="pc-track"><span class="pc-fill pc-fill--dim" style="--w:85%;--d:300ms"></span><span class="pc-fill pc-fill--ok" style="--w:40%;--d:450ms"></span></div>
-              </div>
-            </div>
-            <div class="pc-stats">
-              <div><b>P1</b><span>mantida, sem migrar para P2</span></div>
-              <div><b data-count="60" data-prefix="US$ " data-suffix=" mil" data-delay="1000">US$ 60 mil</b><span>de economia por ano</span></div>
-              <div><b>A+ a F</b><span>nota do relatório antes de publicar</span></div>
-            </div>
-            <a class="pc-go" href="#escala">Ler o caso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-          </article>
-  
-          <!-- CASO 04 -->
-          <article class="pc-case" data-pc-case="4">
-            <div class="pc-case-top"><span>Caso 04 · Dados públicos ANP</span><span>dbt · Dagster · DuckDB</span></div>
-            <h3 class="pc-case-title">Radar de preço de combustível</h3>
-            <div class="pc-chart">
-              <p class="pc-chart-title">Do arquivo bruto ao mart, toda semana</p>
-              <ol class="pc-pipe">
-                <li style="--d:250ms"><span class="pc-node">01</span><span class="pc-node-lab">ingestão</span></li>
-                <li style="--d:500ms"><span class="pc-node">02</span><span class="pc-node-lab">camadas</span></li>
-                <li style="--d:750ms"><span class="pc-node">03</span><span class="pc-node-lab">semântica</span></li>
-                <li style="--d:1000ms"><span class="pc-node">04</span><span class="pc-node-lab">orquestra</span></li>
-                <li style="--d:1250ms"><span class="pc-node">05</span><span class="pc-node-lab">CI</span></li>
-              </ol>
-            </div>
-            <div class="pc-stats">
-              <div><b data-count="30" data-delay="1300">30</b><span>testes a cada build</span></div>
-              <div><b data-count="28" data-delay="1400">28</b><span>checks passando no Dagster</span></div>
-              <div><b data-count="50" data-suffix=" s" data-delay="1500">50 s</b><span>pipeline completo no CI</span></div>
-            </div>
-            <a class="pc-go" href="#radar">Ler o caso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-          </article>
-  
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ===== fim da seção "O que mudou" ===== -->
-
-  <div id="casos-detalhe">
-
-    <section class="secao" id="aurora" aria-labelledby="t-aurora">
-      <div class="largura">
-        <p class="rotulo caso-rotulo">Caso 01 · Aurora Alimentos</p>
-        <h2 id="t-aurora">Quanto a ruptura custa</h2>
-        <p class="olho">Distribuidora fictícia de laticínios, construída de ponta a
-        ponta para responder uma pergunta: quanto a ruptura custa em reais, onde,
-        e quem precisa agir. Do gerador de dados ao alerta no e-mail de cada cargo.</p>
-
-        <div class="aur-grade">
-          <nav class="aur-indice" aria-label="Etapas do caso Aurora">
-            <ul>
-              <li><a href="#aurora-01">01 Geração da base</a></li>
-              <li><a href="#aurora-02">02 Banco e contrato</a></li>
-              <li><a href="#aurora-03">03 Modelo semântico</a></li>
-              <li><a href="#aurora-04">04 Telas do painel</a></li>
-              <li><a href="#aurora-05">05 Previsão e pedido</a></li>
-              <li><a href="#aurora-06">06 Alertas por e-mail</a></li>
-            </ul>
-          </nav>
-
-          <div>
-            <article class="aur-etapa" id="aurora-01">
-              <div class="aur-topo">
-                <span class="aur-num">01</span>
-                <h3>Geração da base</h3>
-              </div>
-              <p class="aur-ferramentas"><span>Python</span><span>pandas</span><span>numpy</span></p>
-              <p>30 distribuidores, 250 lojas, 48 produtos, 7.528 pares de loja e produto
-              e 19 meses de sell-in, de fevereiro de 2025 a agosto de 2026: 3,8 milhões
-              de linhas de fato
-              com semente fixa. Os parâmetros verdadeiros ficam ocultos no gerador,
-              o que permite comparar cada estimativa com o valor que a produziu.
-              A ruptura não é semeada: ela emerge do estoque dia a dia, em 11,2%
-              dos pares de loja e produto por dia.</p>
-              <figure>
-                <img class="fig-01" src="01-gerador.png" alt="Saída do gerador no terminal, com a contagem de linhas de cada tabela de fato e o percentual de dias em ruptura" width="682" height="357" loading="lazy">
-                <figcaption>Volumetria por tabela e percentual de dias em ruptura, na execução do gerador.</figcaption>
-              </figure>
-            </article>
-
-            <article class="aur-etapa" id="aurora-02">
-              <div class="aur-topo">
-                <span class="aur-num">02</span>
-                <h3>Banco, esquema e contrato</h3>
-              </div>
-              <p class="aur-ferramentas"><span>PostgreSQL 18</span></p>
-              <p>Modelo estrela com os fatos de sell-in, sell-out, estoque e agenda
-              de compra, dimensões conformadas e visões materializadas para o painel.
-              A camada de contrato em <code class="dado">sql/00_contrato_aurora.sql</code>
-              fixa nome, tipo e chave que o resto do projeto consome.</p>
-              <figure>
-                <img class="fig-02" src="02-banco.png" alt="Consulta no PostgreSQL listando as tabelas de fato com a contagem de linhas e a primeira e a última data de cada uma" width="655" height="237" loading="lazy">
-                <figcaption>As tabelas carregadas, com contagem de linhas e janela de datas.</figcaption>
-              </figure>
-            </article>
-
-            <article class="aur-etapa" id="aurora-03">
-              <div class="aur-topo">
-                <span class="aur-num">03</span>
-                <h3>Modelo semântico e risco</h3>
-              </div>
-              <p class="aur-ferramentas"><span>Power BI</span><span>DAX</span></p>
-              <!-- AJUSTE: total de medidas do modelo semântico. Fonte: o arquivo
-                   .pbix do Aurora. Como obter: abrir a Exibição de Modelo e contar
-                   as medidas da tabela @Medidas, ou listar por DAX com
-                   EVALUATE INFO.MEASURES(). -->
-              <p>Medidas de venda, estoque, cobertura e risco sobre as visões do banco:
-              cobertura em dias, giro diário, dias até a entrega e estoque em unidades.
-              A cobertura é sempre ponderada pela demanda, nunca média simples:
-              9,43 dias contra 15,21, diferença que inverte uma decisão de compra.
-              O cálculo de risco usa a data de entrega, não a data do pedido.</p>
-              <figure>
-                <img class="fig-03" src="03-modelo.png" alt="Modelo semântico no Power BI com as tabelas de fato, as dimensões conformadas e as visões de ruptura e de sugestão de pedido" width="1327" height="742" loading="lazy">
-                <figcaption>Modelo e relacionamentos no Power BI Desktop.</figcaption>
-              </figure>
-            </article>
-
-            <article class="aur-etapa" id="aurora-04">
-              <div class="aur-topo">
-                <span class="aur-num">04</span>
-                <h3>Telas do painel</h3>
-              </div>
-              <p class="aur-ferramentas"><span>HTML</span><span>CSS</span></p>
-              <p>9 telas de ruptura e pedido geradas a partir de um só arquivo de
-              estilo, do resumo executivo ao próximo pedido. O visual do Power BI
-              renderiza resultado já calculado. Rodar Python ou R dentro do relatório
-              foi descartado por limite de amostragem, dependência de gateway e saída
-              estática.</p>
-              <figure>
-                <img class="fig-04" src="04-telas.png" alt="Tela Ruptura em Valor do painel Aurora, com o menu das telas à esquerda e os cartões de valor em risco, cobertura média e pares em ruptura" width="1267" height="697" loading="lazy">
-                <figcaption>A tela de ruptura em valor, e à esquerda o menu com as telas.</figcaption>
-              </figure>
-              <p><a href="aurora/">Ver as telas online, com os dados da base</a></p>
-            </article>
-
-            <article class="aur-etapa" id="aurora-05">
-              <div class="aur-topo">
-                <span class="aur-num">05</span>
-                <h3>Previsão e sugestão de pedido</h3>
-              </div>
-              <p class="aur-ferramentas"><span>Python</span><span>statsforecast</span><span>DAX</span></p>
-              <p>Cada série de loja e produto é classificada por ADI e CV², segundo
-              Syntetos e Boylan, e roteada para AutoETS, CrostonOptimized ou
-              SeasonalNaive, com o modelo campeão escolhido em backtest de origem
-              móvel. O erro diário (WMAPE 0,688) cai para 0,218 no ciclo de 7 dias, que é
-              o grão em que o pedido é decidido. O alvo do treino é a venda mais a demanda não atendida: treinar
-              na venda observada ensinaria o modelo a prever a própria ruptura.</p>
-              <p>A previsão entra na decisão de estoque em vez de ficar em relatório
-              separado. A política é order-up-to, com estoque de segurança derivado
-              do erro do próprio backtest. A tela fecha a carteira inteira: lojas com
-              necessidade calculada, itens já em caixa fechada e itens críticos, que
-              são os que já estão sem produto na loja.</p>
-              <figure>
-                <img class="fig-05" src="05-pedidos.png" alt="Tela Próximo Pedido com o valor do pedido sugerido, 80 lojas para atender, 1.940 itens no pedido e 213 itens críticos" width="1270" height="702" loading="lazy">
-                <figcaption>Uma leitura da carteira: 80 lojas com necessidade calculada e 213 itens já sem estoque na loja.</figcaption>
-              </figure>
-            </article>
-
-            <article class="aur-etapa" id="aurora-06">
-              <div class="aur-topo">
-                <span class="aur-num">06</span>
-                <h3>Alertas por e-mail</h3>
-              </div>
-              <p class="aur-ferramentas"><span>Python</span><span>SMTP</span></p>
-              <p>Vendedor, gestor, diretor e reposição recebem versões diferentes do
-              mesmo alerta, cada um com o que precisa decidir. O e-mail traz o pedido
-              sugerido, as lojas para atender e os itens críticos, sem depender de
-              alguém abrir o painel.</p>
-              <figure>
-                <img class="fig-06" src="06-email.png" alt="E-mail de alerta na caixa de entrada, com o pedido sugerido, as lojas para atender, os itens críticos e a lista de produtos por loja" width="982" height="877" loading="lazy">
-                <figcaption>O alerta como chega ao destinatário.</figcaption>
-              </figure>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="secao" id="variacao" aria-labelledby="t-variacao">
-      <div class="largura">
-        <p class="rotulo caso-rotulo">Caso 02 · Aurora Alimentos</p>
-        <h2 id="t-variacao">Por que a receita mudou</h2>
-        <p class="olho">A receita mudou contra o ano anterior. Quanto disso é loja
-        nova, quanto é preço e quanto é a loja trocando um item barato por um caro?
-        Um motor em SQL quebra a variação em pilares que somam exatamente a variação,
-        no centavo, em qualquer filtro de loja, vendedor ou produto. A versão
-        original roda em produção numa indústria de alimentos; esta é a reconstrução
-        aberta, sobre a base da Aurora.</p>
-
-        <article class="rad-placa">
-          <div class="rad-topo">
-            <span class="rad-num dado">01</span>
-            <h3>A soma fecha por construção</h3>
-          </div>
-          <p class="rad-ferramentas"><span>PostgreSQL</span><span>PL/pgSQL</span></p>
-          <p>Cada pilar é calculado e gravado no grão de loja e produto, em centavos.
-          A sobra do arredondamento fica no próprio par, não numa linha global sem
-          loja que sumiria no primeiro filtro de vendedor. A carga é abortada sem
-          gravar nada se a soma dos pilares não bater com as pontas.</p>
-          <figure>
-            <img class="fig-11" src="11-variacao.png" alt="Tela de variação de receita de agosto de 2026 contra agosto de 2025 em cascata: receita base de 1.524.144, pilares de carteira, sortimento e comercial, e receita atual de 1.811.496, com o valor e o percentual sobre a base em cada barra" width="1240" height="640" loading="lazy">
-            <figcaption>A cascata de agosto de 2026 na base da Aurora: cada barra é um pilar, e a soma delas é a distância entre as pontas.</figcaption>
-          </figure>
-        </article>
-
-        <article class="rad-placa">
-          <div class="rad-topo">
-            <span class="rad-num dado">02</span>
-            <h3>Ritmo de compra não é perda</h3>
-          </div>
-          <p class="rad-ferramentas"><span>SQL</span></p>
-          <p>Loja que não comprou este mês não é loja perdida. Uma janela de atividade
-          de três meses separa perda de ritmo de compra, para a loja e para o item
-          dentro dela. Sem a janela, toda loja com pedido quinzenal alternaria entre
-          perdida e nova, inflando dois pilares com valores que se anulam.</p>
-        </article>
-
-        <article class="rad-placa">
-          <div class="rad-topo">
-            <span class="rad-num dado">03</span>
-            <h3>Mix separado do volume</h3>
-          </div>
-          <p class="rad-ferramentas"><span>SQL</span><span>pytest</span></p>
-          <p>O volume é valorizado ao preço médio da própria loja, e a diferença para o
-          preço do item vira mix. Dois testes provam a fórmula. Na troca de 50 caixas
-          de um item de R$ 10 por 50 de um item de R$ 30, o mix é +R$ 1.000 e volume
-          e preço ficam em zero. No crescimento igual de todos os itens, o mix é zero.
-          São 14 casos com resposta conhecida, rodando em banco descartável.</p>
-        </article>
-
-        <article class="rad-placa">
-          <div class="rad-topo">
-            <span class="rad-num dado">04</span>
-            <h3>Dias úteis: premissa medida</h3>
-          </div>
-          <p class="rad-ferramentas"><span>Python</span><span>numpy</span></p>
-          <p>Atribuir variação a dias úteis supõe que receita é proporcional a eles.
-          Quem compra por agenda não se comporta assim. A elasticidade é medida por
-          regressão log-log com tendência e intervalo por bootstrap, e o motor só usa
-          o valor se o intervalo não contém zero. Na versão em produção a medição deu
-          0,11: assumir proporcionalidade inflava o pilar de calendário em nove vezes,
-          com valor tirado dos pilares comerciais. Na base da Aurora a estimativa foi
-          0,59, com intervalo de 90% de -0,06 a 1,34. O intervalo contém zero, então o
-          motor usou zero.</p>
-        </article>
-
-        <article class="rad-placa">
-          <div class="rad-topo">
-            <span class="rad-num dado">05</span>
-            <h3>Tela e conferência</h3>
-          </div>
-          <p class="rad-ferramentas"><span>Power BI</span><span>DAX</span><span>HTML</span></p>
-          <p>A tela é uma medida DAX que devolve HTML, gerada a partir de um arquivo
-          de estilo, como as telas de ruptura. Cada barra mostra o valor na base e
-          hoje, o peso na variação e as lojas que mais pesam. Uma medida de
-          conferência tem que dar zero em qualquer filtro, e nove testes de sanidade
-          rodam depois de cada carga. Elasticidade de preço, simulador e otimizador
-          ficaram no repositório como apêndice.</p>
-        </article>
-
-        <!-- AJUSTE: endereços do repositório da Aurora e da documentação do
-             módulo (docs/VARIACAO.md), quando o repositório estiver público. -->
-        <div class="rad-links">
-          <a class="botao escuro" href="aurora/#variacao">Ver a tela online</a>
-          <a class="botao" href="https://github.com/vitordjk" rel="noopener">Código no GitHub</a>
-          <a class="botao" href="https://github.com/vitordjk" rel="noopener">Documentação do módulo</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="secao" id="escala" aria-labelledby="t-escala">
-      <div class="largura">
-        <p class="rotulo caso-rotulo">Caso 03 · Vigor Alimentos</p>
-        <h2 id="t-escala">BI para 400 usuários sem trocar de capacidade</h2>
-        <div class="int-grade">
-          <div>
-            <p>O hub comercial atende até 400 usuários simultâneos numa capacidade P1
-            do Microsoft Fabric. A capacidade chegou a 146% de uso e passou a recusar
-            atualizações. A saída óbvia era subir para P2.</p>
-            <p>Antes de comprar, medi. A primeira hipótese, a atualização automática
-            de página, foi descartada pelo dado: o consumo em segundo plano vinha de
-            consultas ao modelo, e a origem eram os fluxos do Power Automate que montam
-            os relatórios por e-mail. Reescritos, passaram de cerca de 78 mil para 2 mil
-            consultas por dia. A segunda causa estava no histórico de atualização: a
-            fase de cache de consulta levava 17 minutos contra 8 da carga de dados, e o
-            cache foi desligado.</p>
-            <p>Para o problema não voltar no próximo relatório publicado, construí uma
-            ferramenta desktop em Python que lê o modelo antes da publicação e dá nota
-            de A+ a F, com simulação do ganho de cada remoção antes de alterar o
-            arquivo. A capacidade continuou na P1: US$ 60 mil por ano a menos na conta.</p>
-          </div>
-          <div class="int-nota">
-            <span class="rotulo">Sem captura</span>
-            <p>Dado e arquivos são internos, então não há tela nem repositório público.
-            O caso está aqui pelo método: medir o consumo antes de comprar capacidade.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="secao" id="radar" aria-labelledby="t-radar">
-      <div class="largura">
-        <p class="rotulo caso-rotulo">Caso 04 · Dados públicos da ANP</p>
-        <h2 id="t-radar">Radar de Preços de Combustíveis</h2>
-        <p class="olho">Plataforma de dados sobre a série histórica de preços da ANP,
-        do download semanal ao mart pronto para análise: 873 mil coletas reais de
-        9.307 postos, nos 27 estados, com contrato nas tabelas finais e uma camada
-        semântica que define cada métrica uma vez.</p>
-
-        <article class="rad-placa">
-          <div class="rad-topo">
-            <span class="rad-num dado">01</span>
-            <h3>Ingestão idempotente</h3>
-          </div>
-          <p class="rad-ferramentas"><span>Python</span><span>Parquet</span><span>DuckDB</span></p>
-          <p>Comparação por hash: só o que mudou é reprocessado. O bronze guarda o
-          arquivo como veio, com origem e data de ingestão em cada linha.</p>
-          <figure>
-            <img class="fig-08" src="08-radar-ingestao.png" alt="Log da execução no Dagster mostrando os quatro arquivos da ANP reconhecidos como inalterados e pulados" width="1607" height="847" loading="lazy">
-            <figcaption>Segunda execução do dia: os 4 arquivos reconhecidos como inalterados e pulados, sem reprocessar nem duplicar.</figcaption>
-          </figure>
-        </article>
-
-        <article class="rad-placa">
-          <div class="rad-topo">
-            <span class="rad-num dado">02</span>
-            <h3>Camadas, testes e contrato</h3>
-          </div>
-          <p class="rad-ferramentas"><span>dbt</span><span>SQL</span></p>
-          <p>Três camadas com uma responsabilidade cada: tipar, deduplicar, modelar.
-          30 testes rodam em todo build, erro bloqueia e aviso pede investigação.
-          As seis tabelas finais têm contrato: nome e tipo de cada coluna declarados,
-          e o build recusa o que não bater, antes de a tabela ser substituída. Na
-          primeira execução real, um teste barrou um produto com a unidade grafada de
-          dois jeitos.</p>
-          <figure>
-            <img class="fig-09" src="09-radar-execucoes.png" alt="Linha de execução do Dagster com 10 assets, 28 verificações e status de sucesso" width="1606" height="101" loading="lazy">
-            <figcaption>A execução verde depois da correção do produto, antes da camada semântica.</figcaption>
-          </figure>
-        </article>
-
-        <article class="rad-placa">
-          <div class="rad-topo">
-            <span class="rad-num dado">03</span>
-            <h3>Camada semântica</h3>
-          </div>
-          <p class="rad-ferramentas"><span>dbt</span><span>MetricFlow</span></p>
-          <p>Preço mediano, margem média e taxa de margem negativa têm uma definição
-          só, versionada com os modelos, com agregação, grão e dimensões declarados.
-          É a mesma definição para o relatório, para a consulta avulsa e para um
-          agente de IA, que precisa desse contexto para não inventar a métrica. A
-          margem só é calculada sobre coletas com valor de compra: margem ausente
-          não vira zero.</p>
-          <pre class="rad-codigo"><code>- name: taxa_margem_negativa
-  type: ratio
-  type_params:
-    numerator: qtd_margem_negativa
-    denominator: qtd_coletas_com_margem
-
-$ mf query --metrics preco_mediano,taxa_margem_negativa \
-           --group-by metric_time__month,localidade__regiao</code></pre>
-        </article>
-
-        <article class="rad-placa">
-          <div class="rad-topo">
-            <span class="rad-num dado">04</span>
-            <h3>Orquestração e linhagem</h3>
-          </div>
-          <p class="rad-ferramentas"><span>Dagster</span></p>
-          <p>Ingestão em Python e modelos do dbt como um grafo só, do arquivo bruto da
-          ANP ao resumo semanal. Agendamento semanal.</p>
-          <figure>
-            <img class="fig-07" src="07-radar-linhagem.png" alt="Grafo de linhagem no Dagster, da ingestão dos arquivos da ANP até o mart de resumo semanal" width="1186" height="477" loading="lazy">
-            <figcaption>Linhagem: ingestão, staging, intermediária, dimensões, fato e resumo semanal.</figcaption>
-          </figure>
-        </article>
-
-        <article class="rad-placa">
-          <div class="rad-topo">
-            <span class="rad-num dado">05</span>
-            <h3>Integração contínua e documentação</h3>
-          </div>
-          <p class="rad-ferramentas"><span>GitHub Actions</span><span>GitHub Pages</span></p>
-          <p>A cada alteração, o GitHub roda o pipeline inteiro contra dados de exemplo
-          versionados e valida a camada semântica contra o warehouse recém construído.
-          Sem testes verdes, sem merge. A documentação do dbt é publicada
-          automaticamente.</p>
-          <figure>
-            <img class="fig-10" src="10-radar-ci.png" alt="Execução do workflow ci.yml no GitHub Actions concluída com sucesso em 50 segundos" width="1438" height="460" loading="lazy">
-            <figcaption>O pipeline completo rodando a cada push, numa máquina limpa do GitHub.</figcaption>
-          </figure>
-        </article>
-
-        <div class="rad-links">
-          <a class="botao escuro" href="https://github.com/vitordjk/radar-precos-combustiveis" rel="noopener">Código no GitHub</a>
-          <a class="botao" href="https://vitordjk.github.io/radar-precos-combustiveis/" rel="noopener">Documentação do dbt</a>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
   <section class="secao" id="ferramentas" aria-labelledby="t-ferramentas">
     <div class="largura">
       <h2 id="t-ferramentas">Ferramentas</h2>
@@ -740,6 +742,6 @@ $ mf query --metrics preco_mediano,taxa_margem_negativa \
   </div>
 </footer>
 
-<script src="painel-casos.js" defer></script>
+<script src="rota-casos.js" defer></script>
 </body>
 </html>
